@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Em Tâm Làm Ads - Kiến thức thực chiến, Kết quả thực tế</title>
+<meta name="description" content="Em Tâm Làm Ads - Chạy ads Facebook/Google, đào tạo 1 kèm 1, build website AI, tư vấn phễu chuyển đổi. Kiến thức thực chiến - Kết quả thực tế!"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--org:#f26a00;--orgdk:#c55200;--navy:#0b2b5c;--navylt:#1a4a8a;--be:#F5E6C8;--be2:#EDD9A3;--bedk:#C8A96E;--blk:#1a1a1a}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:#fff;color:var(--blk)}
+.page{max-width:900px;margin:0 auto;overflow:hidden}
+
+/* NAV */
+.nav{background:var(--navy);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:4px solid var(--org);position:sticky;top:0;z-index:100}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-mascot{width:42px;height:42px;border-radius:50%;background:#ff7a00;display:grid;place-items:center;font-size:22px;border:2px solid rgba(255,255,255,.4);flex-shrink:0}
+.logo-text{font-weight:900;font-size:18px;letter-spacing:-1px;line-height:1}
+.logo-text .w1{color:#fff}.logo-text .w2{color:#f26a00}
+.logo-tagline{font-size:9px;font-weight:700;color:rgba(255,255,255,.55);margin-top:2px}
+.nav-links{display:flex;gap:12px;align-items:center}
+.nav-links a{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--org)}
+.nav-cta{background:var(--org);color:#fff;font-weight:800;font-size:11px;padding:7px 13px;border-radius:50px;border:2px solid var(--orgdk);text-decoration:none}
+.nav-cta:hover{background:var(--orgdk)}
+
+/* HERO */
+.hero{background:var(--be);display:flex;align-items:stretch;min-height:270px;position:relative;overflow:hidden;border-bottom:4px solid var(--be2)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,.06) 1.5px,transparent 1.5px);background-size:18px 18px;pointer-events:none}
+.hero-left{flex:1;padding:30px 20px 30px 24px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.hero-badge{background:var(--navy);color:#fff;font-weight:800;font-size:10px;padding:3px 12px;border-radius:50px;border:2px solid var(--navylt);display:inline-block;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
+.hero-title{font-family:'Baloo 2',sans-serif;font-weight:900;font-size:40px;line-height:.95;margin-bottom:10px}
+.hero-title .t1{color:var(--navy)}.hero-title .t2{color:var(--org)}
+.hero-sub{font-size:13px;color:var(--navy);font-weight:700;margin-bottom:16px;background:rgba(11,43,92,.08);padding:8px 12px;border-radius:10px;border-left:4px solid var(--org);line-height:1.6}
+.hero-btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn-org{background:var(--org);color:#fff;font-weight:800;font-size:12px;padding:10px 16px;border-radius:50px;border:3px solid var(--orgdk);cursor:pointer;text-decoration:none;display:inline-block;transition:transform .15s}
+.btn-org:hover{transform:scale(1.05)}
+.btn-nv{background:var(--navy);color:#fff;font-weight:800;font-size:12px;padding:10px 16px;border-radius:50px;border:3px solid var(--navylt);text-decoration:none;display:inline-block;transition:all .15s}
+.btn-nv:hover{background:var(--navylt)}
+.hero-right{width:230px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:20px;position:relative}
+.hero-logo-box{display:flex;align-items:center;gap:12px;background:var(--navy);border-radius:18px;padding:14px 16px;border:3px solid var(--bedk);box-shadow:4px 4px 0 var(--bedk)}
+.hero-mascot{width:60px;height:60px;border-radius:50%;background:#ff7a00;display:grid;place-items:center;font-size:30px;border:3px solid rgba(255,255,255,.4);flex-shrink:0}
+.hero-logo-txt .ht1{font-weight:900;font-size:17px;letter-spacing:-0.5px;line-height:1}
+.hero-logo-txt .ht1 .w1{color:#fff}.hero-logo-txt .ht1 .w2{color:#f26a00}
+.hero-logo-txt .htag{font-size:9px;font-weight:700;color:rgba(255,255,255,.55);margin-top:3px;line-height:1.4}
+.bubble{position:absolute;top:12px;right:8px;background:#fff;border:3px solid var(--navy);border-radius:12px;padding:6px 10px;font-weight:800;font-size:11px;color:var(--navy);max-width:115px;line-height:1.3;box-shadow:3px 3px 0 var(--navy);z-index:2}
+.bubble span{color:var(--org)}
+.bubble::after{content:'';position:absolute;bottom:-11px;left:14px;border:6px solid transparent;border-top-color:var(--navy)}
+
+/* STATS */
+.stats{background:var(--navy);padding:14px 20px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:8px}
+.si{text-align:center}
+.sn{font-family:'Baloo 2',sans-serif;font-weight:900;font-size:22px;color:var(--org)}
+.sl{font-size:10px;color:rgba(255,255,255,.6);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTIONS */
+.sec{padding:44px 20px}
+.sec.be{background:var(--be)}.sec.wht{background:#fff}.sec.nv{background:var(--navy)}
+.sec-tag{background:var(--org);color:#fff;font-weight:800;font-size:10px;padding:3px 12px;border-radius:50px;display:inline-block;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sec-tag.ghost{background:rgba(255,255,255,.15);color:#fff}
+.sec-title{font-family:'Baloo 2',sans-serif;font-weight:900;font-size:26px;color:var(--navy);line-height:1.1;margin-bottom:6px}
+.sec-title.wht{color:#fff}.sec-title span{color:var(--org)}
+.sec-desc{font-size:13px;color:#666;line-height:1.6;max-width:540px;margin-bottom:24px}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.svc{background:var(--be);border:3px solid var(--bedk);border-radius:14px;padding:18px;box-shadow:4px 4px 0 var(--bedk);transition:transform .15s;position:relative}
+.svc:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--bedk)}
+.svc-icon{font-size:28px;margin-bottom:10px}
+.svc h3{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:15px;color:var(--navy);margin-bottom:5px}
+.svc p{font-size:12px;color:#666;line-height:1.5}
+.svc a{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;color:var(--org);text-decoration:none}
+.svc-hot{position:absolute;top:-10px;right:12px;background:var(--org);color:#fff;font-weight:800;font-size:9px;padding:2px 10px;border-radius:50px;border:2px solid var(--orgdk);text-transform:uppercase}
+
+/* FUNNEL */
+.funnel{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:24px}
+.funnel-step{position:relative;width:100%;display:flex;justify-content:center}
+.funnel-block{display:flex;align-items:center;gap:14px;border:3px solid var(--bedk);border-radius:14px;padding:14px 20px;box-shadow:4px 4px 0 var(--bedk);transition:transform .15s;width:100%}
+.funnel-block:hover{transform:translate(-2px,-2px)}
+.funnel-block.s1{background:#fff3e0;border-color:#f26a00}
+.funnel-block.s2{background:#fff8e1;border-color:#f5a623}
+.funnel-block.s3{background:#e8f5e9;border-color:#4caf50}
+.funnel-block.s4{background:#e3f2fd;border-color:#1a7fdb}
+.funnel-block.s5{background:#f3e5f5;border-color:#9c27b0}
+.funnel-icon{font-size:30px;flex-shrink:0;width:44px;text-align:center}
+.funnel-content h3{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:14px;color:var(--navy);margin-bottom:2px}
+.funnel-content p{font-size:11px;color:#555;line-height:1.4}
+.funnel-content .ftag{display:inline-block;background:var(--navy);color:#fff;font-size:9px;font-weight:800;padding:2px 8px;border-radius:50px;margin-top:4px;text-transform:uppercase}
+.fnum{width:30px;height:30px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-weight:900;font-size:13px;color:#fff;flex-shrink:0;border:2px solid var(--bedk)}
+.farrow{font-size:20px;color:var(--org);margin:5px 0;text-align:center;animation:bounce .8s infinite alternate}
+@keyframes bounce{0%{transform:translateY(0)}100%{transform:translateY(4px)}}
+.funnel-result{background:var(--navy);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;border:3px solid var(--org);box-shadow:4px 4px 0 var(--org);margin-bottom:24px}
+.funnel-result .big{font-size:32px}
+.funnel-result-txt h4{font-family:'Baloo 2',sans-serif;font-weight:900;font-size:15px;color:#fff;margin-bottom:3px}
+.funnel-result-txt p{font-size:12px;color:rgba(255,255,255,.75);line-height:1.5}
+.funnel-result-txt span{color:var(--org);font-weight:800}
+.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.inc-item{background:var(--be);border:2px solid var(--bedk);border-radius:12px;padding:14px;box-shadow:3px 3px 0 var(--bedk)}
+.inc-item h4{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;color:var(--navy);margin-bottom:4px}
+.inc-item p{font-size:11px;color:#666;line-height:1.5}
+
+/* TRAINING */
+.training-wrap{display:flex;gap:20px;flex-wrap:wrap}
+.training-left{flex:1;min-width:220px}
+.training-pts{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.tpt{display:flex;align-items:flex-start;gap:10px;background:#fff;border:2px solid var(--bedk);border-radius:12px;padding:12px}
+.tpt-icon{font-size:20px;flex-shrink:0}
+.tpt-text h4{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;color:var(--navy);margin-bottom:2px}
+.tpt-text p{font-size:11px;color:#666;line-height:1.4}
+.training-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.ttag{background:var(--navy);color:#fff;font-weight:700;font-size:11px;padding:4px 12px;border-radius:50px}
+.training-right{width:190px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.training-box{background:var(--navy);border-radius:16px;padding:20px;text-align:center;border:3px solid var(--bedk);box-shadow:4px 4px 0 var(--bedk)}
+.training-box .big{font-size:40px;margin-bottom:8px}
+.training-box p{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);line-height:1.5}
+.training-box span{color:var(--org);font-weight:800}
+
+/* AI */
+.ai-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.ai-step{background:var(--be);border:3px solid var(--bedk);border-radius:12px;padding:16px;box-shadow:3px 3px 0 var(--bedk);text-align:center}
+.step-num{width:28px;height:28px;background:var(--org);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff;margin:0 auto 8px;border:2px solid var(--orgdk)}
+.ai-step h4{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;color:var(--navy);margin-bottom:4px}
+.ai-step p{font-size:11px;color:#666;line-height:1.4}
+.ai-result{background:var(--navy);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.ai-result-icon{font-size:28px}
+.ai-result p{font-size:12px;color:rgba(255,255,255,.85);line-height:1.5}
+.ai-result p strong{color:var(--org)}
+
+/* BRAND */
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.brand-pt{background:#fff;border:3px solid var(--bedk);border-radius:12px;padding:14px;box-shadow:3px 3px 0 var(--bedk)}
+.brand-pt h4{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:13px;color:var(--navy);margin-bottom:4px}
+.brand-pt p{font-size:11px;color:#666;line-height:1.5}
+.results-box{margin-top:16px;background:var(--navy);border-radius:12px;padding:14px 18px}
+.results-box h4{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:14px;color:var(--org);margin-bottom:10px}
+.results-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.results-list li{font-size:12px;color:#fff;display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.results-list li::before{content:'⭐';flex-shrink:0}
+
+/* COMIC */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:3px solid var(--navy);border-radius:10px;padding:14px;background:var(--be);box-shadow:3px 3px 0 var(--navy);position:relative}
+.pnum{position:absolute;top:-11px;left:10px;width:22px;height:22px;background:var(--org);border:2px solid var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:#fff}
+.pbubble{background:#fff;border:2px solid var(--navy);border-radius:8px;padding:8px 10px;font-size:11.5px;font-weight:700;color:var(--navy);line-height:1.4}
+.pbubble span{color:var(--org)}
+.picon{font-size:22px;margin-bottom:8px}
+
+/* COMIC NOTE */
+.comic-note{background:var(--navy);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.comic-mascot{font-size:32px;flex-shrink:0}
+.comic-bubble{background:#fff;border:2px solid var(--bedk);border-radius:10px;padding:10px 14px;font-size:12px;font-weight:700;color:var(--navy);line-height:1.5;position:relative;flex:1}
+.comic-bubble span{color:var(--org)}
+.comic-bubble::before{content:'';position:absolute;left:-12px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:#fff}
+
+/* TESTI */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:20px}
+.tc{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);border-radius:14px;padding:16px}
+.tstars{color:var(--org);font-size:13px;margin-bottom:6px;letter-spacing:2px}
+.ttext{font-size:12px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:10px;font-style:italic}
+.tname{font-weight:800;font-size:12px;color:var(--org)}
+.trole{font-size:10px;color:rgba(255,255,255,.45)}
+.ttype{display:inline-block;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:9px;font-weight:700;padding:2px 8px;border-radius:50px;margin-top:4px;text-transform:uppercase}
+
+/* CONTACT */
+.contact-wrap{display:flex;gap:24px;flex-wrap:wrap}
+.contact-form{flex:1;min-width:240px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.form-group label{font-size:11px;font-weight:800;color:var(--navy)}
+.form-group input,.form-group select,.form-group textarea{padding:9px 12px;border:2.5px solid var(--bedk);border-radius:10px;font-size:12px;font-family:'Nunito',sans-serif;background:#fff;color:var(--blk);outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--org)}
+.form-group textarea{resize:vertical;min-height:80px}
+.submit-btn{background:var(--org);color:#fff;font-weight:800;font-size:14px;padding:12px 24px;border-radius:50px;border:3px solid var(--orgdk);cursor:pointer;width:100%;transition:all .15s;font-family:'Nunito',sans-serif}
+.submit-btn:hover{background:var(--orgdk);transform:scale(1.02)}
+.success-msg{display:none;background:#d4edda;border:2px solid #28a745;border-radius:10px;padding:12px;font-size:13px;font-weight:700;color:#155724;text-align:center;margin-top:10px}
+.contact-info{width:210px;flex-shrink:0}
+.info-box{background:var(--navy);border-radius:14px;padding:18px;border:3px solid var(--bedk);box-shadow:4px 4px 0 var(--bedk)}
+.info-box h4{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:15px;color:#fff;margin-bottom:14px}
+.info-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:12px}
+.info-item .ii{font-size:16px;flex-shrink:0}
+.info-item div{font-size:11px;color:rgba(255,255,255,.75);line-height:1.4;font-weight:600}
+.info-item div strong{color:var(--org);display:block;font-size:12px}
+.social-links{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.soc{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:800;color:#fff;text-decoration:none;transition:all .15s}
+.soc:hover{background:var(--org);border-color:var(--org)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:20px;border-top:3px solid var(--org)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.footer-logo{display:flex;align-items:center;gap:10px}
+.footer-mascot{width:36px;height:36px;border-radius:50%;background:#ff7a00;display:grid;place-items:center;font-size:18px;border:2px solid rgba(255,255,255,.3)}
+.footer-logo-text .ft1{font-weight:900;font-size:14px;letter-spacing:-0.5px;line-height:1}
+.ft1 .w1{color:#fff}.ft1 .w2{color:#f26a00}
+.footer-logo-text .ftag{font-size:9px;font-weight:700;color:rgba(255,255,255,.45);margin-top:2px}
+.flinks{display:flex;gap:14px;flex-wrap:wrap}
+.flinks a{font-size:11px;color:rgba(255,255,255,.55);text-decoration:none;font-weight:600}
+.flinks a:hover{color:var(--org)}
+.fcopy{font-size:10px;color:rgba(255,255,255,.3);text-align:center}
+
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero{flex-direction:column}
+  .hero-right{width:100%;padding:16px}
+  .hero-title{font-size:30px}
+  .form-row{grid-template-columns:1fr}
+  .ai-steps{grid-template-columns:1fr}
+  .brand-grid{grid-template-columns:1fr}
+  .included-grid{grid-template-columns:1fr}
+  .panels{grid-template-columns:1fr}
+  .contact-wrap{flex-direction:column}
+  .contact-info{width:100%}
+  .training-right{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo-wrap">
+    <div class="logo-mascot">😄</div>
+    <div>
+      <div class="logo-text"><span class="w1">EM TÂM</span> <span class="w2">LÀM ADS</span></div>
+      <div class="logo-tagline">Kiến thức thực chiến - Kết quả thực tế</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">📦 Dịch vụ</a>
+    <a href="#funnel">🔄 Phễu</a>
+    <a href="#training">👨‍🏫 Đào tạo</a>
+    <a href="#ai">🤖 AI</a>
+    <a href="#branding">💡 Thương hiệu</a>
+    <a class="nav-cta" href="#contact">⚡ Đặt lịch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="dots"></div>
+  <div class="hero-left">
+    <span class="hero-badge">🎯 Dành cho doanh nghiệp nhỏ & cá nhân</span>
+    <h1 class="hero-title"><span class="t1">MARKETING &</span><br><span class="t2">QUẢNG CÁO</span><br><span class="t1" style="font-size:28px">THỰC CHIẾN!</span></h1>
+    <p class="hero-sub">🚀 Chạy ads Facebook/Google &nbsp;•&nbsp; 👨‍🏫 Đào tạo 1 kèm 1<br>🤖 Build website bằng AI &nbsp;•&nbsp; 🔄 Tư vấn phễu chuyển đổi</p>
+    <div class="hero-btns">
+      <a class="btn-org" href="#contact">⚡ Đặt lịch tư vấn miễn phí</a>
+      <a class="btn-nv" href="#services">📦 Xem gói dịch vụ</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="bubble">Marketing không khó khi có <span>Tâm!</span> 🎯</div>
+    <div class="hero-logo-box">
+      <div class="hero-mascot">😄</div>
+      <div class="hero-logo-txt">
+        <div class="ht1"><span class="w1">EM TÂM</span><br><span class="w2">LÀM ADS</span></div>
+        <div class="htag">Kiến thức thực chiến<br>Kết quả thực tế</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="si"><div class="sn">500+</div><div class="sl">Khách tin tưởng</div></div>
+  <div class="si"><div class="sn">95%</div><div class="sl">Hài lòng</div></div>
+  <div class="si"><div class="sn">3x</div><div class="sl">ROI trung bình</div></div>
+  <div class="si"><div class="sn">1:1</div><div class="sl">Dạy kèm cá nhân</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec wht" id="services">
+  <span class="sec-tag">📦 Dịch vụ</span>
+  <h2 class="sec-title">Tôi giúp bạn điều <span>GÌ?</span></h2>
+  <p class="sec-desc">5 siêu năng lực dành cho doanh nghiệp nhỏ & cá nhân muốn phát triển online! 💪</p>
+  <div class="svc-grid">
+    <div class="svc"><div class="svc-icon">🎯</div><h3>Xây kênh Marketing</h3><p>Xây phễu bán hàng, quản lý nội dung, kênh bán hàng online hiệu quả từ A-Z.</p><a href="#contact">Tìm hiểu thêm →</a></div>
+    <div class="svc"><div class="svc-icon">📈</div><h3>Chạy quảng cáo Facebook/Google</h3><p>Setup campaign chuyên nghiệp, tối ưu hiệu suất, báo cáo chi tiết. Mỗi đồng ads đều ra kết quả.</p><a href="#contact">Tìm hiểu thêm →</a><span class="svc-hot">PHỔ BIẾN</span></div>
+    <div class="svc"><div class="svc-icon">🔄</div><h3>Tư vấn phễu chuyển đổi</h3><p>Audit & thiết kế lại phễu bán hàng hoàn chỉnh — từ người lạ đến khách trung thành.</p><a href="#funnel">Tìm hiểu thêm →</a><span class="svc-hot">MỚI</span></div>
+    <div class="svc"><div class="svc-icon">👨‍🏫</div><h3>Đào tạo quảng cáo 1 kèm 1</h3><p>Hướng dẫn trực tiếp trên tài khoản của bạn, học từ case thực tế, hỗ trợ sau học.</p><a href="#training">Tìm hiểu thêm →</a><span class="svc-hot">CAM KẾT ĐẦU RA</span></div>
+    <div class="svc"><div class="svc-icon">🤖</div><h3>Build Website & AI</h3><p>Tạo landing page & website bán hàng bằng AI — không cần code. Thực chiến 100%.</p><a href="#ai">Tìm hiểu thêm →</a></div>
+    <div class="svc"><div class="svc-icon">📖</div><h3>Truyện tranh Marketing</h3><p>Kiến thức marketing phức tạp qua truyện tranh — dễ hiểu cho người bận rộn.</p><a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank">Xem fanpage →</a></div>
+  </div>
+</section>
+
+<!-- FUNNEL -->
+<section class="sec be" id="funnel">
+  <span class="sec-tag">🔄 Tư vấn phễu</span>
+  <h2 class="sec-title">Tư vấn <span>Phễu Chuyển Đổi</span></h2>
+  <p class="sec-desc">Từ người lạ → khách tiềm năng → khách mua → khách trung thành. Tâm giúp bạn xây phễu hoàn chỉnh, không bỏ sót bước nào!</p>
+  <div class="funnel">
+    <div class="funnel-step"><div class="funnel-block s1"><div class="fnum">1</div><div class="funnel-icon">🌐</div><div class="funnel-content"><h3>AWARENESS — Tiếp cận</h3><p>Khách lần đầu biết đến bạn qua ads, bài viết, video, referral...</p><span class="ftag">Facebook Ads · Content · SEO</span></div></div></div>
+    <div class="farrow">⬇</div>
+    <div class="funnel-step"><div class="funnel-block s2" style="width:90%"><div class="fnum">2</div><div class="funnel-icon">🤔</div><div class="funnel-content"><h3>INTEREST — Quan tâm</h3><p>Khách xem thêm, tương tác, ghé fanpage — bắt đầu tìm hiểu về bạn.</p><span class="ftag">Retargeting · Content giá trị · Lead Magnet</span></div></div></div>
+    <div class="farrow">⬇</div>
+    <div class="funnel-step"><div class="funnel-block s3" style="width:78%"><div class="fnum">3</div><div class="funnel-icon">💡</div><div class="funnel-content"><h3>CONSIDERATION — Cân nhắc</h3><p>Khách so sánh, hỏi giá, đọc review — cần được nuture đúng lúc.</p><span class="ftag">Messenger · Email · Social Proof</span></div></div></div>
+    <div class="farrow">⬇</div>
+    <div class="funnel-step"><div class="funnel-block s4" style="width:64%"><div class="fnum">4</div><div class="funnel-icon">🛒</div><div class="funnel-content"><h3>CONVERSION — Mua hàng</h3><p>Khách quyết định mua — cần landing page, offer, CTA đủ mạnh.</p><span class="ftag">Landing Page · Offer · Urgency</span></div></div></div>
+    <div class="farrow">⬇</div>
+    <div class="funnel-step"><div class="funnel-block s5" style="width:50%"><div class="fnum">5</div><div class="funnel-icon">❤️</div><div class="funnel-content"><h3>LOYALTY — Trung thành</h3><p>Khách mua lại, giới thiệu bạn bè — vòng lặp tăng trưởng!</p><span class="ftag">Upsell · Referral · Community</span></div></div></div>
+  </div>
+  <div class="funnel-result">
+    <div class="big">💰</div>
+    <div class="funnel-result-txt">
+      <h4>Phễu tốt = Chi phí ads giảm, doanh thu tăng!</h4>
+      <p>Hầu hết fanpage <span>bỏ sót bước 2-3</span> — khách quan tâm mà không được nuture → mất đơn. Tâm giúp bạn vá đúng chỗ rò rỉ trong phễu!</p>
+    </div>
+  </div>
+  <h3 style="font-family:'Baloo 2',sans-serif;font-weight:900;font-size:17px;color:var(--navy);margin-bottom:14px">📋 Gói tư vấn phễu bao gồm:</h3>
+  <div class="included-grid">
+    <div class="inc-item"><h4>🔍 Audit phễu hiện tại</h4><p>Phân tích từng bước — tìm ra điểm rò rỉ khách hàng đang xảy ra ở đâu.</p></div>
+    <div class="inc-item"><h4>🗺️ Vẽ lại phễu tối ưu</h4><p>Thiết kế lại hành trình khách hàng từ A-Z phù hợp với ngành của bạn.</p></div>
+    <div class="inc-item"><h4>📝 Content cho từng bước</h4><p>Gợi ý nội dung & thông điệp phù hợp cho từng giai đoạn của phễu.</p></div>
+    <div class="inc-item"><h4>⚙️ Setup & kết nối tools</h4><p>Hướng dẫn kết nối Pixel, Messenger, Landing page vào phễu hoàn chỉnh.</p></div>
+    <div class="inc-item"><h4>📊 Tracking & đo lường</h4><p>Setup chỉ số cần theo dõi để biết phễu đang hoạt động hiệu quả không.</p></div>
+    <div class="inc-item"><h4>🚀 Tối ưu liên tục</h4><p>Đồng hành tối ưu phễu theo dữ liệu thực tế sau khi setup xong.</p></div>
+  </div>
+  <div class="comic-note">
+    <div class="comic-mascot">😄</div>
+    <div class="comic-bubble">Đừng chạy ads khi chưa có phễu! Đổ tiền vào ads mà phễu rò rỉ thì chỉ <span>tốn ngân sách</span> — Tâm giúp bạn <span>bịt lỗ hổng trước</span>, chạy ads sau! 🎯</div>
+  </div>
+  <br/>
+  <a class="btn-org" href="#contact">🔍 Tư vấn phễu miễn phí ngay</a>
+</section>
+
+<!-- TRAINING -->
+<section class="sec wht" id="training">
+  <span class="sec-tag">👨‍🏫 Đào tạo</span>
+  <h2 class="sec-title">Đào tạo 1 kèm 1 — <span>Cầm tay chỉ việc!</span></h2>
+  <p class="sec-desc">Học thực tế trên case của bạn, áp dụng ngay, support liên tục. Không lý thuyết khô khan!</p>
+  <div class="training-wrap">
+    <div class="training-left">
+      <div class="training-pts">
+        <div class="tpt"><div class="tpt-icon">✅</div><div class="tpt-text"><h4>Học trên case thực tế</h4><p>Bạn học trực tiếp trên campaign của chính mình, không phải bài tập giả định.</p></div></div>
+        <div class="tpt"><div class="tpt-icon">🎯</div><div class="tpt-text"><h4>Áp dụng ngay cho kênh</h4><p>Mỗi kiến thức học được, bạn áp dụng ngay để tăng doanh số thực tế.</p></div></div>
+        <div class="tpt"><div class="tpt-icon">🚀</div><div class="tpt-text"><h4>Support liên tục sau học</h4><p>Có câu hỏi sau buổi học? Tâm hỗ trợ đến khi ra kết quả.</p></div></div>
+      </div>
+      <div class="training-tags">
+        <span class="ttag">💻 Online qua Zoom</span>
+        <span class="ttag">📹 Ghi hình ôn tập</span>
+        <span class="ttag">📅 Linh hoạt lịch học</span>
+      </div>
+      <a class="btn-org" href="#contact">📅 Đăng ký lịch học ngay</a>
+    </div>
+    <div class="training-right">
+      <div class="training-box">
+        <div class="big">🎓</div>
+        <p>Cam kết <span>đầu ra</span><br/>học xong<br/>tự chạy được!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="sec be" id="ai">
+  <span class="sec-tag">🤖 AI & Website</span>
+  <h2 class="sec-title">Build Website bằng AI — <span>Không cần code!</span></h2>
+  <p class="sec-desc">Website đơn giản, rõ ràng, hiệu quả — xây trong ngày!</p>
+  <div class="ai-steps">
+    <div class="ai-step"><div class="step-num">1</div><h4>🏗️ Lên cấu trúc</h4><p>Thiết kế layout rõ ràng, dễ navigate, phục vụ bán hàng hiệu quả.</p></div>
+    <div class="ai-step"><div class="step-num">2</div><h4>✍️ Viết nội dung AI</h4><p>Dùng AI viết content chuyên nghiệp, giúp khách hiểu rõ giá trị của bạn.</p></div>
+    <div class="ai-step"><div class="step-num">3</div><h4>⚡ Tối ưu chuyển đổi</h4><p>Tối ưu CTA, form liên hệ để tăng tỷ lệ khách hàng liên hệ.</p></div>
+  </div>
+  <div class="ai-result">
+    <div class="ai-result-icon">✨</div>
+    <p><strong>Kết quả:</strong> Website chuyên nghiệp, load nhanh, SEO-friendly, sẵn sàng bán hàng ngay từ ngày đầu! 🎉</p>
+  </div>
+</section>
+
+<!-- BRANDING -->
+<section class="sec wht" id="branding">
+  <span class="sec-tag">💡 Thương hiệu</span>
+  <h2 class="sec-title">Thương hiệu rõ ràng — <span>Nội dung ra đơn!</span></h2>
+  <p class="sec-desc">Marketing không phải may mắn — là kết quả của strategy rõ ràng + nội dung kỹ lưỡng!</p>
+  <div class="brand-grid">
+    <div class="brand-pt"><h4>🎯 Định vị brand</h4><p>Biết bạn khác biệt ở đâu, tại sao khách chọn bạn thay vì đối thủ.</p></div>
+    <div class="brand-pt"><h4>📝 Xây khung nội dung</h4><p>Các chủ đề chính để viết, tránh bí ý tưởng và nội dung lệch hướng.</p></div>
+    <div class="brand-pt"><h4>📅 Lịch đăng bài</h4><p>Khi nào đăng, ở đâu, cách nào — đăng đều đặn tăng niềm tin khách hàng.</p></div>
+    <div class="brand-pt"><h4>💬 Tối ưu thông điệp</h4><p>Mỗi bài đều convincing — khách đọc xong muốn liên hệ ngay.</p></div>
+  </div>
+  <div class="results-box">
+    <h4>🏆 Kết quả:</h4>
+    <ul class="results-list">
+      <li>Khách hàng hiểu rõ bạn là ai & tại sao nên chọn bạn</li>
+      <li>Nội dung tập trung, không bị lệch lạc hay mất phương hướng</li>
+      <li>Mỗi bài đều có mục đích, tạo giá trị và thúc đẩy hành động</li>
+      <li>Tăng engagement + conversion = lợi nhuận thực sự! 💰</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHY TAM -->
+<section class="sec be">
+  <span class="sec-tag">📖 Tại sao chọn Tâm?</span>
+  <h2 class="sec-title">Kiến thức <span>thực chiến</span> — Kết quả thực tế</h2>
+  <p class="sec-desc" style="margin-bottom:20px">Phong cách truyện tranh — dễ hiểu cho người bận rộn!</p>
+  <div class="panels">
+    <div class="panel"><span class="pnum">1</span><div class="picon">📖</div><div class="pbubble">Tâm dạy bằng <span>truyện tranh</span> — Marketing phức tạp trở nên dễ hiểu cho bất kỳ ai!</div></div>
+    <div class="panel"><span class="pnum">2</span><div class="picon">🤖</div><div class="pbubble">Kết hợp <span>AI ứng dụng thực tế</span> — Không chỉ học lý thuyết mà làm được ngay!</div></div>
+    <div class="panel"><span class="pnum">3</span><div class="picon">📈</div><div class="pbubble"><span>Cam kết đầu ra</span> — Học xong phải tự chạy được, không chỉ "biết" mà phải "làm"!</div></div>
+    <div class="panel"><span class="pnum">4</span><div class="picon">💬</div><div class="pbubble">Hỗ trợ <span>1 kèm 1</span> — Tâm đồng hành đến khi fanpage ra đơn thật!</div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec nv">
+  <span class="sec-tag ghost">⭐ Khách hàng nói gì</span>
+  <h2 class="sec-title wht">Kết quả & Phản hồi <span>Từ Khách Hàng!</span></h2>
+  <div class="tgrid">
+    <div class="tc"><div class="tstars">★★★★★</div><p class="ttext">"Sau khoá training 1 kèm 1, tôi tự tin quản lý quảng cáo Facebook. ROI tăng gấp 3 lần trong 2 tháng!"</p><div class="tname">Nguyễn Minh Anh</div><div class="trole">Chủ Shop Online</div><span class="ttype">🏢 E-commerce</span></div>
+    <div class="tc"><div class="tstars">★★★★★</div><p class="ttext">"Giúp tôi xây dựng chiến lược marketing toàn diện. Từ branding đến nội dung đều được tư vấn kỹ!"</p><div class="tname">Trần Huy Hoàng</div><div class="trole">Founder Startup</div><span class="ttype">🏢 SaaS</span></div>
+    <div class="tc"><div class="tstars">★★★★★</div><p class="ttext">"Setup quảng cáo Google hiệu quả, hướng dẫn tối ưu chi tiết. Campaign chạy rất tốt, sẽ tiếp tục hợp tác!"</p><div class="tname">Phạm Thúy Liên</div><div class="trole">Marketing Manager</div><span class="ttype">🏢 E-commerce</span></div>
+  </div>
+  <br/>
+  <div style="text-align:center"><a class="btn-org" href="#contact">🚀 Bạn cũng có thể là success story tiếp theo!</a></div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec be" id="contact">
+  <span class="sec-tag">💬 Liên hệ</span>
+  <h2 class="sec-title">Chia sẻ bài toán <span>của bạn!</span></h2>
+  <p class="sec-desc">Cho Tâm biết nhu cầu — sẽ liên hệ lại trong 24 giờ! ⚡</p>
+  <div class="contact-wrap">
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group"><label>👤 Tên của bạn *</label><input type="text" placeholder="Nguyễn Văn A" id="f-name"/></div>
+        <div class="form-group"><label>📧 Email *</label><input type="email" placeholder="email@gmail.com" id="f-email"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>📱 Số điện thoại *</label><input type="tel" placeholder="0901 234 567" id="f-phone"/></div>
+        <div class="form-group"><label>🏢 Ngành / Lĩnh vực</label>
+          <select id="f-industry">
+            <option value="">-- Chọn ngành --</option>
+            <option>E-commerce</option><option>Dịch vụ (Service)</option>
+            <option>Giáo dục</option><option>F&B</option>
+            <option>Bất động sản</option><option>Khác</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>⚡ Nhu cầu của bạn *</label>
+        <select id="f-need">
+          <option value="">-- Chọn nhu cầu --</option>
+          <option>Chạy quảng cáo Facebook/Google</option>
+          <option>Tư vấn phễu chuyển đổi</option>
+          <option>Đào tạo 1 kèm 1</option>
+          <option>Build Website bằng AI</option>
+          <option>Tư vấn Thương hiệu & Nội dung</option>
+          <option>Xây kênh Marketing tổng thể</option>
+          <option>Khác</option>
+        </select>
+      </div>
+      <div class="form-group"><label>💬 Ghi chú (tuỳ chọn)</label><textarea placeholder="Mô tả thêm về tình hình hiện tại của bạn..." id="f-note"></textarea></div>
+      <button class="submit-btn" onclick="submitForm()">🚀 Gửi yêu cầu tư vấn</button>
+      <div class="success-msg" id="success-msg">✅ Cảm ơn bạn! Tâm sẽ liên hệ trong 24 giờ! 📞</div>
+    </div>
+    <div class="contact-info">
+      <div class="info-box">
+        <h4>📞 Thông tin liên hệ</h4>
+        <div class="info-item"><div class="ii">📱</div><div><strong>Điện thoại / Zalo</strong>0965 817 021</div></div>
+        <div class="info-item"><div class="ii">📧</div><div><strong>Email</strong>truongthanhtamvinici@gmail.com</div></div>
+        <div class="info-item"><div class="ii">⏰</div><div><strong>Phản hồi</strong>Trong vòng 24 giờ</div></div>
+        <div class="social-links">
+          <a class="soc" href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank">📘 Facebook</a>
+          <a class="soc" href="https://instagram.com" target="_blank">📷 Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-mascot">😄</div>
+      <div class="footer-logo-text">
+        <div class="ft1"><span class="w1">EM TÂM</span> <span class="w2">LÀM ADS</span></div>
+        <div class="ftag">Kiến thức thực chiến - Kết quả thực tế</div>
+      </div>
+    </div>
+    <div class="flinks">
+      <a href="#services">Dịch vụ</a>
+      <a href="#funnel">Phễu</a>
+      <a href="#training">Đào tạo</a>
+      <a href="#ai">AI & Website</a>
+      <a href="#branding">Thương hiệu</a>
+      <a href="#contact">Liên hệ</a>
+    </div>
+  </div>
+  <p class="fcopy">© 2024 Em Tâm Làm Ads · Kiến thức thực chiến – Kết quả thực tế · 0965 817 021</p>
+</footer>
+
+</div>
+<script>
+function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const need=document.getElementById('f-need').value;
+  if(!name||!email||!phone||!need){alert('Vui lòng điền đầy đủ thông tin bắt buộc (Tên, Email, SĐT, Nhu cầu)!');return;}
+  document.getElementById('success-msg').style.display='block';
+  document.getElementById('f-name').value='';
+  document.getElementById('f-email').value='';
+  document.getElementById('f-phone').value='';
+  document.getElementById('f-note').value='';
+  document.getElementById('f-need').value='';
+  document.getElementById('f-industry').value='';
+  setTimeout(()=>{document.getElementById('success-msg').style.display='none';},6000);
+}
+</script>
+</body>
+</html>
