@@ -451,8 +451,9 @@ body{font-family:'Nunito',sans-serif;background:#fff;color:var(--blk)}
         </select>
       </div>
       <div class="form-group"><label>💬 Ghi chú (tuỳ chọn)</label><textarea placeholder="Mô tả thêm về tình hình hiện tại của bạn..." id="f-note"></textarea></div>
-      <button class="submit-btn" onclick="submitForm()">🚀 Gửi yêu cầu tư vấn</button>
+      <button class="submit-btn" onclick="submitForm(event)">🚀 Gửi yêu cầu tư vấn</button>
       <div class="success-msg" id="success-msg">✅ Cảm ơn bạn! Tâm sẽ liên hệ trong 24 giờ! 📞</div>
+      <div class="error-msg" id="error-msg" style="display:none;background:#f8d7da;border:2px solid #dc3545;border-radius:10px;padding:12px;font-size:13px;font-weight:700;color:#721c24;text-align:center;margin-top:10px">⚠️ Có lỗi xảy ra, vui lòng thử lại hoặc nhắn Facebook trực tiếp!</div>
     </div>
     <div class="contact-info">
       <div class="info-box">
@@ -493,20 +494,54 @@ body{font-family:'Nunito',sans-serif;background:#fff;color:var(--blk)}
 
 </div>
 <script>
-function submitForm(){
+async function submitForm(e){
+  e.preventDefault();
   const name=document.getElementById('f-name').value.trim();
   const email=document.getElementById('f-email').value.trim();
   const phone=document.getElementById('f-phone').value.trim();
+  const industry=document.getElementById('f-industry').value;
   const need=document.getElementById('f-need').value;
+  const note=document.getElementById('f-note').value.trim();
   if(!name||!email||!phone||!need){alert('Vui lòng điền đầy đủ thông tin bắt buộc (Tên, Email, SĐT, Nhu cầu)!');return;}
-  document.getElementById('success-msg').style.display='block';
-  document.getElementById('f-name').value='';
-  document.getElementById('f-email').value='';
-  document.getElementById('f-phone').value='';
-  document.getElementById('f-note').value='';
-  document.getElementById('f-need').value='';
-  document.getElementById('f-industry').value='';
-  setTimeout(()=>{document.getElementById('success-msg').style.display='none';},6000);
+
+  const btn=document.querySelector('.submit-btn');
+  const oldText=btn.textContent;
+  btn.textContent='⏳ Đang gửi...';
+  btn.disabled=true;
+  document.getElementById('success-msg').style.display='none';
+  document.getElementById('error-msg').style.display='none';
+
+  try{
+    const res=await fetch('https://formspree.io/f/mbdeaqly',{
+      method:'POST',
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body:JSON.stringify({
+        'Tên':name,
+        'Email':email,
+        'Số điện thoại':phone,
+        'Ngành':industry,
+        'Nhu cầu':need,
+        'Ghi chú':note
+      })
+    });
+    if(res.ok){
+      document.getElementById('success-msg').style.display='block';
+      document.getElementById('f-name').value='';
+      document.getElementById('f-email').value='';
+      document.getElementById('f-phone').value='';
+      document.getElementById('f-note').value='';
+      document.getElementById('f-need').value='';
+      document.getElementById('f-industry').value='';
+      setTimeout(()=>{document.getElementById('success-msg').style.display='none';},6000);
+    }else{
+      document.getElementById('error-msg').style.display='block';
+    }
+  }catch(err){
+    document.getElementById('error-msg').style.display='block';
+  }finally{
+    btn.textContent=oldText;
+    btn.disabled=false;
+  }
 }
 </script>
 </body>
