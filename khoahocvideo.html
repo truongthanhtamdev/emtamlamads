@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khóa Học Chụp Ảnh - Quay Video & Dựng Video Bằng Điện Thoại</title>
+<style>
+  :root{
+    --bg:#0e1b14;
+    --panel:#15261c;
+    --accent:#ffb454;
+    --accent2:#7fd99a;
+    --text:#f3f4ee;
+    --muted:#9fb3a4;
+    --line:#26392c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Be Vietnam Pro', 'Segoe UI', system-ui, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    padding:60px 0 40px;
+    text-align:center;
+    background:linear-gradient(180deg, #14271c 0%, var(--bg) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    color:var(--accent2);
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-size:13px;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(28px,5vw,46px);
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:16px;
+  }
+  .hero h1 span{color:var(--accent);}
+  .hero p.sub{
+    color:var(--muted);
+    font-size:17px;
+    max-width:620px;
+    margin:0 auto 28px;
+  }
+  .stats{
+    display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+    margin-bottom:30px;
+    font-size:15px;color:var(--muted);
+  }
+  .stats b{color:var(--text);font-size:20px;display:block;}
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#1a1206;
+    font-weight:700;
+    padding:16px 36px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:17px;
+    box-shadow:0 6px 0 #c98a2e;
+    transition:transform .1s;
+  }
+  .cta-btn:active{transform:translateY(4px);box-shadow:0 2px 0 #c98a2e;}
+  .hero-price{
+    display:flex;justify-content:center;align-items:center;gap:12px;
+    margin-bottom:20px;flex-wrap:wrap;
+  }
+  .hero-old{
+    color:var(--muted);font-size:18px;text-decoration:line-through;
+  }
+  .hero-new{
+    color:var(--accent);font-size:28px;font-weight:800;
+  }
+  .hero-tag{
+    background:#e2483a;color:#fff;font-weight:800;font-size:13px;
+    padding:4px 10px;border-radius:6px;
+  }
+
+  /* PREVIEW VIDEOS */
+  .preview{padding:50px 0;border-bottom:1px solid var(--line);}
+  .preview h2{font-size:26px;font-weight:800;margin-bottom:6px;text-align:center;}
+  .preview p.lead{color:var(--muted);text-align:center;margin-bottom:30px;}
+  .preview-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+  }
+  .preview-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .preview-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block;}
+  .preview-card .label{padding:14px 16px;font-weight:600;font-size:15px;}
+
+  /* CURRICULUM */
+  .curriculum{padding:50px 0;}
+  .curriculum h2{font-size:26px;font-weight:800;text-align:center;margin-bottom:6px;}
+  .curriculum p.lead{color:var(--muted);text-align:center;margin-bottom:34px;}
+
+  .part{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    margin-bottom:14px;
+    overflow:hidden;
+  }
+  .part-header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 20px;cursor:pointer;
+    font-weight:700;font-size:16px;
+  }
+  .part-header .count{color:var(--muted);font-weight:500;font-size:14px;}
+  .part-header .arrow{transition:transform .2s;color:var(--accent2);}
+  .part.open .arrow{transform:rotate(180deg);}
+  .lessons{display:none;border-top:1px solid var(--line);}
+  .part.open .lessons{display:block;}
+  .lesson{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:13px 20px;font-size:15px;
+    border-bottom:1px solid var(--line);
+    color:var(--text);
+  }
+  .lesson:last-child{border-bottom:none;}
+  .lesson.free{color:var(--accent2);font-weight:600;}
+  .lesson.free .badge{
+    background:var(--accent2);color:#0e1b14;font-size:11px;font-weight:800;
+    padding:2px 8px;border-radius:6px;margin-left:8px;letter-spacing:.05em;
+  }
+  .lesson.locked{
+    color:var(--muted);cursor:pointer;
+    filter:opacity(.65);
+  }
+  .lesson.locked:hover{background:#1c2f23;}
+  .lesson .icon-lock{margin-left:8px;}
+  .lesson .time{color:var(--muted);font-size:13px;white-space:nowrap;margin-left:12px;}
+  .lesson-left{display:flex;align-items:center;gap:4px;}
+
+  /* PRICING / PAYMENT */
+  .pricing{
+    padding:60px 0;
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .pricing h2{font-size:26px;font-weight:800;text-align:center;margin-bottom:6px;}
+  .pricing p.lead{color:var(--muted);text-align:center;margin-bottom:34px;}
+
+  .price-card{
+    max-width:520px;margin:0 auto;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:32px;
+    text-align:center;
+  }
+  .price-card .price{
+    font-size:42px;font-weight:800;color:var(--accent);margin-bottom:4px;
+  }
+  .price-card .price-note{color:var(--muted);font-size:14px;margin-bottom:24px;}
+
+  .discount-badge{
+    display:inline-block;background:#e2483a;color:#fff;font-weight:800;
+    font-size:13px;padding:6px 14px;border-radius:20px;margin-bottom:14px;
+    letter-spacing:.03em;
+  }
+  .price-old{
+    color:var(--muted);font-size:18px;text-decoration:line-through;
+    margin-bottom:2px;
+  }
+  .countdown{
+    display:flex;justify-content:center;gap:10px;margin-bottom:16px;
+  }
+  .cd-box{
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    min-width:54px;padding:8px 6px;text-align:center;
+  }
+  .cd-box span{display:block;font-size:22px;font-weight:800;color:var(--accent);}
+  .cd-box label{display:block;font-size:11px;color:var(--muted);margin-top:2px;}
+
+  .qr-box{
+    background:#fff;border-radius:12px;padding:16px;
+    display:inline-block;margin-bottom:18px;
+  }
+  .qr-box img{width:180px;height:180px;display:block;}
+
+  .bank-info{
+    background:#1c2f23;border-radius:10px;padding:16px;margin-bottom:24px;
+    text-align:left;font-size:15px;
+  }
+  .bank-info div{display:flex;justify-content:space-between;padding:4px 0;}
+  .bank-info span.l{color:var(--muted);}
+  .bank-info span.v{font-weight:700;}
+
+  .note-box{
+    background:#2e2412;border:1px solid #4a3a1c;border-radius:10px;
+    padding:14px 16px;text-align:left;font-size:14px;color:#ffd9a0;
+    margin-bottom:24px;
+  }
+
+  /* FORM */
+  .form-section input, .form-section textarea{
+    width:100%;padding:13px 14px;border-radius:8px;
+    border:1px solid var(--line);background:var(--bg);color:var(--text);
+    font-size:15px;margin-bottom:12px;font-family:inherit;
+  }
+  .form-section label{display:block;font-size:14px;color:var(--muted);margin-bottom:6px;text-align:left;}
+  .form-section .field{margin-bottom:14px;text-align:left;}
+  .submit-btn{
+    width:100%;background:var(--accent);color:#1a1206;font-weight:700;
+    padding:15px;border:none;border-radius:10px;font-size:16px;cursor:pointer;
+  }
+  .submit-btn:hover{background:#ffc473;}
+  .form-msg{font-size:14px;margin-top:12px;display:none;}
+  .form-msg.success{color:var(--accent2);display:block;}
+
+  /* UNLOCK MODAL */
+  .modal-overlay{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);
+    align-items:center;justify-content:center;z-index:100;padding:20px;
+  }
+  .modal-overlay.show{display:flex;}
+  .modal{
+    background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    max-width:440px;width:100%;padding:30px;text-align:center;
+    position:relative;
+  }
+  .modal h3{font-size:20px;font-weight:800;margin-bottom:8px;}
+  .modal p{color:var(--muted);font-size:14px;margin-bottom:18px;}
+  .modal .close{
+    position:absolute;top:14px;right:18px;cursor:pointer;color:var(--muted);
+    font-size:22px;background:none;border:none;
+  }
+  .modal-actions{display:flex;gap:10px;}
+  .modal-actions a, .modal-actions button{
+    flex:1;padding:12px;border-radius:8px;font-weight:700;font-size:14px;
+    text-decoration:none;border:none;cursor:pointer;
+  }
+  .modal-actions .pay{background:var(--accent);color:#1a1206;}
+  .modal-actions .unlock{background:var(--accent2);color:#0e1b14;}
+
+  /* UNLOCK CODE BAR */
+  .unlock-bar{
+    background:var(--bg);border:1px solid var(--line);border-radius:10px;
+    padding:14px;display:flex;gap:10px;margin-top:18px;
+  }
+  .unlock-bar input{flex:1;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--text);}
+  .unlock-bar button{padding:10px 18px;border-radius:8px;border:none;background:var(--accent2);color:#0e1b14;font-weight:700;cursor:pointer;}
+
+  footer{
+    padding:30px 0;text-align:center;color:var(--muted);font-size:13px;
+  }
+
+  @media(max-width:600px){
+    .stats{gap:18px;}
+    .price-card{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Khóa học video quay sẵn</div>
+    <h1>Chụp Ảnh &amp; Quay Dựng Video<br><span>Bằng Điện Thoại</span></h1>
+    <p class="sub">Từ người mới chưa biết bắt đầu từ đâu, đến tự tay quay – dựng video chuyên nghiệp và kiếm tiền từ điện thoại. Học theo lộ trình 7 phần, xem lại bất cứ lúc nào.</p>
+    <div class="stats">
+      <div><b>7</b>Phần học</div>
+      <div><b>44</b>Bài giảng</div>
+      <div><b>3h26p</b>Thời lượng</div>
+    </div>
+    <div class="hero-price">
+      <span class="hero-old">2.500.000đ</span>
+      <span class="hero-new">900.000đ</span>
+      <span class="hero-tag">-64%</span>
+    </div>
+    <a href="#dangky" class="cta-btn">Đăng ký khóa học – 900.000đ</a>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="preview">
+  <div class="wrap">
+    <h2>Học thử miễn phí</h2>
+    <p class="lead">3 bài học đầu tiên — xem ngay, không cần đăng ký</p>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <iframe src="https://www.youtube.com/embed/990wKc7Xh3M" allowfullscreen></iframe>
+        <div class="label">Bài 1: Vì sao điện thoại có thể kiếm được tiền?</div>
+      </div>
+      <div class="preview-card">
+        <iframe src="https://www.youtube.com/embed/SgHClW7AJLY" allowfullscreen></iframe>
+        <div class="label">Bài 2: Ba con đường kiếm tiền sau khóa học</div>
+      </div>
+      <div class="preview-card">
+        <iframe src="https://www.youtube.com/embed/stJDrkcaBT4" allowfullscreen></iframe>
+        <div class="label">Bài 3: Sai lầm khiến 90% mãi không kiếm được tiền</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum">
+  <div class="wrap">
+    <h2>Nội dung khóa học</h2>
+    <p class="lead">7 phần · 44 bài giảng · 3 giờ 26 phút</p>
+
+    <!-- PHẦN 1 -->
+    <div class="part open">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 1: Bản Đồ Kiếm Tiền Bằng Điện Thoại</span>
+        <span><span class="count">3 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson free"><div class="lesson-left">Bài 1: Vì sao điện thoại có thể kiếm được tiền? <span class="badge">FREE</span></div><span class="time">02:02</span></div>
+        <div class="lesson free"><div class="lesson-left">Bài 2: Ba con đường kiếm tiền sau khóa học <span class="badge">FREE</span></div><span class="time">02:05</span></div>
+        <div class="lesson free"><div class="lesson-left">Bài 3: Sai lầm khiến 90% mãi không kiếm được tiền <span class="badge">FREE</span></div><span class="time">02:46</span></div>
+      </div>
+    </div>
+
+    <!-- PHẦN 2 -->
+    <div class="part">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 2: Bản Đồ Chinh Phục Video Chuyển Đổi Cao</span>
+        <span><span class="count">6 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 4: Chúng ta luôn bắt đầu từ sự thiếu tự tin <span class="icon-lock">🔒</span></div><span class="time">03:05</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 5: Chỉ nên học 1 video 1 ngày trong khóa này <span class="icon-lock">🔒</span></div><span class="time">03:05</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 6: 90% người mới làm video mua sai thiết bị <span class="icon-lock">🔒</span></div><span class="time">03:10</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 7: Sai lầm 1 - "Chê" thiết bị <span class="icon-lock">🔒</span></div><span class="time">01:33</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 8: Sai lầm 2 - Không canh được bố cục <span class="icon-lock">🔒</span></div><span class="time">01:36</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 9: Sai lầm 3 và 4 - Không mục đích và không có quy trình <span class="icon-lock">🔒</span></div><span class="time">02:04</span></div>
+      </div>
+    </div>
+
+    <!-- PHẦN 3 -->
+    <div class="part">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 3: Biến Điện Thoại Thành Máy Quay</span>
+        <span><span class="count">4 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 10: Cách tối ưu điện thoại <span class="icon-lock">🔒</span></div><span class="time">08:21</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 11: Chụp ảnh với 0.5 1x và 3x <span class="icon-lock">🔒</span></div><span class="time">09:00</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 12: Chế độ chân dung <span class="icon-lock">🔒</span></div><span class="time">07:35</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 13: Các chế độ quay <span class="icon-lock">🔒</span></div><span class="time">02:58</span></div>
+      </div>
+    </div>
+
+    <!-- PHẦN 4 -->
+    <div class="part">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 4: Kiến Thức - Kỹ Thuật Quay Video</span>
+        <span><span class="count">7 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 14: Cỡ cảnh – nền móng của mọi video <span class="icon-lock">🔒</span></div><span class="time">13:10</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 15: Bố cục cơ bản – cách đặt chủ thể <span class="icon-lock">🔒</span></div><span class="time">12:33</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 16: Góc máy & cảm xúc người xem <span class="icon-lock">🔒</span></div><span class="time">06:00</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 17: Ánh sáng - Chìa khóa cho video triệu view <span class="icon-lock">🔒</span></div><span class="time">08:20</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 18: Quy tắc "một bước chân" <span class="icon-lock">🔒</span></div><span class="time">01:40</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 19: Động tác máy cơ bản <span class="icon-lock">🔒</span></div><span class="time">09:58</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 20: Xác định mục tiêu quay video <span class="icon-lock">🔒</span></div><span class="time">07:06</span></div>
+      </div>
+    </div>
+
+    <!-- PHẦN 5 -->
+    <div class="part">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 5: Quy Trình Edit 15 Phút với Capcut</span>
+        <span><span class="count">13 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 21: Bước quan trọng trước khi dựng <span class="icon-lock">🔒</span></div><span class="time">01:19</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 22: Làm quen giao diện Capcut <span class="icon-lock">🔒</span></div><span class="time">06:45</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 23: Cắt ghép video đơn giản <span class="icon-lock">🔒</span></div><span class="time">05:37</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 24: Thay đổi tốc độ cho video <span class="icon-lock">🔒</span></div><span class="time">08:39</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 25: Kỹ thuật chèn B Roll <span class="icon-lock">🔒</span></div><span class="time">08:26</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 26: Chuyển cảnh phổ biến <span class="icon-lock">🔒</span></div><span class="time">05:20</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 27: Âm thanh và hiệu ứng âm thanh <span class="icon-lock">🔒</span></div><span class="time">10:18</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 28: Kỹ thuật thêm chữ cơ bản <span class="icon-lock">🔒</span></div><span class="time">03:54</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 29: Mẫu văn bản <span class="icon-lock">🔒</span></div><span class="time">08:11</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 30: Phụ đề tự động <span class="icon-lock">🔒</span></div><span class="time">04:34</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 31: Nhãn dán <span class="icon-lock">🔒</span></div><span class="time">04:23</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 32: Chỉnh màu bộ lọc và tùy chỉnh <span class="icon-lock">🔒</span></div><span class="time">07:29</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 33: Làm đẹp da không tỳ vết <span class="icon-lock">🔒</span></div><span class="time">05:28</span></div>
+      </div>
+    </div>
+
+    <!-- PHẦN 6 -->
+    <div class="part">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 6: Cỗ Máy Nội Dung Scale-up</span>
+        <span><span class="count">6 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 34: 10 Bước Edit chuẩn chuyên gia <span class="icon-lock">🔒</span></div><span class="time">--:--</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 35: Hệ thống sản xuất nội dung "DÂY CHUYỀN" & CT 3S <span class="icon-lock">🔒</span></div><span class="time">--:--</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 36: Chuẩn bị kỹ để ngày mai "CHỈ VIỆC TOẢ SÁNG" <span class="icon-lock">🔒</span></div><span class="time">--:--</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 37: Buổi sáng "THẦN TỐC" - Quay 1 lần dùng cả tuần <span class="icon-lock">🔒</span></div><span class="time">--:--</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 38: Buổi chiều nhẹ nhàng - Gọt giũa và lên lịch <span class="icon-lock">🔒</span></div><span class="time">--:--</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 39: Bí mật để bạn không bao giờ bỏ cuộc <span class="icon-lock">🔒</span></div><span class="time">--:--</span></div>
+      </div>
+    </div>
+
+    <!-- PHẦN 7 -->
+    <div class="part">
+      <div class="part-header" onclick="toggle(this)">
+        <span>Phần 7: Kiếm Tiền Từ Điện Thoại</span>
+        <span><span class="count">5 bài học</span> <span class="arrow">▾</span></span>
+      </div>
+      <div class="lessons">
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 40: Ba loại video mà khách hàng trả tiền <span class="icon-lock">🔒</span></div><span class="time">03:07</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 41: Tạo video portfolio đầu tiên <span class="icon-lock">🔒</span></div><span class="time">03:03</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 42: Cách tìm job đầu tiên <span class="icon-lock">🔒</span></div><span class="time">04:39</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 43: Kỹ năng deal định giá khi nhận job <span class="icon-lock">🔒</span></div><span class="time">05:57</span></div>
+        <div class="lesson locked" onclick="openModal()"><div class="lesson-left">Bài 44: Lộ trình nâng cấp bản thân <span class="icon-lock">🔒</span></div><span class="time">01:31</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING / PAYMENT -->
+<section class="pricing" id="dangky">
+  <div class="wrap">
+    <h2>Đăng ký khóa học</h2>
+    <p class="lead">Thanh toán 1 lần — học không giới hạn thời gian</p>
+
+    <div class="price-card">
+      <div class="discount-badge">🔥 GIẢM 64% — Còn lại:</div>
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><span id="cd-days">07</span><label>Ngày</label></div>
+        <div class="cd-box"><span id="cd-hours">00</span><label>Giờ</label></div>
+        <div class="cd-box"><span id="cd-mins">00</span><label>Phút</label></div>
+        <div class="cd-box"><span id="cd-secs">00</span><label>Giây</label></div>
+      </div>
+      <div class="price-old">2.500.000đ</div>
+      <div class="price">900.000đ</div>
+      <div class="price-note">Trọn bộ 7 phần · 44 bài giảng · 3h26p</div>
+
+      <div class="qr-box">
+        <img src="https://img.vietqr.io/image/VPB-28101998-compact2.png?amount=900000&addInfo=DK%20KHOA%20VIDEO&accountName=TRUONG%20NGUYEN%20THANH%20TAM" alt="QR chuyển khoản VPBank">
+      </div>
+
+      <div class="bank-info">
+        <div><span class="l">Ngân hàng</span><span class="v">VPBank</span></div>
+        <div><span class="l">Số tài khoản</span><span class="v">28101998</span></div>
+        <div><span class="l">Chủ tài khoản</span><span class="v">TRƯƠNG NGUYỄN THÀNH TÂM</span></div>
+        <div><span class="l">Số tiền</span><span class="v">900.000đ</span></div>
+      </div>
+
+      <div class="note-box">
+        ⚠️ Nội dung chuyển khoản: ghi <b>Số điện thoại</b> của bạn (VD: 0901234567 KHOAVIDEO). Sau khi chuyển khoản, điền form bên dưới để nhận <b>mã mở khóa</b> toàn bộ khóa học.
+      </div>
+
+      <div class="form-section">
+        <form id="orderForm" action="https://formspree.io/f/xojzpwlg" method="POST">
+          <div class="field">
+            <label>Họ và tên</label>
+            <input type="text" name="name" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="field">
+            <label>Số điện thoại (đã ghi nội dung CK)</label>
+            <input type="tel" name="phone" required placeholder="09xxxxxxxx">
+          </div>
+          <div class="field">
+            <label>Email nhận mã mở khóa</label>
+            <input type="email" name="email" required placeholder="email@example.com">
+          </div>
+          <div class="field">
+            <label>Ghi chú (không bắt buộc)</label>
+            <textarea name="note" rows="2" placeholder="Thời gian chuyển khoản, ảnh chụp CK..."></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="Đăng ký khóa Quay Video Bằng Điện Thoại - 900k">
+          <button type="submit" class="submit-btn">Gửi thông tin đăng ký</button>
+          <div class="form-msg" id="formMsg">✅ Đã gửi! Mã mở khóa sẽ được gửi vào email trong vòng vài giờ.</div>
+        </form>
+      </div>
+
+      <div class="unlock-bar">
+        <input type="text" id="unlockCode" placeholder="Đã có mã mở khóa? Nhập tại đây">
+        <button onclick="checkUnlock()">Mở khóa</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Khóa Học Chụp Ảnh - Quay Dựng Video Bằng Điện Thoại · Mọi quyền lợi liên hệ qua email đăng ký
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">×</button>
+    <h3>Bài học này đã khóa 🔒</h3>
+    <p>Đăng ký khóa học với giá <b>900.000đ</b> để mở khóa toàn bộ 44 bài giảng, học không giới hạn thời gian.</p>
+    <div class="modal-actions">
+      <a href="#dangky" class="pay" onclick="closeModal()">Thanh toán ngay</a>
+      <button class="unlock" onclick="closeModal(); document.getElementById('unlockCode').focus();">Đã có mã</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(el){
+  el.parentElement.classList.toggle('open');
+}
+
+function openModal(){
+  document.getElementById('modalOverlay').classList.add('show');
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+// Countdown timer - resets every 7 days (rolling deadline)
+function updateCountdown(){
+  const now = new Date().getTime();
+  const cycleMs = 7*24*60*60*1000;
+  const remainder = now % cycleMs;
+  let dist = cycleMs - remainder;
+
+  const d = Math.floor(dist/(1000*60*60*24));
+  const h = Math.floor((dist%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((dist%(1000*60*60))/(1000*60));
+  const s = Math.floor((dist%(1000*60))/1000);
+
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Replace with your real unlock code
+const UNLOCK_CODE = "VIDEO900K";
+
+function checkUnlock(){
+  const val = document.getElementById('unlockCode').value.trim().toUpperCase();
+  if(val === UNLOCK_CODE){
+    document.querySelectorAll('.lesson.locked').forEach(l=>{
+      l.classList.remove('locked');
+      l.classList.add('free');
+      l.querySelector('.icon-lock')?.remove();
+      l.onclick = null;
+    });
+    document.querySelectorAll('.part').forEach(p=>p.classList.add('open'));
+    alert('🎉 Mở khóa thành công! Bạn có thể xem toàn bộ bài giảng.');
+  } else {
+    alert('Mã không đúng. Vui lòng kiểm tra lại email đăng ký.');
+  }
+}
+
+// Formspree AJAX submit
+document.getElementById('orderForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      document.getElementById('formMsg').classList.add('success');
+      form.reset();
+    } else {
+      alert('Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ trực tiếp.');
+    }
+  }).catch(()=> alert('Có lỗi xảy ra, vui lòng thử lại.'));
+});
+</script>
+
+</body>
+</html>
