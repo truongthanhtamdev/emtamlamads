@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Khóa Học Full - Chụp Ảnh & Quay Dựng Video Bằng Điện Thoại</title>
+<style>
+  :root{--bg:#0e1b14;--panel:#15261c;--accent:#ffb454;--accent2:#7fd99a;--text:#f3f4ee;--muted:#9fb3a4;--line:#26392c;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* ACCESS DENIED */
+  .gate{display:none;position:fixed;inset:0;background:var(--bg);z-index:999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+  .gate.show{display:flex}
+  .gate h2{font-size:28px;font-weight:800;color:var(--accent);margin-bottom:12px}
+  .gate p{color:var(--muted);font-size:15px;margin-bottom:24px;max-width:420px}
+  .gate a{background:var(--accent);color:#1a1206;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-size:16px}
+
+  /* HEADER */
+  .header{background:var(--panel);border-bottom:1px solid var(--line);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .header-logo{display:flex;align-items:center;gap:10px}
+  .header-logo .mascot{width:36px;height:36px;border-radius:50%;background:#ff7a00;display:grid;place-items:center;font-size:18px}
+  .header-logo .brand{font-weight:900;font-size:15px}
+  .header-logo .brand span{color:#ff7a00}
+  .header-badge{background:var(--accent2);color:#0e1b14;font-weight:800;font-size:11px;padding:4px 12px;border-radius:50px}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#14271c 0%,#0e1b14 100%);padding:40px 0 32px;border-bottom:1px solid var(--line);text-align:center}
+  .hero .badge{background:var(--accent2);color:#0e1b14;font-weight:800;font-size:11px;padding:3px 14px;border-radius:50px;display:inline-block;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px}
+  .hero h1{font-size:clamp(24px,4vw,38px);font-weight:800;line-height:1.2;margin-bottom:10px}
+  .hero h1 span{color:var(--accent)}
+  .hero p{color:var(--muted);font-size:14px;max-width:560px;margin:0 auto 20px}
+  .hero-stats{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .hero-stats b{color:var(--text);font-size:18px;display:block}
+
+  /* MAIN PLAYER */
+  .player-section{padding:32px 0;background:#0a150e;border-bottom:1px solid var(--line)}
+  .player-wrap{display:flex;gap:20px;align-items:flex-start}
+  .player-main{flex:1;min-width:0}
+  .player-main .video-frame{position:relative;padding-bottom:56.25%;background:#000;border-radius:12px;overflow:hidden;border:2px solid var(--line)}
+  .player-main .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+  .player-main .video-title{margin-top:12px;font-weight:800;font-size:16px;color:var(--text)}
+  .player-main .video-meta{font-size:12px;color:var(--muted);margin-top:4px}
+  .playlist-sidebar{width:280px;flex-shrink:0;max-height:420px;overflow-y:auto;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+  .playlist-sidebar::-webkit-scrollbar{width:4px}
+  .playlist-sidebar::-webkit-scrollbar-track{background:var(--panel)}
+  .playlist-sidebar::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+  .playlist-header{padding:12px 14px;font-weight:800;font-size:13px;color:var(--accent2);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+  .playlist-item{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .15s}
+  .playlist-item:hover{background:rgba(255,255,255,.04)}
+  .playlist-item.active{background:rgba(127,217,154,.08);border-left:3px solid var(--accent2)}
+  .playlist-item .pnum{width:22px;height:22px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;color:var(--muted)}
+  .playlist-item.active .pnum{background:var(--accent2);color:#0e1b14}
+  .playlist-item .pinfo{flex:1;min-width:0}
+  .playlist-item .pinfo .ptitle{font-size:12px;font-weight:700;color:var(--text);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .playlist-item .pinfo .ptime{font-size:10px;color:var(--muted);margin-top:2px}
+  .playlist-item .free-tag{background:var(--accent2);color:#0e1b14;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px;flex-shrink:0}
+  .coming-soon{opacity:.4;cursor:default}
+  .coming-soon .pnum{background:#333}
+
+  /* MODULES */
+  .modules{padding:32px 0}
+  .module{margin-bottom:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .module-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;background:var(--panel);font-weight:800;font-size:14px;user-select:none}
+  .module-header:hover{background:#1c3024}
+  .module-header .arrow{transition:transform .2s;color:var(--muted)}
+  .module.open .arrow{transform:rotate(180deg)}
+  .module-body{display:none;padding:8px 0}
+  .module.open .module-body{display:block}
+  .lesson-row{display:flex;align-items:center;gap:12px;padding:9px 18px;cursor:pointer;transition:background .15s}
+  .lesson-row:hover{background:rgba(255,255,255,.03)}
+  .lesson-row.active{background:rgba(127,217,154,.06)}
+  .lesson-row .lnum{width:28px;height:28px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--muted);flex-shrink:0}
+  .lesson-row.active .lnum{background:var(--accent2);color:#0e1b14}
+  .lesson-row .linfo{flex:1}
+  .lesson-row .linfo .ltitle{font-size:13px;font-weight:700;color:var(--text)}
+  .lesson-row .linfo .ltime{font-size:11px;color:var(--muted);margin-top:2px}
+  .lesson-row .free-badge{background:var(--accent2);color:#0e1b14;font-size:9px;font-weight:800;padding:2px 7px;border-radius:4px}
+  .lesson-row .lock-badge{color:var(--muted);font-size:12px}
+  .cs-row{opacity:.35;cursor:default}
+
+  /* FOOTER */
+  .footer{padding:24px 0;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+  .footer a{color:var(--accent);text-decoration:none}
+
+  @media(max-width:700px){
+    .player-wrap{flex-direction:column}
+    .playlist-sidebar{width:100%;max-height:240px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ACCESS GATE -->
+<div class="gate" id="gate">
+  <div style="font-size:48px;margin-bottom:16px">🔒</div>
+  <h2>Bạn chưa có quyền truy cập</h2>
+  <p>Trang này chỉ dành cho học viên đã đăng ký khóa học. Vui lòng mua khóa học để nhận link truy cập.</p>
+  <a href="/khoahocvideo">Xem & Đăng ký khóa học →</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    <div class="mascot">😄</div>
+    <div class="brand"><span>EM TÂM</span> LÀM ADS</div>
+  </div>
+  <span class="header-badge">🎓 Khu vực học viên</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">✅ Đã mở khóa toàn bộ</span>
+    <h1>Chụp Ảnh & Quay Dựng Video<br><span>Bằng Điện Thoại</span></h1>
+    <p>Chào mừng bạn! Toàn bộ 44 bài giảng đã được mở khóa. Học theo thứ tự để đạt hiệu quả tốt nhất.</p>
+    <div class="hero-stats">
+      <div><b>7</b>Phần học</div>
+      <div><b>44</b>Bài giảng</div>
+      <div><b>3h26p</b>Thời lượng</div>
+      <div><b>∞</b>Xem lại mãi mãi</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYER -->
+<section class="player-section">
+  <div class="wrap">
+    <div class="player-wrap">
+      <div class="player-main">
+        <div class="video-frame">
+          <iframe id="mainPlayer" src="https://www.youtube.com/embed/990wKc7Xh3M?rel=0" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="video-title" id="currentTitle">Bài 1: Vì sao điện thoại có thể kiếm được tiền?</div>
+        <div class="video-meta" id="currentMeta">Phần 1 · 02:02</div>
+      </div>
+      <div class="playlist-sidebar">
+        <div class="playlist-header">📋 Danh sách bài học</div>
+        <div id="playlistItems"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules">
+  <div class="wrap">
+    <h2 style="font-size:22px;font-weight:800;margin-bottom:20px;color:var(--accent2)">📚 Toàn bộ nội dung khóa học</h2>
+    <div id="moduleList"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2024 Em Tâm Làm Ads · <a href="/khoahocvideo">Trang khóa học</a> · <a href="/">Trang chủ</a></p>
+    <p style="margin-top:6px">Hỗ trợ: <a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank">Facebook Em Tâm</a> · Zalo: 0965 817 021</p>
+  </div>
+</footer>
+
+<script>
+// ── SECRET KEY CHECK ──
+const SECRET_KEY = 'TAM2024SECRET';
+const params = new URLSearchParams(window.location.search);
+if(params.get('key') !== SECRET_KEY){
+  document.getElementById('gate').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+// ── CURRICULUM DATA ──
+const modules = [
+  {
+    title: 'Phần 1: Bản Đồ Kiếm Tiền Bằng Điện Thoại',
+    lessons: [
+      {num:1, title:'Vì sao điện thoại có thể kiếm được tiền?', time:'02:02', vid:'990wKc7Xh3M', free:true},
+      {num:2, title:'Ba con đường kiếm tiền sau khóa học', time:'02:05', vid:'SgHClW7AJLY', free:true},
+      {num:3, title:'Sai lầm khiến 90% mãi không kiếm được tiền', time:'02:46', vid:'stJDrkcaBT4', free:true},
+    ]
+  },
+  {
+    title: 'Phần 2: Bản Đồ Chinh Phục Video Chuyển Đổi Cao',
+    lessons: [
+      {num:4, title:'Chúng ta luôn bắt đầu từ sự thiếu tự tin', time:'03:05', vid:'nXKFDh5f0VA'},
+      {num:5, title:'Chỉ nên học 1 video 1 ngày trong khóa này', time:'03:05', vid:'SsyTO0kRjX4'},
+      {num:6, title:'90% người mới làm video mua sai thiết bị', time:'03:10', vid:'5JNZogx5Vrw'},
+      {num:7, title:'Sai lầm 1 - "Chê" thiết bị', time:'01:33', vid:'kjvPwI93g8k'},
+      {num:8, title:'Sai lầm 2 - Không canh được bố cục', time:'01:36', vid:'kjvPwI93g8k'},
+      {num:9, title:'Sai lầm 3 và 4 - Không mục đích và không có quy trình', time:'02:04', vid:'vPI_BHV9LIQ'},
+    ]
+  },
+  {
+    title: 'Phần 3: Biến Điện Thoại Thành Máy Quay',
+    lessons: [
+      {num:10, title:'Cách tối ưu điện thoại', time:'08:21', vid:'HuzXsWwlj-4'},
+      {num:11, title:'Chụp ảnh với 0.5 1x và 3x', time:'09:00', vid:''},
+      {num:12, title:'Chế độ chân dung', time:'07:35', vid:''},
+      {num:13, title:'Các chế độ quay', time:'02:58', vid:''},
+    ]
+  },
+  {
+    title: 'Phần 4: Kiến Thức - Kỹ Thuật Quay Video',
+    lessons: [
+      {num:14, title:'Cỡ cảnh – nền móng của mọi video', time:'13:10', vid:''},
+      {num:15, title:'Bố cục cơ bản – cách đặt chủ thể', time:'12:33', vid:''},
+      {num:16, title:'Góc máy & cảm xúc người xem', time:'06:00', vid:''},
+      {num:17, title:'Ánh sáng - Chìa khóa cho video triệu view', time:'08:20', vid:''},
+      {num:18, title:'Quy tắc "một bước chân"', time:'01:40', vid:''},
+      {num:19, title:'Động tác máy cơ bản', time:'09:58', vid:''},
+      {num:20, title:'Xác định mục tiêu quay video', time:'07:06', vid:''},
+    ]
+  },
+  {
+    title: 'Phần 5: Quy Trình Edit 15 Phút với Capcut',
+    lessons: [
+      {num:21, title:'Bước quan trọng trước khi dựng', time:'01:19', vid:''},
+      {num:22, title:'Làm quen giao diện Capcut', time:'06:45', vid:''},
+      {num:23, title:'Cắt ghép video đơn giản', time:'05:37', vid:''},
+      {num:24, title:'Thay đổi tốc độ cho video', time:'08:39', vid:''},
+      {num:25, title:'Kỹ thuật chèn B Roll', time:'08:26', vid:''},
+      {num:26, title:'Chuyển cảnh phổ biến', time:'05:20', vid:''},
+      {num:27, title:'Âm thanh và hiệu ứng âm thanh', time:'10:18', vid:''},
+      {num:28, title:'Kỹ thuật thêm chữ cơ bản', time:'03:54', vid:''},
+      {num:29, title:'Mẫu văn bản', time:'08:11', vid:''},
+      {num:30, title:'Phụ đề tự động', time:'04:34', vid:''},
+      {num:31, title:'Nhãn dán', time:'04:23', vid:''},
+      {num:32, title:'Chỉnh màu bộ lọc và tùy chỉnh', time:'07:29', vid:''},
+      {num:33, title:'Làm đẹp da không tỳ vết', time:'05:28', vid:''},
+    ]
+  },
+  {
+    title: 'Phần 6: Cỗ Máy Nội Dung Scale-up',
+    lessons: [
+      {num:34, title:'10 Bước Edit chuẩn chuyên gia', time:'--:--', vid:''},
+      {num:35, title:'Hệ thống sản xuất nội dung "DÂY CHUYỀN" & CT 3S', time:'--:--', vid:''},
+      {num:36, title:'Chuẩn bị kỹ để ngày mai "CHỈ VIỆC TOẢ SÁNG"', time:'--:--', vid:''},
+      {num:37, title:'Buổi sáng "THẦN TỐC" - Quay 1 lần dùng cả tuần', time:'--:--', vid:''},
+      {num:38, title:'Buổi chiều nhẹ nhàng - Gọt giũa và lên lịch', time:'--:--', vid:''},
+      {num:39, title:'Bí mật để bạn không bao giờ bỏ cuộc', time:'--:--', vid:''},
+    ]
+  },
+  {
+    title: 'Phần 7: Kiếm Tiền Từ Điện Thoại',
+    lessons: [
+      {num:40, title:'Ba loại video mà khách hàng trả tiền', time:'03:07', vid:''},
+      {num:41, title:'Tạo video portfolio đầu tiên', time:'03:03', vid:''},
+      {num:42, title:'Cách tìm job đầu tiên', time:'04:39', vid:''},
+      {num:43, title:'Kỹ năng deal định giá khi nhận job', time:'05:57', vid:''},
+      {num:44, title:'Lộ trình nâng cấp bản thân', time:'01:31', vid:''},
+    ]
+  }
+];
+
+// Flatten all lessons
+const allLessons = modules.flatMap(m => m.lessons);
+let currentIdx = 0;
+
+function playLesson(idx){
+  const l = allLessons[idx];
+  if(!l || !l.vid) return;
+  currentIdx = idx;
+  document.getElementById('mainPlayer').src = `https://www.youtube.com/embed/${l.vid}?rel=0&autoplay=1`;
+  document.getElementById('currentTitle').textContent = `Bài ${l.num}: ${l.title}`;
+  document.getElementById('currentMeta').textContent = `${getModuleTitle(idx)} · ${l.time}`;
+  // Update active states
+  document.querySelectorAll('.playlist-item').forEach((el,i)=>el.classList.toggle('active', i===idx));
+  document.querySelectorAll('.lesson-row').forEach(el=>el.classList.remove('active'));
+  document.querySelector(`.lesson-row[data-idx="${idx}"]`)?.classList.add('active');
+  document.querySelector(`.playlist-item[data-idx="${idx}"]`)?.scrollIntoView({behavior:'smooth',block:'nearest'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function getModuleTitle(lessonIdx){
+  let count = 0;
+  for(const m of modules){
+    count += m.lessons.length;
+    if(lessonIdx < count) return m.title.split(':')[0];
+  }
+  return '';
+}
+
+// Build playlist sidebar
+const pList = document.getElementById('playlistItems');
+allLessons.forEach((l,i)=>{
+  const div = document.createElement('div');
+  div.className = 'playlist-item' + (i===0?' active':'') + (!l.vid?' coming-soon':'');
+  div.dataset.idx = i;
+  div.innerHTML = `
+    <div class="pnum">${l.num}</div>
+    <div class="pinfo">
+      <div class="ptitle">${l.title}</div>
+      <div class="ptime">${l.time}</div>
+    </div>
+    ${l.free?'<span class="free-tag">FREE</span>':''}
+  `;
+  if(l.vid) div.onclick = ()=>playLesson(i);
+  pList.appendChild(div);
+});
+
+// Build module accordion
+const mList = document.getElementById('moduleList');
+let lessonOffset = 0;
+modules.forEach((mod, mi)=>{
+  const div = document.createElement('div');
+  div.className = 'module' + (mi===0?' open':'');
+  const headerTxt = `${mod.title} <span style="color:var(--muted);font-size:12px;font-weight:600">${mod.lessons.length} bài</span>`;
+  let bodyHTML = '';
+  mod.lessons.forEach((l, li)=>{
+    const idx = lessonOffset + li;
+    const hasVid = !!l.vid;
+    bodyHTML += `<div class="lesson-row${!hasVid?' cs-row':''}" data-idx="${idx}" onclick="${hasVid?`playLesson(${idx})`:''}">
+      <div class="lnum">${l.num}</div>
+      <div class="linfo">
+        <div class="ltitle">${l.title}</div>
+        <div class="ltime">${l.time}</div>
+      </div>
+      ${l.free?'<span class="free-badge">FREE</span>':(!hasVid?'<span style="color:var(--muted);font-size:11px">Sắp có</span>':'')}
+    </div>`;
+  });
+  div.innerHTML = `
+    <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+      <span>${headerTxt}</span>
+      <span class="arrow">▾</span>
+    </div>
+    <div class="module-body">${bodyHTML}</div>
+  `;
+  mList.appendChild(div);
+  lessonOffset += mod.lessons.length;
+});
+</script>
+</body>
+</html>
