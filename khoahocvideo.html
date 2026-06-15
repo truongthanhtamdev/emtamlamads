@@ -311,6 +311,35 @@
   </div>
 </section>
 
+<!-- PLAYLIST MODULE 1 -->
+<section style="background:#0e1b14;padding:48px 0;border-bottom:1px solid #26392c">
+  <div style="max-width:960px;margin:0 auto;padding:0 20px">
+    <div style="text-align:center;margin-bottom:24px">
+      <span style="background:#7fd99a;color:#0e1b14;font-weight:800;font-size:11px;padding:3px 14px;border-radius:50px;text-transform:uppercase;letter-spacing:1px">🎬 Xem thử miễn phí</span>
+      <h2 style="font-family:inherit;font-weight:800;font-size:26px;color:#f3f4ee;margin-top:12px;margin-bottom:6px">Module 1 — <span style="color:#ffb454">Bản Đồ Chinh Phục Video</span></h2>
+      <p style="color:#9fb3a4;font-size:14px">6 bài học · Xem toàn bộ module miễn phí ngay bên dưới!</p>
+    </div>
+    <div style="position:relative;width:100%;padding-bottom:56.25%;background:#000;border-radius:14px;overflow:hidden;border:2px solid #26392c;box-shadow:0 8px 32px rgba(0,0,0,.5)">
+      <iframe
+        src="https://www.youtube.com/embed/videoseries?list=PLJNfl8LEcpqoM8pp1zh0rNL9zEe1VR_l1&rel=0&modestbranding=1"
+        style="position:absolute;inset:0;width:100%;height:100%;border:none"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+      </iframe>
+    </div>
+    <div style="display:flex;justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap">
+      <a href="https://www.youtube.com/playlist?list=PLJNfl8LEcpqoM8pp1zh0rNL9zEe1VR_l1" target="_blank"
+        style="background:#ffb454;color:#1a1206;font-weight:700;font-size:13px;padding:10px 20px;border-radius:50px;text-decoration:none">
+        ▶ Xem trên YouTube
+      </a>
+      <a href="#order"
+        style="background:#15261c;color:#7fd99a;font-weight:700;font-size:13px;padding:10px 20px;border-radius:50px;text-decoration:none;border:1px solid #26392c">
+        🔓 Mở khóa toàn bộ khóa học
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CURRICULUM -->
 <section class="curriculum">
   <div class="wrap">
@@ -452,6 +481,32 @@
       <div class="price">900.000đ</div>
       <div class="price-note">Trọn bộ 7 phần · 44 bài giảng · 3h26p</div>
 
+      <!-- BONUS COACHING -->
+      <div style="background:linear-gradient(135deg,#1a3a24,#0e2a1a);border:2px solid #7fd99a;border-radius:14px;padding:18px;margin:18px 0;text-align:left">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="font-size:28px">🎁</span>
+          <div>
+            <div style="font-weight:900;font-size:16px;color:#7fd99a">BONUS TẶNG KÈM</div>
+            <div style="font-size:12px;color:#9fb3a4">Chỉ dành cho học viên đăng ký khóa học</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:rgba(0,0,0,.2);border-radius:10px">
+          <span style="font-size:22px;flex-shrink:0">🎯</span>
+          <div>
+            <div style="font-weight:800;font-size:14px;color:#f3f4ee;margin-bottom:4px">1 Buổi Coaching Facebook Ads 90 phút — MIỄN PHÍ</div>
+            <div style="font-size:12px;color:#9fb3a4;line-height:1.5">Giải đáp mọi thắc mắc về khóa học, chiến lược chạy ads cho video, tư vấn 1-1 trực tiếp với Tâm qua Zoom.</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <span style="background:#7fd99a;color:#0e1b14;font-size:10px;font-weight:800;padding:2px 10px;border-radius:50px">✓ 90 phút 1-1</span>
+              <span style="background:#7fd99a;color:#0e1b14;font-size:10px;font-weight:800;padding:2px 10px;border-radius:50px">✓ Qua Zoom</span>
+              <span style="background:#7fd99a;color:#0e1b14;font-size:10px;font-weight:800;padding:2px 10px;border-radius:50px">✓ Trị giá 500.000đ</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:12px;font-size:13px;color:#ffb454;font-weight:700">
+          🔥 Tổng giá trị: <s style="color:#9fb3a4">3.000.000đ</s> → Chỉ 900.000đ!
+        </div>
+      </div>
+
       <div class="qr-box">
         <img src="https://img.vietqr.io/image/VPB-28101998-compact2.png?amount=900000&addInfo=DK%20KHOA%20VIDEO&accountName=TRUONG%20NGUYEN%20THANH%20TAM" alt="QR chuyển khoản VPBank">
       </div>
@@ -493,7 +548,7 @@
 
       <div class="unlock-bar">
         <input type="text" id="unlockCode" placeholder="Đã có mã mở khóa? Nhập tại đây">
-        <button onclick="checkUnlock()">Mở khóa</button>
+        <button onclick="checkUnlock()">▶ Vào học</button>
       </div>
     </div>
   </div>
@@ -548,22 +603,14 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Replace with your real unlock code
-const UNLOCK_CODE = "VIDEO900K";
+const UNLOCK_CODE = "TAM2024SECRET";
 
 function checkUnlock(){
   const val = document.getElementById('unlockCode').value.trim().toUpperCase();
-  if(val === UNLOCK_CODE){
-    document.querySelectorAll('.lesson.locked').forEach(l=>{
-      l.classList.remove('locked');
-      l.classList.add('free');
-      l.querySelector('.icon-lock')?.remove();
-      l.onclick = null;
-    });
-    document.querySelectorAll('.part').forEach(p=>p.classList.add('open'));
-    alert('🎉 Mở khóa thành công! Bạn có thể xem toàn bộ bài giảng.');
+  if(val === UNLOCK_CODE.toUpperCase()){
+    window.location.href = '/khoahocvideo-full?key=TAM2024SECRET';
   } else {
-    alert('Mã không đúng. Vui lòng kiểm tra lại email đăng ký.');
+    alert('Mã không đúng. Vui lòng kiểm tra lại email đăng ký hoặc liên hệ Zalo 0965 817 021.');
   }
 }
 
