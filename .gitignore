@@ -1,0 +1,9 @@
+# Large raw video files — host separately (YouTube/Drive) and link, don't version-control
+assets/*.mp4
+
+# Raw unprocessed image drops
+assets/svc-src/
+
+# Local dev tooling — not part of the deployed site
+cloudflared.exe
+config.yml
