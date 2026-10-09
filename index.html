@@ -3,53 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Em Tâm Làm Ads — Marketing, quảng cáo và nội dung thực chiến</title>
-<meta name="description" content="Xây kênh marketing, chạy quảng cáo Facebook/Google, tư vấn phễu chuyển đổi, đào tạo 1 kèm 1, build website AI và khoá học quay dựng video — đồng hành cùng doanh nghiệp nhỏ và cá nhân.">
+<title>Em Tâm Làm Ads — Vận hành Fanpage, Quay chụp dựng video &amp; Chạy quảng cáo cho shop</title>
+<meta name="description" content="Em Tâm Làm Ads đồng hành cùng shop online và doanh nghiệp nhỏ: vận hành fanpage &amp; mạng xã hội, quay chụp – dựng video sản phẩm, chạy quảng cáo Facebook/Google ra đơn. Tư vấn miễn phí qua Zalo 0965 817 021.">
+<meta name="theme-color" content="#0B0D0F">
+<link rel="canonical" href="https://emtamlamads.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Em Tâm Làm Ads">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://emtamlamads.com/">
+<meta property="og:title" content="Em Tâm Làm Ads — Vận hành Fanpage, Quay chụp dựng &amp; Quảng cáo cho shop">
+<meta property="og:description" content="Nội dung đẹp + quảng cáo đúng người = shop ra đơn đều. Tư vấn miễn phí qua Zalo 0965 817 021.">
+<meta property="og:image" content="https://emtamlamads.com/assets/hero/hero-marketing.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23101214'/%3E%3Ccircle cx='20' cy='20' r='17' stroke='%23C6A15B' stroke-width='1.5' fill='none'/%3E%3Ctext x='20' y='25.5' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='14' fill='%23F5F1E7'%3EET%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<style>
-  .svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-top:3rem; }
-  .svc-card{ border:1px solid var(--card-line); background:var(--card-bg); padding:0; display:flex; flex-direction:column; transition:transform .25s ease, border-color .2s ease; text-decoration:none; color:inherit; position:relative; overflow:hidden; }
-  .svc-card:hover{ transform:translateY(-4px); border-color:var(--line-strong); }
-  .svc-banner{ aspect-ratio:16/9; overflow:hidden; background:linear-gradient(135deg,#221E18,#15130F); }
-  .svc-banner img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.2,.8,.2,1); }
-  .svc-card:hover .svc-banner img{ transform:scale(1.06); }
-  .svc-banner-empty{ display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--ink),#1c1712); }
-  .svc-banner-empty .ico{ width:40px; height:40px; color:var(--accent); opacity:0.85; }
-  .svc-banner-empty .ico circle, .svc-banner-empty .ico path, .svc-banner-empty .ico rect, .svc-banner-empty .ico line{ stroke:currentColor; fill:none; stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round; }
-  .svc-body{ padding:1.5rem 1.6rem 1.7rem; display:flex; flex-direction:column; flex:1; }
-  .svc-title-row{ display:flex; align-items:center; gap:0.6rem; }
-  .svc-title-row .ico{ width:22px; height:22px; color:var(--accent); flex-shrink:0; }
-  .svc-title-row .ico circle, .svc-title-row .ico path, .svc-title-row .ico rect, .svc-title-row .ico line{ stroke:currentColor; fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
-  .badge-card{ animation:none; }
-  .badge-grid.reveal-stagger.is-visible .badge-card{ animation:badge-pop .5s cubic-bezier(.2,.8,.2,1) backwards; animation-delay:calc(var(--i,0) * 100ms); }
-  @keyframes badge-pop{ from{ opacity:0; transform:translateY(14px) scale(.96); } to{ opacity:1; transform:translateY(0) scale(1); } }
-  .svc-card h3{ font-size:1.08rem; margin:0; }
-  .svc-card p{ color:var(--fg-dim); font-size:0.9rem; line-height:1.6; margin-top:0.8rem; flex:1; }
-  .svc-card .go{ margin-top:1.1rem; font-size:0.82rem; font-weight:600; color:var(--brass-2); display:inline-flex; align-items:center; gap:0.4em; }
-  .svc-card .go svg{ width:12px; height:12px; transition:transform .2s ease; }
-  .svc-card:hover .go svg{ transform:translateX(3px); }
-  .svc-tag{ position:absolute; top:0.9rem; right:0.9rem; z-index:2; font-size:0.66rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#F5F1E7; background:rgba(16,18,20,0.6); backdrop-filter:blur(4px); border:1px solid rgba(245,241,231,0.35); padding:0.25rem 0.6rem; border-radius:20px; }
-
-  .home-course{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center; }
-  .home-course-media{ border-radius:6px; overflow:hidden; border:1px solid var(--line-strong); }
-  .home-course-mosaic{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:0.7rem; }
-  .hcm-main{ grid-column:1 / -1; aspect-ratio:16/10; }
-  .hcm-sub{ aspect-ratio:1/1; }
-  .hcm-main .hero-video-cta{ opacity:1; transform:translate(-50%,-50%); }
-
-  .svc-slide{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1.6rem,3vw,3rem); align-items:start; max-width:50rem; }
-  .svc-slide-ico{ width:64px; height:64px; border:1px solid var(--line-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden; }
-  .svc-slide-ico .ico{ width:28px; height:28px; color:var(--accent); }
-  .svc-slide-ico .ico path, .svc-slide-ico .ico circle, .svc-slide-ico .ico rect{ stroke:currentColor; fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
-  .svc-slide-ico img{ width:100%; height:100%; object-fit:cover; }
-  @media (max-width:640px){
-    .svc-slide{ grid-template-columns:1fr; }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Em Tâm Làm Ads",
+  "url": "https://emtamlamads.com/",
+  "image": "https://emtamlamads.com/assets/hero/hero-marketing.jpg",
+  "telephone": "+84965817021",
+  "email": "truongthanhtamvinici@gmail.com",
+  "areaServed": "VN",
+  "sameAs": ["https://www.facebook.com/profile.php?id=61590304574447"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dịch vụ",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vận hành Fanpage & mạng xã hội cho shop" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quay chụp & dựng video sản phẩm" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chạy quảng cáo Facebook & Google" } }
+    ]
   }
-
-  /* ============ HERO v2 — cinematic premium redesign ============ */
+}
+</script>
+<style>
+  /* ============ HERO v2 — cinematic premium ============ */
   .hero-v2{ padding-top:clamp(3.2rem,6vw,4.8rem); padding-bottom:clamp(4.5rem,9vw,7rem); overflow:visible; isolation:isolate; }
   .hero-glow{ position:absolute; inset:0; z-index:0; pointer-events:none;
     background:radial-gradient(circle at 75% 40%, rgba(214,179,44,0.12), transparent 40%);
@@ -58,19 +52,24 @@
   .hero-noise{ position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0.03; mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  .hero-v2 .hero-grid{ grid-template-columns:43fr 57fr; align-items:center; }
+  .hero-v2 .hero-grid{ grid-template-columns:45fr 55fr; align-items:center; }
   @media (max-width:980px){ .hero-v2 .hero-grid{ grid-template-columns:1fr; } }
 
   .hero-title{ margin-top:1.2rem; }
-  .hero-title .line{ display:block; white-space:nowrap; font-family:var(--font-display); font-weight:600; font-size:clamp(2.1rem, 2.7vw + 1rem, 4.4rem); line-height:1.09; color:var(--text-primary, var(--fg)); }
-  @media (max-width:480px){ .hero-title .line{ white-space:normal; } }
+  .hero-title .line{ display:block; font-family:var(--font-display); font-weight:600; font-size:clamp(2.1rem, 2.6vw + 1rem, 4.1rem); line-height:1.1; color:var(--text-primary, var(--fg)); }
   .hero-title .accent-grad{ background:linear-gradient(100deg, var(--gold-light), var(--gold-primary) 55%, var(--gold-dark)); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .hero-v2 p.lede{ font-size:1.06rem; color:var(--text-secondary, var(--fg-dim)); }
+  .hero-v2 p.lede{ font-size:1.06rem; color:var(--text-secondary, var(--fg-dim)); max-width:54ch; }
 
-  .hero-highlights{ display:flex; flex-wrap:wrap; gap:0.9rem 1.7rem; margin:1.7rem 0 0; padding:0; list-style:none; }
-  .hero-highlights li{ display:inline-flex; align-items:center; gap:0.55em; font-size:0.9rem; color:var(--text-secondary, var(--fg-dim)); }
-  .hero-highlights .chk{ width:15px; height:15px; flex:none; color:var(--gold-primary); }
-  .hero-highlights .chk path{ stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .hero-svcs{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.7rem 0 0; padding:0; list-style:none; }
+  .hero-svcs a{
+    display:inline-flex; align-items:center; gap:0.55em; text-decoration:none;
+    font-size:0.88rem; font-weight:600; color:var(--text-primary);
+    padding:0.5rem 0.95rem; border-radius:30px;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(214,179,44,0.28);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .hero-svcs a:hover{ border-color:var(--gold-primary); background:rgba(214,179,44,0.08); }
+  .hero-svcs .n{ font-family:var(--font-num); font-size:0.72rem; color:var(--gold-primary); }
 
   .hero-social-proof{ display:flex; align-items:center; gap:0.65em; margin-top:1.8rem; font-size:0.85rem; color:var(--text-secondary, var(--fg-dim)); }
   .hero-social-proof .stars{ color:var(--gold-primary); letter-spacing:0.08em; font-size:0.88rem; }
@@ -80,7 +79,6 @@
   .hg-ring{ position:absolute; width:300px; height:300px; border:1px solid rgba(214,179,44,0.22); border-radius:50%; top:-46px; right:-40px; z-index:0; pointer-events:none; }
   .hg-dots{ position:absolute; width:110px; height:110px; right:-16px; bottom:-34px; z-index:0; pointer-events:none; opacity:0.55;
     background-image:radial-gradient(rgba(214,179,44,0.4) 1px, transparent 1.6px); background-size:13px 13px; }
-
   .hg-main{ position:relative; aspect-ratio:16/11; border-radius:12px; overflow:hidden; z-index:1;
     border:1px solid rgba(255,255,255,0.14); box-shadow:0 34px 64px -22px rgba(0,0,0,0.6); background:#0B0C0D; }
   .hg-main img{ width:100%; height:100%; object-fit:cover; display:block; transition:opacity .5s ease, transform .5s ease; }
@@ -89,28 +87,19 @@
   .hg-main-caption{ position:absolute; left:1.4rem; right:4.5rem; bottom:1.3rem; display:flex; flex-direction:column; gap:0.3rem; z-index:2; }
   .hg-cat{ font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-light); }
   .hg-title{ font-family:var(--font-display); font-size:1.15rem; color:#F5F1E7; }
-
-  .hg-video-btn{ position:absolute; top:1rem; left:1rem; z-index:3; display:inline-flex; align-items:center; gap:0.5em;
-    font-family:var(--font-body); font-weight:600; font-size:0.78rem; color:#F5F1E7;
-    background:rgba(10,12,14,0.68); backdrop-filter:blur(10px); border:1px solid rgba(214,179,44,0.3);
-    padding:0.5rem 0.85rem; border-radius:20px; cursor:pointer; transition:border-color .2s ease, background .2s ease; }
-  .hg-video-btn::before{ content:"▶"; font-size:0.65em; color:var(--gold-primary); }
-  .hg-video-btn:hover{ border-color:var(--gold-primary); background:rgba(10,12,14,0.85); }
-
-  .hg-nav{ position:absolute; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; z-index:3;
+  .hg-nav{ position:absolute; width:32px; height:32px; border-radius:50%; z-index:3;
     background:rgba(8,9,10,0.5); border:1px solid rgba(255,255,255,0.3); color:#F5F1E7;
     display:flex; align-items:center; justify-content:center; font-size:1.05rem; line-height:1; cursor:pointer;
     transition:background .2s ease, border-color .2s ease; }
   .hg-nav:hover{ background:rgba(8,9,10,0.8); border-color:var(--gold-primary); }
   .hg-nav:focus-visible{ outline:2px solid var(--gold-primary); outline-offset:2px; }
-  .hg-prev{ right:3.4rem; bottom:1.15rem; top:auto; transform:none; }
-  .hg-next{ right:1.4rem; bottom:1.15rem; top:auto; transform:none; }
+  .hg-prev{ right:3.4rem; bottom:1.15rem; }
+  .hg-next{ right:1.4rem; bottom:1.15rem; }
   .hg-counter{ position:absolute; top:1rem; right:1.1rem; z-index:3; font-family:var(--font-num); font-size:0.72rem;
     letter-spacing:0.04em; color:rgba(245,241,231,0.9); background:rgba(8,9,10,0.5); padding:0.28rem 0.6rem; border-radius:20px; }
   .hg-progress{ position:absolute; left:0; right:0; bottom:0; height:2px; background:rgba(255,255,255,0.14); z-index:2; }
   .hg-progress-bar{ height:100%; width:0%; background:linear-gradient(90deg,var(--gold-dark),var(--gold-primary)); }
-
-  .hg-thumb{ position:absolute; width:112px; aspect-ratio:1/1; border-radius:10px; overflow:hidden; z-index:2;
+  .hg-thumb{ position:absolute; width:112px; aspect-ratio:1/1; border-radius:10px; overflow:hidden; z-index:2; padding:0;
     border:1px solid rgba(255,255,255,0.16); box-shadow:0 18px 32px -12px rgba(0,0,0,0.55); cursor:pointer;
     background:#0B0C0D; transition:transform .3s cubic-bezier(.2,.8,.2,1); }
   .hg-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -119,16 +108,16 @@
   .hg-thumb-1{ top:-28px; right:-22px; }
   .hg-thumb-2{ bottom:-26px; left:-20px; }
   @media (max-width:980px){ .hg-thumb-1{ top:-18px; right:-10px; width:88px; } .hg-thumb-2{ bottom:-16px; left:-10px; width:88px; } }
-
   .hg-badge{ position:absolute; display:inline-flex; align-items:center; gap:0.45em; z-index:4;
     font-size:0.72rem; font-weight:600; color:#F5F1E7; background:rgba(10,12,14,0.82); backdrop-filter:blur(12px);
     border:1px solid rgba(214,179,44,0.28); padding:0.45rem 0.8rem; border-radius:20px;
     animation:badge-float 5s ease-in-out infinite; animation-delay:var(--fd,0s); }
   .hg-badge svg{ width:12px; height:12px; color:var(--gold-primary); }
-  .hg-badge svg path, .hg-badge svg circle{ stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  .hg-badge svg path, .hg-badge svg circle, .hg-badge svg rect{ stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
   @keyframes badge-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
   .hb-1{ top:14%; left:-14px; }
   .hb-2{ top:46%; right:-12px; }
+  .hb-3{ top:1rem; left:1rem; animation:none; }
   @media (max-width:980px){ .hb-1{ display:none; } .hb-2{ right:0.4rem; } }
 
   /* ---- Trust panel ---- */
@@ -142,6 +131,128 @@
   .tp-num .u{ color:var(--gold-primary); }
   .tp-lbl{ font-size:0.84rem; color:var(--text-secondary); margin-top:0.35rem; }
   @media (max-width:620px){ .trust-panel{ grid-template-columns:repeat(2,1fr); } .trust-panel > div:nth-child(odd){ border-left:none; } .trust-panel > div:nth-child(n+3){ border-top:1px solid rgba(255,255,255,0.08); } }
+
+  /* ============ 3 DỊCH VỤ CHÍNH — tổng quan ============ */
+  .core-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+  .core-card{ position:relative; display:flex; flex-direction:column; text-decoration:none; color:inherit;
+    background:var(--card-bg); border:1px solid var(--card-line); border-radius:14px; overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .2s ease; }
+  .core-card:hover{ transform:translateY(-5px); border-color:var(--line-strong); box-shadow:0 26px 50px -28px rgba(34,28,17,0.45); }
+  .core-card .media{ aspect-ratio:4/3; overflow:hidden; background:#15130F; }
+  .core-card .media img{ width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  .core-card:hover .media img{ transform:scale(1.05); }
+  .core-card .num{ position:absolute; top:0.9rem; left:0.9rem; z-index:2; font-family:var(--font-num); font-weight:800; font-size:0.78rem;
+    color:#F5F1E7; background:rgba(16,18,20,0.66); backdrop-filter:blur(4px); border:1px solid rgba(245,241,231,0.3); padding:0.3rem 0.65rem; border-radius:20px; }
+  .core-card .body{ padding:1.5rem 1.6rem 1.7rem; display:flex; flex-direction:column; flex:1; }
+  .core-card h3{ font-size:1.3rem; line-height:1.3; }
+  .core-card p{ color:var(--fg-dim); font-size:0.95rem; line-height:1.6; margin:0.75rem 0 0; flex:1; }
+  .core-card .go{ margin-top:1.2rem; font-size:0.86rem; font-weight:700; color:var(--accent); display:inline-flex; align-items:center; gap:0.4em; }
+  .core-card .go svg{ width:12px; height:12px; transition:transform .2s ease; }
+  .core-card:hover .go svg{ transform:translateX(3px); }
+
+  /* ============ Chi tiết dịch vụ ============ */
+  .svc-detail{ display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(2rem,5vw,4.5rem); align-items:center; }
+  .svc-detail.flip .svc-media{ order:2; }
+  .svc-media{ position:relative; padding-bottom:2.2rem; }
+  .svc-media .main{ border-radius:14px; overflow:hidden; aspect-ratio:4/3.4; border:1px solid var(--line-strong); box-shadow:0 30px 60px -30px rgba(0,0,0,0.6); background:#15130F; }
+  .svc-media .main img{ width:100%; height:100%; object-fit:cover; }
+  .svc-media .sub{ position:absolute; right:-1rem; bottom:0; width:46%; border-radius:12px; overflow:hidden; border:4px solid var(--bg); box-shadow:0 20px 40px -18px rgba(0,0,0,0.6); background:#fff; }
+  .svc-media .sub img{ width:100%; height:auto; }
+  .svc-detail.flip .svc-media .sub{ right:auto; left:-1rem; }
+  .svc-num{ font-family:var(--font-num); font-weight:800; font-size:0.8rem; letter-spacing:0.08em; color:var(--accent); }
+  .svc-detail h2{ font-size:clamp(1.9rem,2.2vw+1rem,2.8rem); margin-top:0.9rem; }
+  .svc-detail h2 .accent{ color:var(--accent); font-style:italic; }
+  section[data-bg="dark"] .svc-detail h2 .accent{ color:var(--brass-2); }
+  .svc-detail .lede{ color:var(--fg-dim); font-size:1.05rem; margin-top:1rem; max-width:52ch; }
+  .deliver{ margin-top:1.6rem; }
+  .deliver h3{ font-family:var(--font-body); font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-mute); }
+  .deliver ul{ list-style:none; margin:0.9rem 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0.75rem 1.4rem; }
+  .deliver li{ display:flex; gap:0.65em; font-size:0.95rem; line-height:1.5; color:var(--fg); }
+  .deliver li::before{ content:""; flex:none; width:18px; height:18px; margin-top:2px; border-radius:50%;
+    background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='m3 6.2 2 2 4-4.4' fill='none' stroke='%23fff' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat; }
+  section[data-bg="dark"] .deliver li::before{ background-color:var(--brass); }
+  .fit-box{ margin-top:1.6rem; padding:1rem 1.2rem; border-left:3px solid var(--accent); background:var(--card-bg); border-radius:0 10px 10px 0; font-size:0.93rem; color:var(--fg-dim); }
+  .fit-box b{ color:var(--fg); }
+  section[data-bg="dark"] .fit-box{ background:rgba(255,255,255,0.04); border-left-color:var(--brass); }
+  .svc-detail .hero-ctas{ margin-top:1.8rem; }
+
+  /* ============ Trọn gói ============ */
+  .combo{ display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(1.6rem,4vw,3rem); align-items:center; }
+  .combo h2{ font-size:clamp(1.8rem,2vw+1rem,2.6rem); margin-top:0.8rem; }
+  .combo p{ margin-top:1rem; color:var(--fg-dim); font-size:1.03rem; max-width:52ch; }
+  .combo-steps{ display:grid; gap:0.7rem; }
+  .combo-steps div{ display:flex; align-items:center; gap:0.9rem; padding:1rem 1.2rem; border-radius:12px; background:var(--card-bg); border:1px solid var(--card-line); font-weight:600; }
+  .combo-steps span{ flex:none; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-family:var(--font-num); font-weight:800; font-size:0.85rem; background:#1B1206; color:#F0D66B; }
+
+  /* ============ Dịch vụ khác ============ */
+  .more-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+  .more-card{ display:flex; flex-direction:column; padding:1.4rem; border-radius:12px; background:var(--card-bg); border:1px solid var(--card-line); scroll-margin-top:110px; }
+  .more-card .thumb{ width:56px; height:56px; border-radius:12px; overflow:hidden; border:1px solid var(--card-line); display:grid; place-items:center; color:var(--accent); background:var(--bg); }
+  .more-card .thumb img{ width:100%; height:100%; object-fit:cover; }
+  .more-card .thumb svg{ width:24px; height:24px; }
+  .more-card .thumb svg *{ stroke:currentColor; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+  .more-card h3{ font-size:1.08rem; margin-top:1rem; }
+  .more-card p{ color:var(--fg-dim); font-size:0.9rem; line-height:1.55; margin:0.55rem 0 0; flex:1; }
+  .more-card a{ margin-top:1rem; font-size:0.85rem; font-weight:700; color:var(--accent); text-decoration:none; }
+  .more-card a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+  /* ============ Quy trình ============ */
+  .steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; counter-reset:step; }
+  .steps li{ position:relative; padding:1.6rem 1.4rem; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid var(--line); }
+  .steps li::before{ counter-increment:step; content:"0" counter(step); display:inline-grid; place-items:center; width:46px; height:46px; border-radius:50%;
+    font-family:var(--font-num); font-weight:800; font-size:0.9rem; color:#181410; background:linear-gradient(135deg,var(--gold-light),var(--gold-primary) 60%,var(--gold-dark)); }
+  .steps h3{ font-size:1.12rem; margin-top:1.1rem; }
+  .steps p{ color:var(--fg-dim); font-size:0.92rem; margin:0.5rem 0 0; }
+
+  /* ============ Khoá học ============ */
+  .home-course{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center; }
+  .home-course-media{ border-radius:8px; overflow:hidden; border:1px solid var(--line-strong); }
+  .home-course-mosaic{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+  .hcm-main{ grid-column:1 / -1; aspect-ratio:16/9; }
+  .hcm-sub{ aspect-ratio:4/3; }
+  .course-stats{ display:flex; gap:2rem; margin-top:1.6rem; }
+  .course-stats .num{ font-family:var(--font-num); font-weight:800; font-size:1.8rem; }
+  .course-stats .lbl{ font-size:0.82rem; color:var(--fg-dim); }
+
+  .badge-card{ animation:none; }
+  .badge-grid.reveal-stagger.is-visible .badge-card{ animation:badge-pop .5s cubic-bezier(.2,.8,.2,1) backwards; animation-delay:calc(var(--i,0) * 100ms); }
+  @keyframes badge-pop{ from{ opacity:0; transform:translateY(14px) scale(.96); } to{ opacity:1; transform:translateY(0) scale(1); } }
+
+  /* ============ Hỏi đáp ============ */
+  .faq{ max-width:860px; display:grid; gap:0.8rem; }
+  .faq details{ border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,0.03); transition:border-color .2s ease; }
+  .faq details[open]{ border-color:rgba(214,179,44,0.4); }
+  .faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.15rem 1.3rem; font-weight:600; font-size:1rem; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; flex:none; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-size:1.2rem; color:var(--gold-primary); border:1px solid rgba(214,179,44,0.4); transition:transform .2s ease; }
+  .faq details[open] summary::after{ transform:rotate(45deg); }
+  .faq details p{ margin:0; padding:0 1.3rem 1.2rem; color:var(--fg-dim); font-size:0.97rem; }
+
+  /* ============ Responsive ============ */
+  @media (max-width:1024px){
+    .core-grid{ grid-template-columns:1fr; max-width:620px; }
+    .core-card{ flex-direction:row; }
+    .core-card .media{ width:38%; aspect-ratio:auto; flex:none; }
+    .more-grid{ grid-template-columns:1fr 1fr; }
+    .steps{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:880px){
+    .svc-detail, .svc-detail.flip{ grid-template-columns:1fr; }
+    .svc-detail.flip .svc-media{ order:0; }
+    .svc-media{ max-width:560px; }
+    .combo{ grid-template-columns:1fr; }
+    .home-course{ grid-template-columns:1fr; }
+  }
+  .svc-media .main.square{ aspect-ratio:1/1; }
+  @media (max-width:560px){
+    .core-card{ flex-direction:column; }
+    .core-card .media{ width:auto; aspect-ratio:4/3; }
+    .deliver ul{ grid-template-columns:1fr; }
+    .svc-media .sub{ right:-0.4rem; width:52%; }
+    .svc-detail.flip .svc-media .sub{ left:-0.4rem; }
+    .more-grid, .steps{ grid-template-columns:1fr; }
+    .course-stats{ gap:1.4rem; }
+  }
 </style>
 </head>
 <body data-page="home">
@@ -160,65 +271,64 @@
     <nav class="links" aria-label="Điều hướng chính">
       <a href="index.html" data-page="home">Trang chủ</a>
       <a href="#dich-vu">Dịch vụ</a>
+      <a href="#quy-trinh">Quy trình</a>
       <a href="#khoa-hoc">Khóa học</a>
       <a href="#ve-chung-toi">Về chúng tôi</a>
       <a href="#cam-nhan">Cảm nhận</a>
     </nav>
-    <a href="lien-he.html" class="btn btn-primary nav-cta-desktop">Liên hệ <span class="btn-arrow">→</span></a>
+    <a href="lien-he.html" class="btn btn-primary nav-cta-desktop">Nhận tư vấn <span class="btn-arrow">→</span></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Mở menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <nav id="mobileMenu" class="mobile-menu" aria-label="Điều hướng di động">
     <a href="index.html" data-page="home">Trang chủ</a>
-    <span class="mm-group-label">Dịch vụ</span>
-    <a class="mm-sub" href="#xay-kenh-marketing">Xây kênh Marketing</a>
-    <a class="mm-sub" href="#chay-quang-cao">Chạy quảng cáo Facebook/Google</a>
-    <a class="mm-sub" href="#tu-van-pheu">Tư vấn phễu chuyển đổi</a>
-    <a class="mm-sub" href="#dao-tao-1-kem-1">Đào tạo 1 kèm 1</a>
-    <a class="mm-sub" href="#build-website-ai">Build Website &amp; AI</a>
-    <a class="mm-sub" href="#truyen-tranh-marketing">Truyện tranh Marketing</a>
+    <span class="mm-group-label">3 dịch vụ chính</span>
+    <a class="mm-sub" href="#xay-kenh-marketing">Vận hành Fanpage &amp; Social</a>
+    <a class="mm-sub" href="#quay-chup-dung-video">Quay chụp &amp; Dựng video</a>
+    <a class="mm-sub" href="#chay-quang-cao">Chạy quảng cáo</a>
+    <a class="mm-sub" href="#dich-vu-khac">Dịch vụ khác</a>
     <span class="mm-group-label">Khóa học Video</span>
-    <a class="mm-sub" href="#khoa-hoc">Khoá học trong trang này</a>
     <a class="mm-sub" href="khoa-hoc-video.html">Tổng quan khoá học</a>
     <a class="mm-sub" href="khoa-hoc-chuong-trinh.html">Chương trình &amp; Học phí</a>
+    <a href="#quy-trinh">Quy trình làm việc</a>
     <a href="#ve-chung-toi">Về chúng tôi</a>
     <a href="#cam-nhan">Cảm nhận</a>
-    <a href="lien-he.html" class="btn btn-primary">Liên hệ</a>
+    <a href="lien-he.html" class="btn btn-primary">Nhận tư vấn miễn phí</a>
   </nav>
 </header>
 
 <main id="top">
 
-  <!-- ============ HERO v2 — cinematic premium ============ -->
+  <!-- ============ HERO ============ -->
   <section class="hero hero-v2" data-bg="dark">
     <div class="hero-mesh"></div>
     <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
     <div class="hero-noise" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-content">
-        <span class="eyebrow reveal">Marketing • Quảng cáo • Video • AI Website</span>
+        <span class="eyebrow reveal">Fanpage • Quay chụp dựng • Quảng cáo</span>
         <h1 class="hero-title">
-          <span class="clip-reveal" style="transition-delay:.05s"><span class="line">Biến ý tưởng thành</span></span>
-          <span class="clip-reveal" style="transition-delay:.16s"><span class="line accent-grad">hệ thống Marketing</span></span>
-          <span class="clip-reveal" style="transition-delay:.27s"><span class="line">tạo ra kết quả.</span></span>
+          <span class="clip-reveal" style="transition-delay:.05s"><span class="line">Nội dung đẹp,</span></span>
+          <span class="clip-reveal" style="transition-delay:.16s"><span class="line">quảng cáo đúng người —</span></span>
+          <span class="clip-reveal" style="transition-delay:.27s"><span class="line accent-grad">shop ra đơn đều.</span></span>
         </h1>
-        <p class="lede reveal" style="transition-delay:.38s">Đồng hành cùng chủ doanh nghiệp và thương hiệu cá nhân xây kênh, chạy quảng cáo, sản xuất video và ứng dụng AI để tạo nên một hệ thống Marketing hiệu quả.</p>
+        <p class="lede reveal" style="transition-delay:.38s">Em Tâm lo trọn phần marketing cho shop của bạn: vận hành fanpage &amp; mạng xã hội, quay chụp – dựng video sản phẩm và chạy quảng cáo ra đơn. Bạn tập trung bán hàng, phần còn lại để Tâm.</p>
 
-        <ul class="hero-highlights reveal" style="transition-delay:.44s">
-          <li><svg class="chk" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg>Chiến lược thực chiến</li>
-          <li><svg class="chk" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg>Đồng hành 1 kèm 1</li>
-          <li><svg class="chk" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg>Tập trung vào chuyển đổi</li>
+        <ul class="hero-svcs reveal" style="transition-delay:.44s" aria-label="3 dịch vụ chính">
+          <li><a href="#xay-kenh-marketing"><span class="n">01</span>Vận hành Fanpage &amp; Social</a></li>
+          <li><a href="#quay-chup-dung-video"><span class="n">02</span>Quay chụp &amp; Dựng video</a></li>
+          <li><a href="#chay-quang-cao"><span class="n">03</span>Chạy quảng cáo</a></li>
         </ul>
 
         <div class="hero-ctas reveal" style="transition-delay:.5s">
-          <a href="lien-he.html" class="btn btn-primary">Đặt lịch tư vấn miễn phí <span class="btn-arrow">→</span></a>
-          <a href="#dich-vu" class="btn btn-ghost">Khám phá dịch vụ</a>
+          <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Tư vấn miễn phí qua Zalo <span class="btn-arrow">→</span></a>
+          <a href="#dich-vu" class="btn btn-ghost">Xem dịch vụ</a>
         </div>
 
         <div class="hero-social-proof reveal" style="transition-delay:.56s">
-          <span class="stars">★★★★★</span>
-          <span>Đã đồng hành cùng hơn 500 khách hàng và chủ doanh nghiệp.</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>Đã đồng hành cùng hơn 500 khách hàng và chủ shop.</span>
         </div>
       </div>
 
@@ -227,12 +337,11 @@
         <div class="hg-dots" aria-hidden="true"></div>
 
         <div class="hg-main" id="hgMain">
-          <img id="hgMainImg" src="assets/hero/hero-main.jpg" alt="Xây dựng hệ thống Marketing" width="800" height="550" loading="eager">
+          <img id="hgMainImg" src="assets/hero/hero-marketing.jpg" alt="Quay chụp sản phẩm bằng điện thoại" width="1080" height="480" fetchpriority="high">
           <div class="hg-main-overlay"></div>
-          <button class="hg-video-btn" type="button" data-video-src="assets/hero.mp4" data-video-poster="assets/hero/hero-main.jpg">Xem hành trình lớp học</button>
           <div class="hg-main-caption">
-            <span class="hg-cat" id="hgMainCat">Marketing</span>
-            <span class="hg-title" id="hgMainTitle">Xây dựng hệ thống Marketing</span>
+            <span class="hg-cat" id="hgMainCat">Quay chụp</span>
+            <span class="hg-title" id="hgMainTitle">Quay chụp sản phẩm cho shop</span>
           </div>
           <div class="hg-counter"><span id="hgCounterCur">01</span> / <span id="hgCounterTotal">06</span></div>
           <button class="hg-nav hg-prev" type="button" aria-label="Ảnh trước">‹</button>
@@ -244,12 +353,12 @@
         <button class="hg-thumb hg-thumb-2" id="hgThumb2" type="button" aria-label="Xem ảnh khác"><img alt="" loading="lazy"></button>
 
         <div class="hg-badge hb-1" style="--fd:0s">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg>
-          Video Content
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h5"/></svg>
+          Fanpage đều đặn
         </div>
         <div class="hg-badge hb-2" style="--fd:1.6s">
-          <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
-          Facebook Ads
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+          Quảng cáo ra đơn
         </div>
       </div>
     </div>
@@ -258,228 +367,232 @@
   <div class="trust-panel-wrap">
     <div class="wrap">
       <div class="trust-panel reveal reveal-stagger" style="transition-delay:.1s">
-        <div style="--i:0"><div class="tp-num" data-count="500" data-suffix="+">0</div><div class="tp-lbl">Khách hàng đã đồng hành</div></div>
-        <div style="--i:1"><div class="tp-num" data-count="95" data-suffix="%">0</div><div class="tp-lbl">Khách hàng hài lòng</div></div>
-        <div style="--i:2"><div class="tp-num" data-count="3" data-suffix="×">0</div><div class="tp-lbl">Hiệu suất tối ưu trung bình</div></div>
+        <div style="--i:0"><div class="tp-num" data-count="500" data-suffix="+">500<span class="u">+</span></div><div class="tp-lbl">Khách hàng đã đồng hành</div></div>
+        <div style="--i:1"><div class="tp-num" data-count="95" data-suffix="%">95<span class="u">%</span></div><div class="tp-lbl">Khách hàng hài lòng</div></div>
+        <div style="--i:2"><div class="tp-num" data-count="3" data-suffix="×">3<span class="u">×</span></div><div class="tp-lbl">Hiệu suất tối ưu trung bình</div></div>
         <div style="--i:3"><div class="tp-num">1<span class="u">:1</span></div><div class="tp-lbl">Đồng hành cá nhân</div></div>
       </div>
     </div>
   </div>
 
-  <div class="video-modal" id="videoModal" aria-hidden="true">
-    <div class="video-modal-backdrop" data-close="1"></div>
-    <div class="video-modal-panel">
-      <button class="video-modal-close" type="button" data-close="1" aria-label="Đóng video">✕</button>
-      <video id="lightboxVideo" controls playsinline preload="none" poster="assets/hero.jpg">
-        <source src="assets/hero.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Xây kênh Marketing</span><span>Chạy quảng cáo Ads</span><span>Tư vấn phễu</span><span>Đào tạo 1 kèm 1</span><span>Build Website AI</span><span>Quay dựng Video</span>
-      <span>Xây kênh Marketing</span><span>Chạy quảng cáo Ads</span><span>Tư vấn phễu</span><span>Đào tạo 1 kèm 1</span><span>Build Website AI</span><span>Quay dựng Video</span>
-    </div>
-  </div>
-
-  <!-- ============ DỊCH VỤ — paper ============ -->
+  <!-- ============ 3 DỊCH VỤ CHÍNH — tổng quan ============ -->
   <section id="dich-vu" data-bg="paper">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">Tôi giúp bạn điều gì</span>
-        <h2>Sáu mảng ghép cho một hệ thống marketing hoàn chỉnh.</h2>
-        <p>Mỗi dịch vụ có thể dùng riêng lẻ hoặc kết hợp — tuỳ vào việc doanh nghiệp bạn đang thiếu mảng nào nhất.</p>
+        <span class="eyebrow">3 dịch vụ chính</span>
+        <h2>Một đầu mối cho cả nội dung lẫn quảng cáo.</h2>
+        <p>Chọn lẻ từng dịch vụ hoặc kết hợp trọn gói — tất cả đều bám sát một mục tiêu: khách thật, đơn thật cho shop của bạn.</p>
       </div>
 
-      <div class="svc-grid reveal reveal-stagger">
-        <a href="#xay-kenh-marketing" class="svc-card" style="--i:0">
-          <div class="svc-banner"><img src="assets/svc-xay-kenh.jpg" alt="Xây kênh Marketing"></div>
-          <div class="svc-body">
-            <div class="svc-title-row">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-              <h3>Xây kênh Marketing</h3>
-            </div>
-            <p>Xây phễu bán hàng, quản lý nội dung, kênh bán hàng online hiệu quả từ A-Z.</p>
-            <span class="go">Tìm hiểu thêm <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      <div class="core-grid reveal reveal-stagger">
+        <a href="#xay-kenh-marketing" class="core-card" style="--i:0">
+          <span class="num">01</span>
+          <div class="media"><img src="assets/svc-xay-kenh.jpg" alt="Vận hành fanpage và mạng xã hội" loading="lazy"></div>
+          <div class="body">
+            <h3>Vận hành Fanpage &amp; Social cho shop</h3>
+            <p>Fanpage, TikTok luôn “sống”: lên kế hoạch, viết bài, thiết kế, đăng đều và chăm sóc khách — khách vào là tin, là muốn mua.</p>
+            <span class="go">Xem chi tiết <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
           </div>
         </a>
-        <a href="#chay-quang-cao" class="svc-card" style="--i:1">
-          <span class="svc-tag">Phổ biến</span>
-          <div class="svc-banner"><img src="assets/svc-quang-cao.jpg" alt="Chạy quảng cáo Facebook/Google"></div>
-          <div class="svc-body">
-            <div class="svc-title-row">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
-              <h3>Chạy quảng cáo Facebook/Google</h3>
-            </div>
-            <p>Setup campaign chuyên nghiệp, tối ưu hiệu suất, báo cáo chi tiết. Mỗi đồng ads đều ra kết quả.</p>
-            <span class="go">Tìm hiểu thêm <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        <a href="#quay-chup-dung-video" class="core-card" style="--i:1">
+          <span class="num">02</span>
+          <div class="media"><img src="assets/hero/hero-marketing.jpg" alt="Quay chụp sản phẩm" loading="lazy"></div>
+          <div class="body">
+            <h3>Quay chụp &amp; Dựng video</h3>
+            <p>Ảnh và video sản phẩm đẹp, bắt trend, đúng tỉ lệ từng nền tảng — dùng ngay để đăng bài và chạy quảng cáo.</p>
+            <span class="go">Xem chi tiết <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
           </div>
         </a>
-        <a href="#tu-van-pheu" class="svc-card" style="--i:2">
-          <span class="svc-tag">Mới</span>
-          <div class="svc-banner"><img src="assets/svc-pheu.jpg" alt="Tư vấn phễu chuyển đổi"></div>
-          <div class="svc-body">
-            <div class="svc-title-row">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16l-6 8v6l-4 2v-8L4 4Z"/></svg>
-              <h3>Tư vấn phễu chuyển đổi</h3>
-            </div>
-            <p>Audit và thiết kế lại phễu bán hàng hoàn chỉnh — từ người lạ đến khách trung thành.</p>
-            <span class="go">Tìm hiểu thêm <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
-          </div>
-        </a>
-        <a href="#dao-tao-1-kem-1" class="svc-card" style="--i:3">
-          <span class="svc-tag">Cam kết đầu ra</span>
-          <div class="svc-banner"><img src="assets/svc-ooh.jpg" alt="Đào tạo quảng cáo 1 kèm 1"></div>
-          <div class="svc-body">
-            <div class="svc-title-row">
-              <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-              <h3>Đào tạo quảng cáo 1 kèm 1</h3>
-            </div>
-            <p>Hướng dẫn trực tiếp trên tài khoản của bạn, học từ case thực tế, hỗ trợ sau học.</p>
-            <span class="go">Tìm hiểu thêm <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
-          </div>
-        </a>
-        <a href="#build-website-ai" class="svc-card" style="--i:4">
-          <div class="svc-banner svc-banner-empty"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
-          <div class="svc-body">
-            <div class="svc-title-row">
-              <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
-              <h3>Build Website &amp; AI</h3>
-            </div>
-            <p>Tạo landing page và website bán hàng bằng AI — không cần code. Thực chiến 100%.</p>
-            <span class="go">Tìm hiểu thêm <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
-          </div>
-        </a>
-        <a href="#truyen-tranh-marketing" class="svc-card" style="--i:5">
-          <div class="svc-banner"><img src="assets/svc-brand.jpg" alt="Truyện tranh Marketing"></div>
-          <div class="svc-body">
-            <div class="svc-title-row">
-              <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
-              <h3>Truyện tranh Marketing</h3>
-            </div>
-            <p>Kiến thức marketing phức tạp qua truyện tranh — dễ hiểu cho người bận rộn.</p>
-            <span class="go">Xem fanpage <svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        <a href="#chay-quang-cao" class="core-card" style="--i:2">
+          <span class="num">03</span>
+          <div class="media"><img src="assets/svc-quang-cao.jpg" alt="Chạy quảng cáo Facebook và Google" loading="lazy"></div>
+          <div class="body">
+            <h3>Chạy quảng cáo</h3>
+            <p>Quảng cáo Facebook &amp; Google nhắm đúng tệp khách, tối ưu chi phí trên mỗi đơn, báo cáo minh bạch từng đồng.</p>
+            <span class="go">Xem chi tiết <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ 6 DỊCH VỤ — mỗi cái 1 slide đơn giản ============ -->
+  <!-- ============ 01 — VẬN HÀNH FANPAGE & SOCIAL ============ -->
   <section id="xay-kenh-marketing" data-bg="dark">
-    <div class="wrap svc-slide">
-      <div class="svc-slide-ico"><img src="assets/svc-xay-kenh.jpg" alt=""></div>
+    <div class="wrap svc-detail">
+      <div class="svc-media reveal">
+        <div class="main square"><img src="assets/svc-xay-kenh.jpg" alt="Tư vấn xây kênh video hiệu quả" loading="lazy"></div>
+        <div class="sub"><img src="assets/z7709114166501_0009708e05b04092c83f0ad8e70dbd46 (1).jpg" alt="Bình luận khách hàng: video gần 2 nghìn lượt xem, có khách hỏi mua" loading="lazy"></div>
+      </div>
       <div>
-        <span class="eyebrow reveal">Dịch vụ · Xây kênh Marketing</span>
-        <h2 class="reveal">Một kênh bán hàng online hiệu quả — <span class="accent">xây từ A-Z.</span></h2>
-        <p class="lede reveal">Xây phễu bán hàng, quản lý nội dung, tổ chức lại kênh bán hàng online để khách hàng dễ tìm, dễ hiểu và dễ mua hơn.</p>
-        <ul class="result-check-list reveal">
-          <li>Kênh có cấu trúc rõ ràng, dễ mở rộng về sau</li>
-          <li>Nội dung đăng đều đặn theo kế hoạch, không còn bí ý tưởng</li>
-          <li>Khách dễ dàng tìm thấy thông tin và tiến hành mua hàng</li>
-        </ul>
-        <div class="hero-ctas reveal"><a href="lien-he.html" class="btn btn-primary">Trao đổi về kênh của bạn <span class="btn-arrow">→</span></a></div>
+        <span class="svc-num reveal">DỊCH VỤ 01</span>
+        <h2 class="reveal">Fanpage luôn “sống” — <span class="accent">khách vào là muốn mua.</span></h2>
+        <p class="lede reveal">Tâm vận hành fanpage và các kênh mạng xã hội (Facebook, TikTok, Instagram) thay bạn: từ kế hoạch nội dung, hình ảnh, đăng bài đến trả lời khách — đều đặn, chỉn chu, đúng chất thương hiệu.</p>
+        <div class="deliver reveal">
+          <h3>Bạn nhận được</h3>
+          <ul>
+            <li>Kế hoạch nội dung theo tháng</li>
+            <li>Viết bài, thiết kế ảnh, đăng đều đặn</li>
+            <li>Tối ưu trang: ảnh bìa, giới thiệu, tin nhắn tự động</li>
+            <li>Kịch bản trả lời inbox, chốt đơn</li>
+            <li>Xây phễu: người lạ → khách quen</li>
+            <li>Báo cáo tương tác &amp; đề xuất định kỳ</li>
+          </ul>
+        </div>
+        <div class="fit-box reveal"><b>Phù hợp với:</b> shop mới mở page, hoặc page có sẵn nhưng bỏ bê vì không có thời gian chăm.</div>
+        <div class="hero-ctas reveal">
+          <a href="lien-he.html?dv=fanpage" class="btn btn-primary">Tư vấn gói vận hành <span class="btn-arrow">→</span></a>
+          <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-ghost">Nhắn Zalo</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="chay-quang-cao" data-bg="paper">
-    <div class="wrap svc-slide">
-      <div class="svc-slide-ico"><img src="assets/svc-quang-cao.jpg" alt=""></div>
+  <!-- ============ 02 — QUAY CHỤP & DỰNG VIDEO ============ -->
+  <section id="quay-chup-dung-video" data-bg="paper">
+    <div class="wrap svc-detail flip">
+      <div class="svc-media reveal">
+        <div class="main"><img src="assets/hero/hero-marketing.jpg" alt="Quay sản phẩm đồ uống bằng điện thoại" loading="lazy"></div>
+        <div class="sub"><img src="assets/bts-3.jpg" alt="Dựng video trên máy tính" loading="lazy"></div>
+      </div>
       <div>
-        <span class="eyebrow reveal">Dịch vụ · Phổ biến</span>
-        <h2 class="reveal">Mỗi đồng ads bỏ ra, đều <span class="accent">ra kết quả.</span></h2>
-        <p class="lede reveal">Setup campaign chuyên nghiệp trên Facebook và Google, tối ưu hiệu suất liên tục, báo cáo chi tiết dễ hiểu.</p>
-        <ul class="result-check-list reveal">
-          <li>Chiến dịch setup đúng mục tiêu, không thử sai lãng phí</li>
-          <li>Chi phí trên mỗi kết quả (CPA) được theo dõi, tối ưu liên tục</li>
-          <li>Báo cáo rõ ràng — biết chính xác tiền ads đang đi đâu</li>
-        </ul>
-        <div class="hero-ctas reveal"><a href="lien-he.html" class="btn btn-primary">Audit tài khoản ads miễn phí <span class="btn-arrow">→</span></a></div>
+        <span class="svc-num reveal">DỊCH VỤ 02</span>
+        <h2 class="reveal">Hình ảnh &amp; video sản phẩm <span class="accent">đủ đẹp để bán.</span></h2>
+        <p class="lede reveal">Nhiều năm làm dựng phim và sản xuất nội dung cho các agency — giờ Tâm mang kinh nghiệm đó vào từng tấm ảnh, từng video ngắn cho shop của bạn.</p>
+        <div class="deliver reveal">
+          <h3>Bạn nhận được</h3>
+          <ul>
+            <li>Chụp ảnh sản phẩm, lookbook, feedback</li>
+            <li>Video ngắn TikTok, Reels, Shorts</li>
+            <li>Video review, unbox, giới thiệu sản phẩm</li>
+            <li>Video làm quảng cáo (ads creative)</li>
+            <li>Dựng, chỉnh màu, chèn chữ &amp; nhạc trend</li>
+            <li>Xuất đúng tỉ lệ cho từng nền tảng</li>
+          </ul>
+        </div>
+        <div class="fit-box reveal"><b>Phù hợp với:</b> shop cần nguồn ảnh, video đều tay cho page và quảng cáo mà không muốn thuê cả ê-kíp.</div>
+        <div class="hero-ctas reveal">
+          <a href="lien-he.html?dv=quay-chup" class="btn btn-primary">Tư vấn quay chụp <span class="btn-arrow">→</span></a>
+          <a href="khoa-hoc-video.html" class="btn btn-ghost">Muốn tự quay? Xem khoá học</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="tu-van-pheu" data-bg="dark">
-    <div class="wrap svc-slide">
-      <div class="svc-slide-ico"><img src="assets/svc-pheu.jpg" alt=""></div>
+  <!-- ============ 03 — CHẠY QUẢNG CÁO ============ -->
+  <section id="chay-quang-cao" data-bg="dark">
+    <div class="wrap svc-detail">
+      <div class="svc-media reveal">
+        <div class="main square"><img src="assets/svc-quang-cao.jpg" alt="Chạy quảng cáo đúng — quả đến ngay" loading="lazy"></div>
+        <div class="sub"><img src="assets/svc-pheu.jpg" alt="Mô hình phễu marketing" loading="lazy"></div>
+      </div>
       <div>
-        <span class="eyebrow reveal">Dịch vụ · Mới</span>
-        <h2 class="reveal">Từ người lạ, đến <span class="accent">khách trung thành.</span></h2>
-        <p class="lede reveal">Audit và thiết kế lại phễu bán hàng hoàn chỉnh — không bỏ sót bước nào trong hành trình khách hàng.</p>
-        <ul class="result-check-list reveal">
-          <li>Vá đúng chỗ đang rò rỉ khách hàng trong phễu hiện tại</li>
-          <li>Hành trình khách hàng được thiết kế lại từ A-Z</li>
-          <li>Chi phí ads giảm, doanh thu tăng nhờ phễu tối ưu</li>
-        </ul>
-        <div class="hero-ctas reveal"><a href="lien-he.html" class="btn btn-primary">Tư vấn phễu miễn phí <span class="btn-arrow">→</span></a></div>
+        <span class="svc-num reveal">DỊCH VỤ 03</span>
+        <h2 class="reveal">Mỗi đồng quảng cáo bỏ ra, <span class="accent">đều ra kết quả.</span></h2>
+        <p class="lede reveal">Setup chiến dịch Facebook &amp; Google bài bản, nhắm đúng tệp khách, theo dõi chi phí trên mỗi đơn mỗi ngày — không thử sai lãng phí ngân sách của shop.</p>
+        <div class="deliver reveal">
+          <h3>Bạn nhận được</h3>
+          <ul>
+            <li>Audit tài khoản quảng cáo hiện tại</li>
+            <li>Nghiên cứu sản phẩm, tệp khách, đối thủ</li>
+            <li>Lên chiến dịch &amp; nội dung quảng cáo</li>
+            <li>Test – đo lường – tối ưu hằng ngày</li>
+            <li>Theo dõi chi phí trên mỗi đơn (CPA)</li>
+            <li>Báo cáo minh bạch, dễ hiểu</li>
+          </ul>
+        </div>
+        <div class="fit-box reveal"><b>Phù hợp với:</b> shop muốn tăng đơn nhanh, hoặc đang tự chạy nhưng chi phí cao, đơn ít.</div>
+        <div class="hero-ctas reveal">
+          <a href="lien-he.html?dv=quang-cao" class="btn btn-primary">Audit tài khoản ads miễn phí <span class="btn-arrow">→</span></a>
+          <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-ghost">Nhắn Zalo</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="dao-tao-1-kem-1" data-bg="paper">
-    <div class="wrap svc-slide">
-      <div class="svc-slide-ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-      <div>
-        <span class="eyebrow reveal">Dịch vụ · Cam kết đầu ra</span>
-        <h2 class="reveal">Cầm tay chỉ việc — trên chính <span class="accent">tài khoản của bạn.</span></h2>
-        <p class="lede reveal">Học thực tế trên case của chính bạn, áp dụng ngay, hỗ trợ liên tục đến khi ra kết quả.</p>
-        <ul class="result-check-list reveal">
-          <li>Học trực tiếp trên campaign của chính mình</li>
-          <li>Mỗi kiến thức học được, áp dụng ngay để tăng doanh số</li>
-          <li>Support liên tục sau học đến khi tự tin tự chạy được</li>
-        </ul>
-        <div class="hero-ctas reveal"><a href="lien-he.html" class="btn btn-primary">Đăng ký lịch học ngay <span class="btn-arrow">→</span></a></div>
+  <!-- ============ TRỌN GÓI ============ -->
+  <section data-bg="brass">
+    <div class="wrap combo">
+      <div class="reveal">
+        <span class="eyebrow">Gói trọn bộ 3 trong 1</span>
+        <h2>Nội dung, hình ảnh và quảng cáo — một đội làm, ăn khớp từ đầu.</h2>
+        <p>Khi người quay video cũng là người chạy quảng cáo, nội dung được làm ra để bán ngay từ khâu kịch bản. Ít khâu phối hợp, ít lãng phí, ra kết quả nhanh hơn.</p>
+        <div class="hero-ctas" style="margin-top:1.6rem;">
+          <a href="lien-he.html?dv=tron-goi" class="btn btn-primary">Nhận báo giá trọn gói <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+      <div class="combo-steps reveal reveal-stagger">
+        <div style="--i:0"><span>01</span>Quay chụp &amp; dựng nội dung bán hàng</div>
+        <div style="--i:1"><span>02</span>Đăng đều trên fanpage &amp; TikTok</div>
+        <div style="--i:2"><span>03</span>Chạy quảng cáo những nội dung hiệu quả nhất</div>
+        <div style="--i:3"><span>04</span>Đo kết quả, tối ưu liên tục mỗi tuần</div>
       </div>
     </div>
   </section>
 
-  <section id="build-website-ai" data-bg="dark">
-    <div class="wrap svc-slide">
-      <div class="svc-slide-ico"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
-      <div>
-        <span class="eyebrow reveal">Dịch vụ · AI &amp; Website</span>
-        <h2 class="reveal">Website bán hàng, xây bằng AI — <span class="accent">không cần code.</span></h2>
-        <p class="lede reveal">Website đơn giản, rõ ràng, hiệu quả — xây trong ngày. Tối ưu để khiến khách liên hệ hoặc mua hàng.</p>
-        <ul class="result-check-list reveal">
-          <li>Load nhanh, chuẩn SEO ngay từ khi ra mắt</li>
-          <li>Nội dung rõ ràng, đúng trọng tâm, không lan man</li>
-          <li>Sẵn sàng chạy quảng cáo dẫn traffic về ngay khi hoàn thành</li>
-        </ul>
-        <div class="hero-ctas reveal"><a href="lien-he.html" class="btn btn-primary">Bắt đầu xây website <span class="btn-arrow">→</span></a></div>
+  <!-- ============ DỊCH VỤ KHÁC ============ -->
+  <section id="dich-vu-khac" data-bg="paper">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Ngoài ra</span>
+        <h2>Các dịch vụ hỗ trợ khác.</h2>
+      </div>
+      <div class="more-grid reveal reveal-stagger">
+        <div class="more-card" id="tu-van-pheu" style="--i:0">
+          <div class="thumb"><img src="assets/svc-pheu.jpg" alt="" loading="lazy"></div>
+          <h3>Tư vấn phễu chuyển đổi</h3>
+          <p>Audit và thiết kế lại phễu bán hàng — vá đúng chỗ đang rò rỉ khách, từ người lạ đến khách trung thành.</p>
+          <a href="lien-he.html?dv=pheu">Tư vấn phễu miễn phí →</a>
+        </div>
+        <div class="more-card" id="dao-tao-1-kem-1" style="--i:1">
+          <div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h3>Đào tạo quảng cáo 1 kèm 1</h3>
+          <p>Cầm tay chỉ việc trên chính tài khoản của bạn, học từ case thực tế, hỗ trợ đến khi tự chạy được.</p>
+          <a href="lien-he.html?dv=dao-tao">Đăng ký lịch học →</a>
+        </div>
+        <div class="more-card" id="build-website-ai" style="--i:2">
+          <div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h3>Build Website &amp; AI</h3>
+          <p>Landing page, website bán hàng xây bằng AI — load nhanh, chuẩn SEO, sẵn sàng chạy quảng cáo.</p>
+          <a href="lien-he.html?dv=website">Bắt đầu xây website →</a>
+        </div>
+        <div class="more-card" id="truyen-tranh-marketing" style="--i:3">
+          <div class="thumb"><img src="assets/svc-brand.jpg" alt="" loading="lazy"></div>
+          <h3>Truyện tranh Marketing</h3>
+          <p>Kiến thức marketing kể lại bằng truyện tranh — dễ hiểu, dễ nhớ cho người bận rộn. Đăng mỗi tuần trên fanpage.</p>
+          <a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank" rel="noopener">Xem fanpage →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="truyen-tranh-marketing" data-bg="paper">
-    <div class="wrap svc-slide">
-      <div class="svc-slide-ico"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg></div>
-      <div>
-        <span class="eyebrow reveal">Dịch vụ · Nội dung</span>
-        <h2 class="reveal">Marketing khô khan, kể lại bằng <span class="accent">truyện tranh dễ hiểu.</span></h2>
-        <p class="lede reveal">Kiến thức marketing phức tạp được kể lại qua truyện tranh — dễ hiểu, dễ nhớ, dễ áp dụng cho người bận rộn.</p>
-        <ul class="result-check-list reveal">
-          <li>Mỗi tập giải thích một khái niệm marketing bằng hình ảnh dễ hiểu</li>
-          <li>Đăng đều trên fanpage — cập nhật kiến thức mỗi tuần</li>
-          <li>Học marketing mà không thấy khô khan hay nặng nề</li>
-        </ul>
-        <div class="hero-ctas reveal"><a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank" rel="noopener" class="btn btn-primary" id="fanpageLink">Xem fanpage <span class="btn-arrow">→</span></a></div>
+  <!-- ============ QUY TRÌNH ============ -->
+  <section id="quy-trinh" data-bg="dark">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Quy trình làm việc</span>
+        <h2>Rõ ràng từ buổi trao đổi đầu tiên.</h2>
+        <p>Bạn luôn biết mình đang trả tiền cho việc gì và kết quả đang ở đâu.</p>
       </div>
+      <ol class="steps reveal reveal-stagger">
+        <li style="--i:0"><h3>Trao đổi miễn phí</h3><p>Nghe về sản phẩm, khách hàng, mục tiêu và ngân sách của shop.</p></li>
+        <li style="--i:1"><h3>Đề xuất kế hoạch</h3><p>Phương án nội dung, lịch quay chụp, chiến dịch quảng cáo kèm báo giá cụ thể.</p></li>
+        <li style="--i:2"><h3>Triển khai</h3><p>Sản xuất nội dung, đăng bài, lên quảng cáo — cập nhật tiến độ thường xuyên.</p></li>
+        <li style="--i:3"><h3>Báo cáo &amp; tối ưu</h3><p>Đo kết quả thật, giữ cái hiệu quả, bỏ cái không hiệu quả, cải thiện mỗi tuần.</p></li>
+      </ol>
     </div>
   </section>
 
-  <!-- ============ KHÓA HỌC VIDEO — dark — sản phẩm chính, ảnh thật ============ -->
-  <section id="khoa-hoc" data-bg="dark">
+  <!-- ============ KHÓA HỌC VIDEO ============ -->
+  <section id="khoa-hoc" data-bg="paper">
     <div class="wrap home-course">
       <div class="reveal">
-        <span class="eyebrow">Sản phẩm chính</span>
-        <h2 style="font-size:clamp(1.9rem,2.4vw+1rem,2.9rem); margin-top:0.9rem;">Khoá học Quay &amp; Dựng Video — học bằng chính điện thoại đang có.</h2>
-        <p style="color:var(--fg-dim); margin-top:1rem; font-size:1.05rem; max-width:48ch;">Chụp ảnh, quay video và dựng video bằng điện thoại — nội dung chuyên nghiệp cho marketing. 44 bài giảng, 7 phần học, học viên từ 18 đến ngoài 50 tuổi đều học được.</p>
-        <div class="stat-row-inline" style="margin-top:1.6rem; gap:1.8rem;">
-          <div><div class="num" data-count="44" style="font-family:var(--font-num); font-weight:800; font-size:1.7rem;">0</div><div class="lbl" style="font-size:0.82rem; color:var(--fg-dim);">bài giảng</div></div>
-          <div><div class="num" data-count="7" style="font-family:var(--font-num); font-weight:800; font-size:1.7rem;">0</div><div class="lbl" style="font-size:0.82rem; color:var(--fg-dim);">phần học</div></div>
-          <div><div class="num" data-count="100" data-suffix="+" style="font-family:var(--font-num); font-weight:800; font-size:1.7rem;">0</div><div class="lbl" style="font-size:0.82rem; color:var(--fg-dim);">học viên</div></div>
+        <span class="eyebrow">Khoá học online</span>
+        <h2 style="font-size:clamp(1.9rem,2.4vw+1rem,2.8rem); margin-top:0.9rem;">Muốn tự làm nội dung? Học quay &amp; dựng video bằng chính điện thoại.</h2>
+        <p style="color:var(--fg-dim); margin-top:1rem; font-size:1.05rem; max-width:48ch;">Chụp ảnh, quay và dựng video chuyên nghiệp cho bán hàng — không cần máy xịn. Học viên từ 18 đến ngoài 50 tuổi đều học được.</p>
+        <div class="course-stats">
+          <div><div class="num" data-count="44">44</div><div class="lbl">bài giảng</div></div>
+          <div><div class="num" data-count="7">7</div><div class="lbl">phần học</div></div>
+          <div><div class="num" data-count="100" data-suffix="+">100<span class="u">+</span></div><div class="lbl">học viên</div></div>
         </div>
         <div class="hero-ctas" style="margin-top:1.8rem;">
           <a href="khoa-hoc-video.html" class="btn btn-primary">Xem tổng quan khoá học <span class="btn-arrow">→</span></a>
@@ -488,86 +601,87 @@
       </div>
       <div class="reveal" style="transition-delay:.15s">
         <div class="home-course-mosaic">
-          <div class="home-course-media ph-frame ph-empty hcm-main">
-            <img src="assets/bts-1.jpg" alt="Học viên quay dựng video bằng điện thoại" onerror="this.remove()">
-            <div class="ph-fallback"><strong>assets/bts-1.jpg</strong>Ảnh hậu trường khoá học</div>
-            <div class="hero-video-overlay"></div>
-            <button class="hero-video-cta" type="button" data-video-src="assets/course-lesson.mp4" data-video-poster="assets/bts-1.jpg">Xem khoá học</button>
-          </div>
-          <div class="home-course-media ph-frame ph-empty hcm-sub">
-            <img src="assets/bts-2.jpg" alt="Học viên thực hành dựng video" onerror="this.remove()">
-            <div class="ph-fallback"><strong>assets/bts-2.jpg</strong>Ảnh thực hành lớp học</div>
-          </div>
-          <div class="home-course-media ph-frame ph-empty hcm-sub">
-            <img src="assets/bts-3.jpg" alt="Buổi học quay dựng video trực tiếp" onerror="this.remove()">
-            <div class="ph-fallback"><strong>assets/bts-3.jpg</strong>Ảnh buổi học trực tiếp</div>
-          </div>
+          <div class="home-course-media ph-frame hcm-main"><img src="assets/bts-1.jpg" alt="Quay sản phẩm bằng điện thoại" loading="lazy"></div>
+          <div class="home-course-media ph-frame hcm-sub"><img src="assets/bts-2.jpg" alt="Dựng video trên máy tính" loading="lazy"></div>
+          <div class="home-course-media ph-frame hcm-sub"><img src="assets/class-photo-2.jpg" alt="Học viên nhận chứng chỉ" loading="lazy"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ VỀ CHÚNG TÔI — brass ============ -->
+  <!-- ============ VỀ CHÚNG TÔI ============ -->
   <section id="ve-chung-toi" data-bg="brass">
     <div class="wrap">
       <div class="reveal sec-head">
-        <span class="eyebrow">Về chúng tôi</span>
+        <span class="eyebrow">Về Em Tâm</span>
         <h2>Nhiều năm làm nghề sản xuất nội dung, trước khi đứng lớp giảng dạy.</h2>
-        <p class="big">Không chỉ làm — mà còn dạy, chia sẻ và đồng hành để học viên ứng dụng được ngay vào công việc và kinh doanh của mình. "Marketing không khó khi có Tâm."</p>
+        <p class="big">Từng dựng phim và sản xuất nội dung cho các agency truyền thông — giờ Tâm đồng hành trực tiếp cùng chủ shop để nội dung và quảng cáo ra kết quả thật. "Marketing không khó khi có Tâm."</p>
       </div>
 
       <div class="badge-grid reveal reveal-stagger">
         <div class="badge-card" style="--i:0; --stripe:#20160A;">
           <div class="hole"></div>
-          <div class="photo ph-empty">
-            <img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" onerror="this.remove()">
-            <div class="init">D</div>
-          </div>
+          <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
           <div class="place">Diễn Quân Media &amp; Entertainment</div>
           <div class="role">Dựng phim</div>
         </div>
         <div class="badge-card" style="--i:1; --stripe:#20160A;">
           <div class="hole"></div>
-          <div class="photo ph-empty">
-            <img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" onerror="this.remove()">
-            <div class="init">C</div>
-          </div>
+          <div class="photo"><img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" loading="lazy"></div>
           <div class="place">Color Man</div>
           <div class="role">Phó phòng Sản xuất nội dung</div>
         </div>
         <div class="badge-card" style="--i:2; --stripe:#20160A;">
           <div class="hole"></div>
-          <div class="photo ph-empty">
-            <img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" onerror="this.remove()">
-            <div class="init">Đ</div>
-          </div>
+          <div class="photo"><img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" loading="lazy"></div>
           <div class="place">Đông Tây Promotion</div>
           <div class="role">Sản xuất nội dung</div>
         </div>
       </div>
 
-      <div class="stat-row-inline reveal" style="margin-top:2.4rem;">
-        <div class="num" data-count="100" data-suffix="+" style="font-family:var(--font-num); font-weight:800; font-size:2.1rem;">0</div>
-        <div class="lbl" style="font-size:0.92rem; color:var(--fg-dim); margin-top:0.2rem;">Học viên và chủ doanh nghiệp đã đồng hành đào tạo thành công</div>
-      </div>
-
       <div class="mosaic reveal" style="margin-top:2.6rem;">
         <span class="mosaic-tag">Ảnh thật</span>
         <div class="mosaic-grid" style="grid-template-rows:1fr;">
-          <div class="ph-frame ph-empty">
-            <img src="assets/event-1.jpg" alt="Lễ trao chứng chỉ" onerror="this.remove()">
-            <div class="ph-fallback"><strong>assets/event-1.jpg</strong>Ảnh nhóm lễ trao chứng chỉ</div>
-          </div>
-          <div class="ph-frame ph-empty">
-            <img src="assets/event-2.jpg" alt="Buổi đào tạo" onerror="this.remove()">
-            <div class="ph-fallback"><strong>assets/event-2.jpg</strong>Ảnh buổi đào tạo trực tiếp</div>
-          </div>
+          <div class="ph-frame"><img src="assets/event-1.jpg" alt="Lễ trao chứng chỉ" loading="lazy"></div>
+          <div class="ph-frame"><img src="assets/event-2.jpg" alt="Buổi đào tạo" loading="lazy"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CẢM NHẬN — paper ============ -->
+  <!-- ============ HỎI ĐÁP ============ -->
+  <section id="hoi-dap" data-bg="dark">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Hỏi đáp</span>
+        <h2>Câu hỏi thường gặp.</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal">
+          <summary>Chi phí dịch vụ được tính như thế nào?</summary>
+          <p>Mỗi shop có sản phẩm và mục tiêu khác nhau, nên Tâm báo giá theo nhu cầu thực tế sau buổi trao đổi miễn phí. Bạn có thể chọn lẻ từng dịch vụ hoặc gói trọn bộ để tiết kiệm hơn.</p>
+        </details>
+        <details class="reveal">
+          <summary>Ngân sách quảng cáo có nằm trong phí dịch vụ không?</summary>
+          <p>Không. Ngân sách quảng cáo do shop nạp trực tiếp vào tài khoản quảng cáo của shop, phí dịch vụ tính riêng — bạn luôn kiểm soát được từng đồng.</p>
+        </details>
+        <details class="reveal">
+          <summary>Shop ở tỉnh khác có quay chụp được không?</summary>
+          <p>Được. Bạn có thể gửi sản phẩm để quay chụp, hoặc trao đổi qua Zalo để lên phương án phù hợp với vị trí của shop.</p>
+        </details>
+        <details class="reveal">
+          <summary>Bao lâu thì thấy kết quả?</summary>
+          <p>Quảng cáo thường có dữ liệu để đánh giá sau vài ngày chạy thử nghiệm; fanpage và nội dung cần thời gian xây dựng đều đặn. Tâm sẽ thống nhất mục tiêu và mốc báo cáo ngay từ đầu.</p>
+        </details>
+        <details class="reveal">
+          <summary>Mình chưa có fanpage / TikTok thì có làm được không?</summary>
+          <p>Được. Tâm hỗ trợ từ khâu tạo và thiết lập trang, xây hình ảnh ban đầu cho đến khi trang sẵn sàng bán hàng.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CẢM NHẬN ============ -->
   <section id="cam-nhan" data-bg="paper">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -642,7 +756,7 @@
             <span class="big">5×</span>
             <span class="lbl">Lượt xem tăng trưởng so với trước khoá học</span>
           </div>
-          <svg class="chart-line" viewBox="0 0 300 110" preserveAspectRatio="none">
+          <svg class="chart-line" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true">
             <defs>
               <linearGradient id="chartFill2" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#C69A4E" stop-opacity="0.55"/>
@@ -661,21 +775,22 @@
     </div>
   </section>
 
-  <!-- ============ CTA CUỐI — dark ============ -->
+  <!-- ============ CTA CUỐI ============ -->
   <section class="cta-final" data-bg="dark">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Bắt đầu</span>
-        <h2>Bắt đầu bằng một buổi trao đổi ngắn.</h2>
-        <p>Cho Tâm biết bạn đang thiếu mảng nào nhất — Tâm sẽ tư vấn hướng đi phù hợp trong 24 giờ.</p>
+        <h2>Kể cho Tâm nghe về shop của bạn.</h2>
+        <p>Cho Tâm biết bạn đang cần fanpage, hình ảnh hay quảng cáo — Tâm sẽ tư vấn hướng đi phù hợp trong 24 giờ.</p>
       </div>
       <div class="chip-row reveal">
-        <span class="chip">Trao đổi trực tiếp một kèm một</span>
+        <span class="chip">Trao đổi trực tiếp 1 kèm 1</span>
         <span class="chip">Không áp lực bán hàng</span>
         <span class="chip">Hoàn toàn miễn phí</span>
       </div>
-      <div class="hero-ctas reveal">
-        <a href="lien-he.html" class="btn btn-primary">Đặt lịch tư vấn</a>
+      <div class="hero-ctas reveal" style="justify-content:center;">
+        <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Nhắn Zalo ngay <span class="btn-arrow">→</span></a>
+        <a href="lien-he.html" class="btn btn-ghost">Gửi yêu cầu tư vấn</a>
         <a href="tel:0965817021" class="btn btn-ghost">Gọi 0965 817 021</a>
       </div>
     </div>
@@ -685,31 +800,42 @@
 
 <footer class="site">
   <div class="wrap foot-row">
-    <span>© 2026 Em Tâm Làm Ads · Kiến thức thực chiến — kết quả thực tế</span>
+    <span>© <span id="year">2026</span> Em Tâm Làm Ads · Fanpage · Quay chụp dựng · Quảng cáo</span>
     <span>
+      <a href="https://zalo.me/0965817021" target="_blank" rel="noopener">Zalo</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank" rel="noopener">Facebook</a>
+      &nbsp;·&nbsp;
       <a href="mailto:truongthanhtamvinici@gmail.com">truongthanhtamvinici@gmail.com</a>
       &nbsp;·&nbsp;
       <a href="tel:0965817021">0965 817 021</a>
-      &nbsp;·&nbsp; Phản hồi trong vòng 24 giờ
     </span>
   </div>
 </footer>
 
+<a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="float-zalo" aria-label="Nhắn Zalo 0965 817 021">Zalo</a>
 <a href="tel:0965817021" class="float-contact" aria-label="Gọi ngay 0965 817 021">
   <span class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
   <span class="fc-text"><span class="fc-lbl">Gọi ngay</span><span class="fc-num">0965 817 021</span></span>
 </a>
 
+<nav class="mobile-cta" aria-label="Liên hệ nhanh">
+  <a href="tel:0965817021" class="btn btn-ghost">Gọi ngay</a>
+  <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Nhắn Zalo</a>
+</nav>
+
 <script src="assets/site.js"></script>
 <script>
-  // Premium Hero Gallery — data-driven, easy to add/remove/reorder photos here
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero gallery — thêm/bớt/đổi thứ tự ảnh ở đây
   var heroProjects = [
-    { image: "assets/hero/hero-main.jpg",     category: "Marketing", title: "Xây dựng hệ thống Marketing" },
-    { image: "assets/hero/hero-video.jpg",    category: "Video",     title: "Quay dựng bằng điện thoại" },
-    { image: "assets/hero/hero-training.jpg", category: "Đào tạo",   title: "Đồng hành 1 kèm 1 thực chiến" },
-    { image: "assets/hero/hero-marketing.jpg",category: "Nội dung",  title: "Sản xuất nội dung chuyên nghiệp" },
-    { image: "assets/hero/hero-content.jpg",  category: "Video",     title: "Dựng video ngay trên điện thoại" },
-    { image: "assets/hero/hero-event.jpg",    category: "Đào tạo",   title: "Buổi đào tạo trực tiếp" }
+    { image: "assets/hero/hero-marketing.jpg", category: "Quay chụp",   title: "Quay chụp sản phẩm cho shop" },
+    { image: "assets/svc-xay-kenh.jpg",        category: "Fanpage",     title: "Xây kênh & vận hành fanpage" },
+    { image: "assets/hero/hero-video.jpg",     category: "Dựng video",  title: "Dựng video bán hàng chuyên nghiệp" },
+    { image: "assets/svc-quang-cao.jpg",       category: "Quảng cáo",   title: "Quảng cáo Facebook & Google ra đơn" },
+    { image: "assets/hero/hero-main.jpg",      category: "Nội dung",    title: "Nội dung video ngắn bắt trend" },
+    { image: "assets/hero/hero-training.jpg",  category: "Đào tạo",     title: "Đồng hành 1 kèm 1 thực chiến" }
   ];
 
   (function(){
@@ -734,10 +860,8 @@
     function pad2(n){ return String(n).length < 2 ? '0' + n : String(n); }
     counterTotal.textContent = pad2(heroProjects.length);
 
-    function thumbIndexes(idx){
-      var n = heroProjects.length;
-      return [ (idx + 1) % n, (idx + 2) % n ];
-    }
+    // tải trước ảnh để chuyển ảnh mượt
+    heroProjects.forEach(function(p){ var i = new Image(); i.src = p.image; });
 
     function setThumb(el, idx){
       var img = el.querySelector('img');
@@ -764,9 +888,9 @@
         apply();
       }
       counterCur.textContent = pad2(idx + 1);
-      var t = thumbIndexes(idx);
-      setThumb(thumb1, t[0]);
-      setThumb(thumb2, t[1]);
+      var n = heroProjects.length;
+      setThumb(thumb1, (idx + 1) % n);
+      setThumb(thumb2, (idx + 2) % n);
     }
 
     function goTo(idx, animate){
@@ -800,7 +924,6 @@
     render(0, false);
     if(!reduceMotion) restartProgress();
 
-    // Subtle parallax on desktop pointer devices
     if(!reduceMotion && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
       var heroSection = wrap.closest('.hero-v2');
       var glow = document.getElementById('heroGlow');
@@ -819,40 +942,6 @@
       }
     }
   })();
-
-  // Video lightbox — shared modal, dynamic source per trigger button
-  var videoModal = document.getElementById('videoModal');
-  var lightboxVideo = document.getElementById('lightboxVideo');
-  var lightboxSource = lightboxVideo ? lightboxVideo.querySelector('source') : null;
-  function openVideoModal(src, poster){
-    if(!videoModal || !lightboxVideo || !lightboxSource) return;
-    if(lightboxSource.getAttribute('src') !== src){
-      lightboxSource.setAttribute('src', src);
-      lightboxVideo.setAttribute('poster', poster || '');
-      lightboxVideo.load();
-    }
-    videoModal.classList.add('is-open');
-    lightboxVideo.play().catch(function(){});
-  }
-  document.querySelectorAll('[data-video-src]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      openVideoModal(btn.getAttribute('data-video-src'), btn.getAttribute('data-video-poster'));
-    });
-  });
-  if(videoModal && lightboxVideo){
-    videoModal.querySelectorAll('[data-close]').forEach(function(el){
-      el.addEventListener('click', function(){
-        videoModal.classList.remove('is-open');
-        lightboxVideo.pause();
-      });
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && videoModal.classList.contains('is-open')){
-        videoModal.classList.remove('is-open');
-        lightboxVideo.pause();
-      }
-    });
-  }
 </script>
 
 </body>
