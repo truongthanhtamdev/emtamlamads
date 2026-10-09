@@ -530,3 +530,35 @@ footer.site{ border-top:1px solid rgba(245,239,227,0.12); padding-block:2.5rem; 
   .feature-grid{ grid-template-columns:1fr; }
   .form-row-2{ grid-template-columns:1fr; }
 }
+
+/* ---------- Contact form actions (Zalo / Email) ---------- */
+.form-actions{ display:grid; grid-template-columns:1.4fr 1fr; gap:0.7rem; margin-top:0.5rem; }
+.form-actions .btn{ width:100%; justify-content:center; }
+@media (max-width:620px){ .form-actions{ grid-template-columns:1fr; } }
+
+/* Ghost buttons on light (paper/brass) sections need a visible outline */
+section[data-bg="paper"] .btn-ghost, section[data-bg="brass"] .btn-ghost{ border-color:var(--line-strong); color:var(--fg); }
+section[data-bg="paper"] .btn-ghost:hover, section[data-bg="brass"] .btn-ghost:hover{ border-color:var(--fg); color:var(--fg); background:rgba(0,0,0,0.04); }
+
+/* ---------- Zalo floating button (desktop) ---------- */
+.float-zalo{ position:fixed; left:1.1rem; bottom:4.6rem; z-index:80; width:48px; height:48px; border-radius:50%;
+  display:grid; place-items:center; background:#0068FF; color:#fff; text-decoration:none; font-family:var(--font-num); font-weight:800; font-size:0.78rem;
+  box-shadow:0 12px 28px rgba(0,0,0,0.35); border:2px solid rgba(255,255,255,0.85); transition:transform .2s ease; }
+.float-zalo:hover{ transform:translateY(-2px) scale(1.04); }
+.float-zalo::after{ content:""; position:absolute; inset:-6px; border-radius:50%; border:2px solid #0068FF; opacity:0; animation:zalo-ping 2.4s ease-out infinite; }
+@keyframes zalo-ping{ 0%{ transform:scale(.85); opacity:.7; } 100%{ transform:scale(1.35); opacity:0; } }
+
+/* ---------- Mobile: bottom contact bar replaces floating buttons ---------- */
+.mobile-cta{ display:none; }
+@media (max-width:640px){
+  .float-zalo, .float-contact{ display:none; }
+  .mobile-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:90;
+    display:grid; grid-template-columns:1fr 1.3fr; gap:0.6rem;
+    padding:0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+    background:rgba(11,13,15,0.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-top:1px solid rgba(214,179,44,0.25);
+  }
+  .mobile-cta .btn{ justify-content:center; padding-block:0.8rem; }
+  body{ padding-bottom:calc(4.4rem + env(safe-area-inset-bottom)); }
+}
