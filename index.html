@@ -255,6 +255,24 @@
   .plan .btn-ghost{ border-color:rgba(242,235,220,0.3); color:var(--cream); }
   .price-note{ margin-top:1.6rem; font-size:0.9rem; color:var(--fg-dim); text-align:center; }
 
+  /* ============ Video feedback ============ */
+  .vfb-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.4rem; margin-bottom:3rem; }
+  .vfb{ margin:0; }
+  @media (max-width:720px){ .vfb-grid{ grid-template-columns:1fr; } }
+  .vfb-player{ position:relative; display:block; width:100%; aspect-ratio:16/9; padding:0; border:0; border-radius:14px; overflow:hidden; cursor:pointer;
+    background:#0B0D0F; box-shadow:0 30px 60px -30px rgba(34,28,17,0.55); }
+  .vfb-player img{ width:100%; height:100%; object-fit:cover; color:transparent; transition:transform .5s ease, opacity .3s ease; }
+  .vfb-player:hover img{ transform:scale(1.03); opacity:0.9; }
+  .vfb-player .play{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%;
+    display:grid; place-items:center; background:rgba(16,18,20,0.72); border:2px solid var(--gold-primary); backdrop-filter:blur(6px); transition:transform .2s ease; }
+  .vfb-player:hover .play{ transform:translate(-50%,-50%) scale(1.08); }
+  .vfb-player .play svg{ width:28px; height:28px; margin-left:4px; color:var(--gold-light); }
+  .vfb-player .badge{ position:absolute; left:1rem; top:1rem; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:#F5F1E7; background:rgba(16,18,20,0.7); padding:0.35rem 0.75rem; border-radius:20px; }
+  .vfb-player iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .vfb-player:focus-visible{ outline:3px solid var(--gold-primary); outline-offset:3px; }
+  .vfb figcaption{ margin-top:0.9rem; text-align:center; font-size:0.92rem; color:var(--fg-dim); }
+
   /* ============ Kết quả thật ============ */
   .results{ display:grid; grid-template-columns:1.05fr 1fr; gap:1.6rem; margin-bottom:3rem; }
   .res-card{ border-radius:14px; background:var(--card-bg); border:1px solid var(--card-line); padding:1.4rem; display:flex; flex-direction:column; }
@@ -836,6 +854,25 @@
         <p>Không phải lời quảng cáo — đây là những đoạn hội thoại và đánh giá nguyên bản từ học viên và khách hàng đã đồng hành.</p>
       </div>
 
+      <div class="vfb-grid reveal reveal-stagger">
+        <figure class="vfb">
+          <button class="vfb-player" type="button" data-yt="UgOzFtB93Kk" aria-label="Phát video feedback khách hàng 1">
+            <img src="https://i.ytimg.com/vi/UgOzFtB93Kk/hqdefault.jpg" alt="Video feedback khách hàng 1" width="480" height="360" loading="lazy">
+            <span class="badge">▶ Video feedback</span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
+          </button>
+          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
+        </figure>
+        <figure class="vfb">
+          <button class="vfb-player" type="button" data-yt="7q80bjS1Sb8" aria-label="Phát video feedback khách hàng 2">
+            <img src="https://i.ytimg.com/vi/7q80bjS1Sb8/hqdefault.jpg" alt="Video feedback khách hàng 2" width="480" height="360" loading="lazy">
+            <span class="badge">▶ Video feedback</span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
+          </button>
+          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
+        </figure>
+      </div>
+
       <div class="results reveal">
         <div class="res-card">
           <span class="tag">Quảng cáo livestream · Shop thời trang</span>
@@ -1004,6 +1041,20 @@
 <script src="assets/site.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Video feedback: chỉ tải YouTube khi khách bấm xem (web nhẹ, nhanh hơn)
+  document.querySelectorAll('[data-yt]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.getAttribute('data-yt') + '?autoplay=1&rel=0&playsinline=1';
+      f.title = btn.getAttribute('aria-label');
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      btn.replaceChildren(f);
+      btn.removeAttribute('aria-label');
+      btn.style.cursor = 'default';
+    }, { once:true });
+  });
 
   // Hero gallery — thêm/bớt/đổi thứ tự ảnh ở đây
   var heroProjects = [
