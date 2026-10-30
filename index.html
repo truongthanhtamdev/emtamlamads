@@ -299,8 +299,20 @@
   .page-table td{ font-family:var(--font-num); font-weight:700; }
   .res-card .fine{ margin-top:auto; padding-top:1rem; font-size:0.8rem; color:var(--fg-mute); }
 
+  /* ============ Về Tâm: đội ngũ ============ */
+  .team{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:2.2rem; }
+  .person{ display:flex; gap:1.1rem; align-items:flex-start; padding:1.4rem; border-radius:14px; background:var(--card-bg); border:1px solid var(--card-line); }
+  .avatar-lg{ flex:none; width:72px; height:72px; border-radius:50%; overflow:hidden; display:grid; place-items:center;
+    font-family:var(--font-display); font-weight:700; font-size:1.8rem; color:#F0D66B; background:#1B1206; border:2px solid rgba(27,18,6,0.35); }
+  .avatar-lg img{ width:100%; height:100%; object-fit:cover; }
+  .person h3{ font-size:1.3rem; }
+  .person .role-line{ margin:0.2rem 0 0; font-size:0.85rem; font-weight:700; color:var(--fg); opacity:0.8; }
+  .person p{ margin:0.6rem 0 0; font-size:0.93rem; line-height:1.55; color:var(--fg-dim); }
+  .sub-head{ font-family:var(--font-body); font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-mute); margin:0 0 0.9rem; }
+  @media (max-width:720px){ .team{ grid-template-columns:1fr; gap:0.8rem; } .person{ padding:1rem; } .avatar-lg{ width:56px; height:56px; font-size:1.4rem; } }
+
   /* ============ Về Tâm: cách làm việc ============ */
-  .values{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:0.5rem; }
+  .values{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:0.5rem 0 2.2rem; }
   .values div{ padding:1.2rem 1.2rem 1.3rem; border-radius:12px; background:var(--card-bg); border:1px solid var(--card-line); }
   .values b{ display:block; font-size:1rem; }
   .values span{ display:block; margin-top:0.4rem; font-size:0.9rem; line-height:1.5; color:var(--fg-dim); }
@@ -680,10 +692,30 @@
     <div class="wrap">
       <div class="reveal sec-head">
         <span class="eyebrow">Về Em Tâm Làm Ads</span>
-        <h2>Người làm nội dung thật, chạy quảng cáo thật — và nói chuyện thẳng với chủ shop.</h2>
-        <p class="big">Đội ngũ đi lên từ nghề dựng phim và sản xuất nội dung cho các agency truyền thông, trước khi tự vận hành fanpage và đứng lớp đào tạo. Vì tự tay làm mỗi ngày, Tâm hiểu một clip thế nào thì ra đơn, một chiến dịch thế nào là đang đốt tiền. "Marketing không khó khi có Tâm."</p>
+        <h2>Hai người, hai thế mạnh — một mục tiêu: shop của bạn ra đơn.</h2>
+        <p class="big">Người chạy quảng cáo và người làm video ngồi chung một bàn, nên nội dung được làm ra để bán ngay từ khâu kịch bản. "Marketing không khó khi có Tâm."</p>
       </div>
 
+      <div class="team reveal reveal-stagger">
+        <article class="person" style="--i:0">
+          <div class="avatar-lg" aria-hidden="true">T</div>
+          <div>
+            <h3>Tâm</h3>
+            <p class="role-line">Người sáng lập Em Tâm Làm Ads · Vận hành fanpage &amp; Quảng cáo</p>
+            <p>Trực tiếp vận hành fanpage và chạy quảng cáo Facebook, Instagram cho các shop — từ lên chiến dịch, đọc chỉ số đến báo cáo. Là người bạn trao đổi khi làm việc qua Zalo.</p>
+          </div>
+        </article>
+        <article class="person" style="--i:1">
+          <div class="avatar-lg photo-av"><img src="assets/badge-1.jpg" alt="Lê Minh Tấn" loading="lazy"></div>
+          <div>
+            <h3>Lê Minh Tấn</h3>
+            <p class="role-line">Chuyên gia quay dựng &amp; sản xuất nội dung</p>
+            <p>Nhiều năm dựng phim và sản xuất nội dung cho các agency truyền thông. Phụ trách quay chụp, dựng video cho khách và đứng lớp khoá Quay · Chụp &amp; Dựng.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="sub-head reveal">Cách làm việc</h3>
       <div class="values reveal reveal-stagger">
         <div style="--i:0"><b>Nói thẳng, không hứa suông</b><span>Sản phẩm, ngân sách thế nào thì nói rõ kỳ vọng thế ấy ngay từ buổi đầu.</span></div>
         <div style="--i:1"><b>Tài khoản là của shop</b><span>Ngân sách nạp thẳng vào tài khoản quảng cáo của shop — bạn thấy từng đồng chi ra.</span></div>
@@ -691,7 +723,8 @@
         <div style="--i:3"><b>Làm việc trực tiếp</b><span>Trao đổi thẳng với Tâm qua Zalo, không qua nhiều lớp trung gian.</span></div>
       </div>
 
-      <div class="badge-grid reveal reveal-stagger">
+      <h3 class="sub-head reveal">Kinh nghiệm của Tấn tại các agency</h3>
+      <div class="badge-grid reveal reveal-stagger" style="margin-top:1rem;">
         <div class="badge-card" style="--i:0; --stripe:#20160A;">
           <div class="hole"></div>
           <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
@@ -764,7 +797,7 @@
       <div>
         <span class="svc-num reveal">DỊCH VỤ 02</span>
         <h2 class="reveal">Hình ảnh &amp; video sản phẩm <span class="accent">đủ đẹp để bán.</span></h2>
-        <p class="lede reveal">Đội ngũ có nhiều năm dựng phim và sản xuất nội dung cho các agency truyền thông — kinh nghiệm đó được đưa vào từng tấm ảnh, từng video ngắn cho shop của bạn.</p>
+        <p class="lede reveal">Do chuyên gia Lê Minh Tấn phụ trách — nhiều năm dựng phim và sản xuất nội dung cho các agency truyền thông, giờ đưa kinh nghiệm đó vào từng tấm ảnh, từng video ngắn cho shop của bạn.</p>
         <div class="deliver reveal">
           <h3>Bạn nhận được</h3>
           <ul>
@@ -824,7 +857,7 @@
       <div class="reveal">
         <span class="eyebrow">Gói trọn bộ 3 trong 1</span>
         <h2>Nội dung, hình ảnh và quảng cáo — một đội làm, ăn khớp từ đầu.</h2>
-        <p>Khi người quay video cũng là người chạy quảng cáo, nội dung được làm ra để bán ngay từ khâu kịch bản. Ít khâu phối hợp, ít lãng phí, ra kết quả nhanh hơn.</p>
+        <p>Khi người quay video (Tấn) và người chạy quảng cáo (Tâm) làm cùng một đội, nội dung được làm ra để bán ngay từ khâu kịch bản. Ít khâu phối hợp, ít lãng phí, ra kết quả nhanh hơn.</p>
         <div class="hero-ctas" style="margin-top:1.6rem;">
           <a href="lien-he.html?dv=tron-goi" class="btn btn-primary">Nhận báo giá trọn gói <span class="btn-arrow">→</span></a>
         </div>
