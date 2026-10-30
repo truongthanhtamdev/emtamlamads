@@ -299,6 +299,32 @@
   .page-table td{ font-family:var(--font-num); font-weight:700; }
   .res-card .fine{ margin-top:auto; padding-top:1rem; font-size:0.8rem; color:var(--fg-mute); }
 
+  /* ============ Về Tâm: cách làm việc ============ */
+  .values{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:0.5rem; }
+  .values div{ padding:1.2rem 1.2rem 1.3rem; border-radius:12px; background:var(--card-bg); border:1px solid var(--card-line); }
+  .values b{ display:block; font-size:1rem; }
+  .values span{ display:block; margin-top:0.4rem; font-size:0.9rem; line-height:1.5; color:var(--fg-dim); }
+  @media (max-width:1024px){ .values{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .values{ grid-template-columns:1fr; } }
+
+  /* ============ Bảng giá dạng ảnh + trích dẫn ============ */
+  .price-proof{ margin:2rem auto 0; max-width:720px; text-align:center; }
+  .price-proof blockquote{ margin:0; font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:var(--fg); }
+  .price-proof cite{ display:block; margin-top:0.4rem; font-style:normal; font-size:0.85rem; color:var(--fg-mute); }
+  .posters{ margin-top:2.2rem; padding-top:1.8rem; border-top:1px solid var(--line); }
+  .posters h3{ font-family:var(--font-body); font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-mute); text-align:center; }
+  .poster-row{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-top:1rem; max-width:720px; margin-inline:auto; }
+  .poster-row button{ display:block; width:100%; min-width:0; padding:0; border:1px solid var(--line-strong); border-radius:10px; overflow:hidden; background:none; cursor:zoom-in; transition:transform .2s ease, border-color .2s ease; }
+  .poster-row button:hover{ transform:translateY(-3px); border-color:var(--gold-primary); }
+  .poster-row img{ display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; }
+  .posters p{ text-align:center; font-size:0.85rem; color:var(--fg-mute); margin-top:0.9rem; }
+  @media (max-width:720px){ .poster-row{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  dialog.lightbox{ padding:0; border:0; background:transparent; max-width:min(92vw,560px); width:100%; }
+  dialog.lightbox::backdrop{ background:rgba(5,6,7,0.85); }
+  dialog.lightbox img{ width:100%; height:auto; max-height:80vh; object-fit:contain; border-radius:10px; }
+  dialog.lightbox .lb-actions{ display:flex; gap:0.6rem; justify-content:center; margin-top:0.8rem; }
+  .faq-more{ margin-top:1.4rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; color:var(--fg-dim); }
+
   /* ============ Hỏi đáp ============ */
   .faq{ max-width:860px; display:grid; gap:0.8rem; }
   .faq details{ border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,0.03); transition:border-color .2s ease; }
@@ -566,6 +592,53 @@
     </div>
   </section>
 
+  <!-- ============ VỀ CHÚNG TÔI ============ -->
+  <section id="ve-chung-toi" data-bg="brass">
+    <div class="wrap">
+      <div class="reveal sec-head">
+        <span class="eyebrow">Về Em Tâm Làm Ads</span>
+        <h2>Người làm nội dung thật, chạy quảng cáo thật — và nói chuyện thẳng với chủ shop.</h2>
+        <p class="big">Đội ngũ đi lên từ nghề dựng phim và sản xuất nội dung cho các agency truyền thông, trước khi tự vận hành fanpage và đứng lớp đào tạo. Vì tự tay làm mỗi ngày, Tâm hiểu một clip thế nào thì ra đơn, một chiến dịch thế nào là đang đốt tiền. "Marketing không khó khi có Tâm."</p>
+      </div>
+
+      <div class="values reveal reveal-stagger">
+        <div style="--i:0"><b>Nói thẳng, không hứa suông</b><span>Sản phẩm, ngân sách thế nào thì nói rõ kỳ vọng thế ấy ngay từ buổi đầu.</span></div>
+        <div style="--i:1"><b>Tài khoản là của shop</b><span>Ngân sách nạp thẳng vào tài khoản quảng cáo của shop — bạn thấy từng đồng chi ra.</span></div>
+        <div style="--i:2"><b>Báo cáo dễ hiểu</b><span>Không chỉ số khó hiểu: bao nhiêu tin nhắn, bao nhiêu đơn, tốn bao nhiêu tiền.</span></div>
+        <div style="--i:3"><b>Làm việc trực tiếp</b><span>Trao đổi thẳng với Tâm qua Zalo, không qua nhiều lớp trung gian.</span></div>
+      </div>
+
+      <div class="badge-grid reveal reveal-stagger">
+        <div class="badge-card" style="--i:0; --stripe:#20160A;">
+          <div class="hole"></div>
+          <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
+          <div class="place">Diễn Quân Media &amp; Entertainment</div>
+          <div class="role">Dựng phim</div>
+        </div>
+        <div class="badge-card" style="--i:1; --stripe:#20160A;">
+          <div class="hole"></div>
+          <div class="photo"><img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" loading="lazy"></div>
+          <div class="place">Color Man</div>
+          <div class="role">Phó phòng Sản xuất nội dung</div>
+        </div>
+        <div class="badge-card" style="--i:2; --stripe:#20160A;">
+          <div class="hole"></div>
+          <div class="photo"><img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" loading="lazy"></div>
+          <div class="place">Đông Tây Promotion</div>
+          <div class="role">Sản xuất nội dung</div>
+        </div>
+      </div>
+
+      <div class="mosaic reveal" style="margin-top:2.6rem;">
+        <span class="mosaic-tag">Ảnh thật</span>
+        <div class="mosaic-grid" style="grid-template-rows:1fr;">
+          <div class="ph-frame"><img src="assets/event-1.jpg" alt="Lễ trao chứng chỉ" loading="lazy"></div>
+          <div class="ph-frame"><img src="assets/event-2.jpg" alt="Buổi đào tạo" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 01 — VẬN HÀNH FANPAGE & SOCIAL ============ -->
   <section id="xay-kenh-marketing" data-bg="paper">
     <div class="wrap svc-detail">
@@ -608,7 +681,7 @@
       <div>
         <span class="svc-num reveal">DỊCH VỤ 02</span>
         <h2 class="reveal">Hình ảnh &amp; video sản phẩm <span class="accent">đủ đẹp để bán.</span></h2>
-        <p class="lede reveal">Nhiều năm làm dựng phim và sản xuất nội dung cho các agency — giờ Tâm mang kinh nghiệm đó vào từng tấm ảnh, từng video ngắn cho shop của bạn.</p>
+        <p class="lede reveal">Đội ngũ có nhiều năm dựng phim và sản xuất nội dung cho các agency truyền thông — kinh nghiệm đó được đưa vào từng tấm ảnh, từng video ngắn cho shop của bạn.</p>
         <div class="deliver reveal">
           <h3>Bạn nhận được</h3>
           <ul>
@@ -780,6 +853,27 @@
           <a href="lien-he.html?dv=combo-2-khoa" class="btn btn-primary">Đăng ký combo</a>
         </article>
       </div>
+      <div class="price-proof reveal">
+        <blockquote>“Hôm nay ra đơn tốt quá em ơi! Chạy như hôm nay là tốt lắm.”</blockquote>
+        <cite>Chị Hằng — Style by BaoAnh, khách gói vận hành quảng cáo livestream</cite>
+      </div>
+      <div class="posters reveal">
+        <h3>Bảng giá dạng ảnh — bấm để xem, lưu về hoặc gửi cho người cùng quyết định</h3>
+        <div class="poster-row">
+          <button type="button" data-poster="assets/bang-gia-goi-van-hanh.jpg"><img src="assets/bang-gia-goi-van-hanh.jpg" alt="Bảng giá gói vận hành Ads + Edit clip 7.500.000đ" width="1080" height="1350" loading="lazy"></button>
+          <button type="button" data-poster="assets/bang-gia-khoa-quay-chup-dung.jpg"><img src="assets/bang-gia-khoa-quay-chup-dung.jpg" alt="Bảng giá khoá Quay Chụp và Dựng 15.000.000đ" width="1080" height="1350" loading="lazy"></button>
+          <button type="button" data-poster="assets/bang-gia-khoa-ads-claude-code.jpg"><img src="assets/bang-gia-khoa-ads-claude-code.jpg" alt="Bảng giá khoá Facebook Ads + AI Claude Code 15.000.000đ" width="1080" height="1350" loading="lazy"></button>
+          <button type="button" data-poster="assets/bang-gia-combo-2-khoa.jpg"><img src="assets/bang-gia-combo-2-khoa.jpg" alt="Combo 2 khoá học 25.000.000đ" width="1080" height="1350" loading="lazy"></button>
+        </div>
+      </div>
+      <dialog class="lightbox" id="posterBox">
+        <img id="posterImg" alt="Bảng giá">
+        <div class="lb-actions">
+          <a class="btn btn-primary" id="posterDl" download>Lưu ảnh</a>
+          <a class="btn btn-primary" href="https://zalo.me/0965817021" target="_blank" rel="noopener">Hỏi Tâm qua Zalo</a>
+          <button class="btn btn-ghost" type="button" id="posterClose">Đóng</button>
+        </div>
+      </dialog>
       <p class="price-note reveal">Cần tư vấn chọn gói? Gọi hoặc nhắn Zalo Tâm: <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" style="color:var(--gold-light);">0965 817 021</a></p>
     </div>
   </section>
@@ -907,6 +1001,9 @@
           <p>Được. Tâm hỗ trợ từ khâu tạo và thiết lập trang, xây hình ảnh ban đầu cho đến khi trang sẵn sàng bán hàng.</p>
         </details>
       </div>
+      <div class="faq-more reveal">Không thấy câu hỏi của bạn?
+        <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Hỏi Tâm qua Zalo <span class="btn-arrow">→</span></a>
+      </div>
     </div>
   </section>
 
@@ -937,48 +1034,8 @@
     </div>
   </section>
 
-  <!-- ============ VỀ CHÚNG TÔI ============ -->
-  <section id="ve-chung-toi" data-bg="brass">
-    <div class="wrap">
-      <div class="reveal sec-head">
-        <span class="eyebrow">Về Em Tâm</span>
-        <h2>Nhiều năm làm nghề sản xuất nội dung, trước khi đứng lớp giảng dạy.</h2>
-        <p class="big">Từng dựng phim và sản xuất nội dung cho các agency truyền thông — giờ Tâm đồng hành trực tiếp cùng chủ shop để nội dung và quảng cáo ra kết quả thật. "Marketing không khó khi có Tâm."</p>
-      </div>
-
-      <div class="badge-grid reveal reveal-stagger">
-        <div class="badge-card" style="--i:0; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
-          <div class="place">Diễn Quân Media &amp; Entertainment</div>
-          <div class="role">Dựng phim</div>
-        </div>
-        <div class="badge-card" style="--i:1; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" loading="lazy"></div>
-          <div class="place">Color Man</div>
-          <div class="role">Phó phòng Sản xuất nội dung</div>
-        </div>
-        <div class="badge-card" style="--i:2; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" loading="lazy"></div>
-          <div class="place">Đông Tây Promotion</div>
-          <div class="role">Sản xuất nội dung</div>
-        </div>
-      </div>
-
-      <div class="mosaic reveal" style="margin-top:2.6rem;">
-        <span class="mosaic-tag">Ảnh thật</span>
-        <div class="mosaic-grid" style="grid-template-rows:1fr;">
-          <div class="ph-frame"><img src="assets/event-1.jpg" alt="Lễ trao chứng chỉ" loading="lazy"></div>
-          <div class="ph-frame"><img src="assets/event-2.jpg" alt="Buổi đào tạo" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ DỊCH VỤ KHÁC ============ -->
-  <section id="dich-vu-khac" data-bg="paper">
+  <section id="dich-vu-khac" data-bg="brass">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Ngoài ra</span>
@@ -1065,6 +1122,22 @@
 <script src="assets/site.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Bảng giá dạng ảnh: xem lớn, lưu ảnh
+  (function(){
+    var box = document.getElementById('posterBox');
+    if(!box || !box.showModal) return;
+    var img = document.getElementById('posterImg'), dl = document.getElementById('posterDl');
+    document.querySelectorAll('[data-poster]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var src = btn.getAttribute('data-poster');
+        img.src = src; img.alt = btn.querySelector('img').alt; dl.href = src;
+        box.showModal();
+      });
+    });
+    document.getElementById('posterClose').addEventListener('click', function(){ box.close(); });
+    box.addEventListener('click', function(e){ if(e.target === box) box.close(); });
+  })();
 
   // Video feedback: chỉ tải YouTube khi khách bấm xem (web nhẹ, nhanh hơn)
   document.querySelectorAll('[data-yt]').forEach(function(btn){
