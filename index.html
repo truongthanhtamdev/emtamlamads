@@ -202,7 +202,7 @@
 
   /* ============ Quy trình ============ */
   .steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; counter-reset:step; }
-  .steps li{ position:relative; padding:1.6rem 1.4rem; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid var(--line); }
+  .steps li{ position:relative; padding:1.6rem 1.4rem; border-radius:12px; background:var(--card-bg); border:1px solid var(--card-line); }
   .steps li::before{ counter-increment:step; content:"0" counter(step); display:inline-grid; place-items:center; width:46px; height:46px; border-radius:50%;
     font-family:var(--font-num); font-weight:800; font-size:0.9rem; color:#181410; background:linear-gradient(135deg,var(--gold-light),var(--gold-primary) 60%,var(--gold-dark)); }
   .steps h3{ font-size:1.12rem; margin-top:1.1rem; }
@@ -253,6 +253,10 @@
   .plan .btn{ margin-top:1rem; justify-content:center; }
   .plan.light .btn-primary{ background:linear-gradient(135deg,#1E3A31,#142921); color:#F2EBDC; }
   .plan .btn-ghost{ border-color:rgba(242,235,220,0.3); color:var(--cream); }
+  .price-hint{ margin-top:1.2rem; display:inline-flex; flex-wrap:wrap; align-items:baseline; gap:0.4rem 0.7rem; font-size:0.95rem; color:var(--fg-dim); }
+  .price-hint b{ font-family:var(--font-num); font-size:1.15rem; color:var(--fg); }
+  .price-hint a{ color:var(--accent); font-weight:700; text-decoration:none; }
+  section[data-bg="dark"] .price-hint a{ color:var(--gold-light); }
   .price-note{ margin-top:1.6rem; font-size:0.9rem; color:var(--fg-dim); text-align:center; }
 
   /* ============ Video feedback ============ */
@@ -271,6 +275,7 @@
     color:#F5F1E7; background:rgba(16,18,20,0.7); padding:0.35rem 0.75rem; border-radius:20px; }
   .vfb-player iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   .vfb-player:focus-visible{ outline:3px solid var(--gold-primary); outline-offset:3px; }
+  #ket-qua .vfb-player{ box-shadow:0 30px 60px -30px rgba(0,0,0,0.8); }
   .vfb figcaption{ margin-top:0.9rem; text-align:center; font-size:0.92rem; color:var(--fg-dim); }
 
   /* ============ Kết quả thật ============ */
@@ -349,12 +354,12 @@
     <nav class="links" aria-label="Điều hướng chính">
       <a href="index.html" data-page="home">Trang chủ</a>
       <a href="#dich-vu">Dịch vụ</a>
+      <a href="#ket-qua">Kết quả</a>
       <a href="#bang-gia">Bảng giá</a>
       <a href="#khoa-hoc">Khóa học</a>
-      <a href="#ve-chung-toi">Về chúng tôi</a>
-      <a href="#cam-nhan">Cảm nhận</a>
+      <a href="#ve-chung-toi">Về Tâm</a>
     </nav>
-    <a href="lien-he.html" class="btn btn-primary nav-cta-desktop">Nhận tư vấn <span class="btn-arrow">→</span></a>
+    <a class="btn btn-primary nav-cta-desktop" href="https://zalo.me/0965817021" target="_blank" rel="noopener">Tư vấn qua Zalo <span class="btn-arrow">→</span></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Mở menu">
       <span></span><span></span><span></span>
     </button>
@@ -369,6 +374,7 @@
     <span class="mm-group-label">Khóa học Video</span>
     <a class="mm-sub" href="khoa-hoc-video.html">Tổng quan khoá học</a>
     <a class="mm-sub" href="khoa-hoc-chuong-trinh.html">Chương trình &amp; Học phí</a>
+    <a href="#ket-qua">Kết quả thật</a>
     <a href="#bang-gia">Bảng giá</a>
     <a href="#quy-trinh">Quy trình làm việc</a>
     <a href="#ve-chung-toi">Về chúng tôi</a>
@@ -402,12 +408,12 @@
 
         <div class="hero-ctas reveal" style="transition-delay:.5s">
           <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Tư vấn miễn phí qua Zalo <span class="btn-arrow">→</span></a>
-          <a href="#dich-vu" class="btn btn-ghost">Xem dịch vụ</a>
+          <a href="#bang-gia" class="btn btn-ghost">Xem bảng giá</a>
         </div>
 
         <div class="hero-social-proof reveal" style="transition-delay:.56s">
           <span class="stars" aria-hidden="true">★★★★★</span>
-          <span>Đã đồng hành cùng hơn 500 khách hàng và chủ shop.</span>
+          <span><b style="color:var(--text-primary)">1,45 triệu lượt xem</b> trong 28 ngày trên 6 fanpage Tâm đang vận hành. <a href="#ket-qua" style="color:var(--gold-light)">Xem kết quả →</a></span>
         </div>
       </div>
 
@@ -495,8 +501,73 @@
     </div>
   </section>
 
+  <!-- ============ KẾT QUẢ THẬT ============ -->
+  <section id="ket-qua" data-bg="dark">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Kết quả thật</span>
+        <h2>Đừng tin lời quảng cáo — hãy xem khách nói gì.</h2>
+        <p>Video khách chia sẻ, tin nhắn thật và số liệu từ chính các fanpage Tâm đang vận hành.</p>
+      </div>
+      <div class="vfb-grid reveal reveal-stagger">
+        <figure class="vfb">
+          <button class="vfb-player" type="button" data-yt="UgOzFtB93Kk" aria-label="Phát video feedback khách hàng 1">
+            <img src="https://i.ytimg.com/vi/UgOzFtB93Kk/hqdefault.jpg" alt="Video feedback khách hàng 1" width="480" height="360" loading="lazy">
+            <span class="badge">▶ Video feedback</span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
+          </button>
+          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
+        </figure>
+        <figure class="vfb">
+          <button class="vfb-player" type="button" data-yt="7q80bjS1Sb8" aria-label="Phát video feedback khách hàng 2">
+            <img src="https://i.ytimg.com/vi/7q80bjS1Sb8/hqdefault.jpg" alt="Video feedback khách hàng 2" width="480" height="360" loading="lazy">
+            <span class="badge">▶ Video feedback</span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
+          </button>
+          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
+        </figure>
+      </div>
+
+      <div class="results reveal">
+        <div class="res-card">
+          <span class="tag">Quảng cáo livestream · Shop thời trang</span>
+          <h3>Style by BaoAnh — “Hôm nay ra đơn tốt quá em ơi!”</h3>
+          <p class="sub">Tin nhắn thật trong nhóm làm việc với khách, khi đang chạy quảng cáo cho phiên livestream.</p>
+          <blockquote>“Khách không có inbox cho chị! Nhưng khi chị livestream thì họ thấy và họ vào chốt.”</blockquote>
+          <figure><img src="assets/feedback-style-by-baoanh.jpg" alt="Tin nhắn khách hàng Style by BaoAnh: Hôm nay ra đơn tốt quá em ơi, chạy lượt follow rất ok, khách vào livestream chốt đơn" width="970" height="877" loading="lazy"></figure>
+        </div>
+        <div class="res-card">
+          <span class="tag">Traffic thật · 28 ngày (2/10 – 29/10)</span>
+          <h3>Các fanpage Tâm đang vận hành</h3>
+          <p class="sub">Số liệu lấy từ Bảng điều khiển Facebook của từng trang.</p>
+          <div class="metric-row">
+            <div class="metric"><div class="v">1,45 triệu</div><div class="l">Lượt xem trên 6 fanpage</div></div>
+            <div class="metric"><div class="v">2.324</div><div class="l">Cuộc trò chuyện qua tin nhắn</div></div>
+          </div>
+          <table class="page-table">
+            <thead><tr><th scope="col">Fanpage</th><th scope="col">Lượt xem</th><th scope="col">Tin nhắn</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">QT Shop</th><td>750.295</td><td>951</td></tr>
+              <tr><th scope="row">Piano + Guitar Đệm Hát</th><td>213.105</td><td>261</td></tr>
+              <tr><th scope="row">Charmé</th><td>212.101</td><td>340</td></tr>
+              <tr><th scope="row">Gold Class Head Spa Chermside</th><td>127.737</td><td>260</td></tr>
+              <tr><th scope="row">Em Tâm Làm Ads</th><td>75.028</td><td>266</td></tr>
+              <tr><th scope="row">Dạy Guitar Online 1:1</th><td>73.207</td><td>246</td></tr>
+            </tbody>
+          </table>
+          <p class="fine">Mỗi shop một kết quả khác nhau, tuỳ sản phẩm và ngân sách — Tâm sẽ nói rõ kỳ vọng ngay từ buổi tư vấn.</p>
+        </div>
+      </div>
+
+      <div class="hero-ctas reveal" style="justify-content:center;">
+        <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Muốn kết quả như vậy? Nhắn Zalo <span class="btn-arrow">→</span></a>
+        <a href="#bang-gia" class="btn btn-ghost">Xem bảng giá</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 01 — VẬN HÀNH FANPAGE & SOCIAL ============ -->
-  <section id="xay-kenh-marketing" data-bg="dark">
+  <section id="xay-kenh-marketing" data-bg="paper">
     <div class="wrap svc-detail">
       <div class="svc-media reveal">
         <div class="main square"><img src="assets/svc-xay-kenh.jpg" alt="Tư vấn xây kênh video hiệu quả" loading="lazy"></div>
@@ -517,6 +588,7 @@
             <li>Báo cáo tương tác &amp; đề xuất định kỳ</li>
           </ul>
         </div>
+        <div class="price-hint reveal">Gói vận hành Ads + Edit clip: <b>7.500.000đ</b>/dự án <a href="#bang-gia">Xem chi tiết →</a></div>
         <div class="fit-box reveal"><b>Phù hợp với:</b> shop mới mở page, hoặc page có sẵn nhưng bỏ bê vì không có thời gian chăm.</div>
         <div class="hero-ctas reveal">
           <a href="lien-he.html?dv=fanpage" class="btn btn-primary">Tư vấn gói vận hành <span class="btn-arrow">→</span></a>
@@ -527,7 +599,7 @@
   </section>
 
   <!-- ============ 02 — QUAY CHỤP & DỰNG VIDEO ============ -->
-  <section id="quay-chup-dung-video" data-bg="paper">
+  <section id="quay-chup-dung-video" data-bg="dark">
     <div class="wrap svc-detail flip">
       <div class="svc-media reveal">
         <div class="main"><img src="assets/hero/hero-marketing.jpg" alt="Quay sản phẩm đồ uống bằng điện thoại" loading="lazy"></div>
@@ -548,6 +620,7 @@
             <li>Xuất đúng tỉ lệ cho từng nền tảng</li>
           </ul>
         </div>
+        <div class="price-hint reveal">Quay chụp theo buổi: báo giá theo số lượng sản phẩm. Muốn tự làm? <a href="#bang-gia">Khoá học 6 buổi →</a></div>
         <div class="fit-box reveal"><b>Phù hợp với:</b> shop cần nguồn ảnh, video đều tay cho page và quảng cáo mà không muốn thuê cả ê-kíp.</div>
         <div class="hero-ctas reveal">
           <a href="lien-he.html?dv=quay-chup" class="btn btn-primary">Tư vấn quay chụp <span class="btn-arrow">→</span></a>
@@ -558,7 +631,7 @@
   </section>
 
   <!-- ============ 03 — CHẠY QUẢNG CÁO ============ -->
-  <section id="chay-quang-cao" data-bg="dark">
+  <section id="chay-quang-cao" data-bg="paper">
     <div class="wrap svc-detail">
       <div class="svc-media reveal">
         <div class="main square"><img src="assets/svc-quang-cao.jpg" alt="Chạy quảng cáo đúng — quả đến ngay" loading="lazy"></div>
@@ -579,6 +652,7 @@
             <li>Báo cáo minh bạch, dễ hiểu</li>
           </ul>
         </div>
+        <div class="price-hint reveal">Đã gồm trong gói vận hành <b>7.500.000đ</b>/dự án, ngân sách ads tính riêng. <a href="#bang-gia">Xem bảng giá →</a></div>
         <div class="fit-box reveal"><b>Phù hợp với:</b> shop muốn tăng đơn nhanh, hoặc đang tự chạy nhưng chi phí cao, đơn ít.</div>
         <div class="hero-ctas reveal">
           <a href="lien-he.html?dv=quang-cao" class="btn btn-primary">Audit tài khoản ads miễn phí <span class="btn-arrow">→</span></a>
@@ -608,44 +682,8 @@
     </div>
   </section>
 
-  <!-- ============ DỊCH VỤ KHÁC ============ -->
-  <section id="dich-vu-khac" data-bg="paper">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Ngoài ra</span>
-        <h2>Các dịch vụ hỗ trợ khác.</h2>
-      </div>
-      <div class="more-grid reveal reveal-stagger">
-        <div class="more-card" id="tu-van-pheu" style="--i:0">
-          <div class="thumb"><img src="assets/svc-pheu.jpg" alt="" loading="lazy"></div>
-          <h3>Tư vấn phễu chuyển đổi</h3>
-          <p>Audit và thiết kế lại phễu bán hàng — vá đúng chỗ đang rò rỉ khách, từ người lạ đến khách trung thành.</p>
-          <a href="lien-he.html?dv=pheu">Tư vấn phễu miễn phí →</a>
-        </div>
-        <div class="more-card" id="dao-tao-1-kem-1" style="--i:1">
-          <div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-          <h3>Đào tạo quảng cáo 1 kèm 1</h3>
-          <p>Cầm tay chỉ việc trên chính tài khoản của bạn, học từ case thực tế, hỗ trợ đến khi tự chạy được.</p>
-          <a href="lien-he.html?dv=dao-tao">Đăng ký lịch học →</a>
-        </div>
-        <div class="more-card" id="build-website-ai" style="--i:2">
-          <div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
-          <h3>Build Website &amp; AI</h3>
-          <p>Landing page, website bán hàng xây bằng AI — load nhanh, chuẩn SEO, sẵn sàng chạy quảng cáo.</p>
-          <a href="lien-he.html?dv=website">Bắt đầu xây website →</a>
-        </div>
-        <div class="more-card" id="truyen-tranh-marketing" style="--i:3">
-          <div class="thumb"><img src="assets/svc-brand.jpg" alt="" loading="lazy"></div>
-          <h3>Truyện tranh Marketing</h3>
-          <p>Kiến thức marketing kể lại bằng truyện tranh — dễ hiểu, dễ nhớ cho người bận rộn. Đăng mỗi tuần trên fanpage.</p>
-          <a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank" rel="noopener">Xem fanpage →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ QUY TRÌNH ============ -->
-  <section id="quy-trinh" data-bg="dark">
+  <section id="quy-trinh" data-bg="paper">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Quy trình làm việc</span>
@@ -658,33 +696,6 @@
         <li style="--i:2"><h3>Triển khai</h3><p>Sản xuất nội dung, đăng bài, lên quảng cáo — cập nhật tiến độ thường xuyên.</p></li>
         <li style="--i:3"><h3>Báo cáo &amp; tối ưu</h3><p>Đo kết quả thật, giữ cái hiệu quả, bỏ cái không hiệu quả, cải thiện mỗi tuần.</p></li>
       </ol>
-    </div>
-  </section>
-
-  <!-- ============ KHÓA HỌC VIDEO ============ -->
-  <section id="khoa-hoc" data-bg="paper">
-    <div class="wrap home-course">
-      <div class="reveal">
-        <span class="eyebrow">Khoá học online</span>
-        <h2 style="font-size:clamp(1.9rem,2.4vw+1rem,2.8rem); margin-top:0.9rem;">Muốn tự làm nội dung? Học quay &amp; dựng video bằng chính điện thoại.</h2>
-        <p style="color:var(--fg-dim); margin-top:1rem; font-size:1.05rem; max-width:48ch;">Chụp ảnh, quay và dựng video chuyên nghiệp cho bán hàng — không cần máy xịn. Học viên từ 18 đến ngoài 50 tuổi đều học được.</p>
-        <div class="course-stats">
-          <div><div class="num" data-count="44">44</div><div class="lbl">bài giảng</div></div>
-          <div><div class="num" data-count="7">7</div><div class="lbl">phần học</div></div>
-          <div><div class="num" data-count="100" data-suffix="+">100<span class="u">+</span></div><div class="lbl">học viên</div></div>
-        </div>
-        <div class="hero-ctas" style="margin-top:1.8rem;">
-          <a href="khoa-hoc-video.html" class="btn btn-primary">Xem tổng quan khoá học <span class="btn-arrow">→</span></a>
-          <a href="khoa-hoc-chuong-trinh.html" class="btn btn-ghost">Chương trình &amp; học phí</a>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.15s">
-        <div class="home-course-mosaic">
-          <div class="home-course-media ph-frame hcm-main"><img src="assets/bts-1.jpg" alt="Quay sản phẩm bằng điện thoại" loading="lazy"></div>
-          <div class="home-course-media ph-frame hcm-sub"><img src="assets/bts-2.jpg" alt="Dựng video trên máy tính" loading="lazy"></div>
-          <div class="home-course-media ph-frame hcm-sub"><img src="assets/class-photo-2.jpg" alt="Học viên nhận chứng chỉ" loading="lazy"></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -773,78 +784,6 @@
     </div>
   </section>
 
-  <!-- ============ VỀ CHÚNG TÔI ============ -->
-  <section id="ve-chung-toi" data-bg="brass">
-    <div class="wrap">
-      <div class="reveal sec-head">
-        <span class="eyebrow">Về Em Tâm</span>
-        <h2>Nhiều năm làm nghề sản xuất nội dung, trước khi đứng lớp giảng dạy.</h2>
-        <p class="big">Từng dựng phim và sản xuất nội dung cho các agency truyền thông — giờ Tâm đồng hành trực tiếp cùng chủ shop để nội dung và quảng cáo ra kết quả thật. "Marketing không khó khi có Tâm."</p>
-      </div>
-
-      <div class="badge-grid reveal reveal-stagger">
-        <div class="badge-card" style="--i:0; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
-          <div class="place">Diễn Quân Media &amp; Entertainment</div>
-          <div class="role">Dựng phim</div>
-        </div>
-        <div class="badge-card" style="--i:1; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" loading="lazy"></div>
-          <div class="place">Color Man</div>
-          <div class="role">Phó phòng Sản xuất nội dung</div>
-        </div>
-        <div class="badge-card" style="--i:2; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" loading="lazy"></div>
-          <div class="place">Đông Tây Promotion</div>
-          <div class="role">Sản xuất nội dung</div>
-        </div>
-      </div>
-
-      <div class="mosaic reveal" style="margin-top:2.6rem;">
-        <span class="mosaic-tag">Ảnh thật</span>
-        <div class="mosaic-grid" style="grid-template-rows:1fr;">
-          <div class="ph-frame"><img src="assets/event-1.jpg" alt="Lễ trao chứng chỉ" loading="lazy"></div>
-          <div class="ph-frame"><img src="assets/event-2.jpg" alt="Buổi đào tạo" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HỎI ĐÁP ============ -->
-  <section id="hoi-dap" data-bg="dark">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Hỏi đáp</span>
-        <h2>Câu hỏi thường gặp.</h2>
-      </div>
-      <div class="faq">
-        <details class="reveal">
-          <summary>Chi phí dịch vụ được tính như thế nào?</summary>
-          <p>Gói vận hành Ads + Edit clip là 7.500.000đ/dự án (ngân sách quảng cáo tính riêng); các khoá đào tạo trực tiếp từ 15.000.000đ, combo 2 khoá 25.000.000đ — xem chi tiết ở <a href="#bang-gia" style="color:var(--gold-light);">Bảng giá</a>. Nhu cầu riêng (quay chụp theo buổi, vận hành dài hạn…) Tâm báo giá sau buổi trao đổi miễn phí.</p>
-        </details>
-        <details class="reveal">
-          <summary>Ngân sách quảng cáo có nằm trong phí dịch vụ không?</summary>
-          <p>Không. Ngân sách quảng cáo do shop nạp trực tiếp vào tài khoản quảng cáo của shop, phí dịch vụ tính riêng — bạn luôn kiểm soát được từng đồng.</p>
-        </details>
-        <details class="reveal">
-          <summary>Shop ở tỉnh khác có quay chụp được không?</summary>
-          <p>Được. Bạn có thể gửi sản phẩm để quay chụp, hoặc trao đổi qua Zalo để lên phương án phù hợp với vị trí của shop.</p>
-        </details>
-        <details class="reveal">
-          <summary>Bao lâu thì thấy kết quả?</summary>
-          <p>Quảng cáo thường có dữ liệu để đánh giá sau vài ngày chạy thử nghiệm; fanpage và nội dung cần thời gian xây dựng đều đặn. Tâm sẽ thống nhất mục tiêu và mốc báo cáo ngay từ đầu.</p>
-        </details>
-        <details class="reveal">
-          <summary>Mình chưa có fanpage / TikTok thì có làm được không?</summary>
-          <p>Được. Tâm hỗ trợ từ khâu tạo và thiết lập trang, xây hình ảnh ban đầu cho đến khi trang sẵn sàng bán hàng.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ CẢM NHẬN ============ -->
   <section id="cam-nhan" data-bg="paper">
     <div class="wrap">
@@ -852,56 +791,6 @@
         <span class="eyebrow">Khách hàng nói gì</span>
         <h2>Người thật, trải nghiệm thật, kết quả thật.</h2>
         <p>Không phải lời quảng cáo — đây là những đoạn hội thoại và đánh giá nguyên bản từ học viên và khách hàng đã đồng hành.</p>
-      </div>
-
-      <div class="vfb-grid reveal reveal-stagger">
-        <figure class="vfb">
-          <button class="vfb-player" type="button" data-yt="UgOzFtB93Kk" aria-label="Phát video feedback khách hàng 1">
-            <img src="https://i.ytimg.com/vi/UgOzFtB93Kk/hqdefault.jpg" alt="Video feedback khách hàng 1" width="480" height="360" loading="lazy">
-            <span class="badge">▶ Video feedback</span>
-            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
-          </button>
-          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
-        </figure>
-        <figure class="vfb">
-          <button class="vfb-player" type="button" data-yt="7q80bjS1Sb8" aria-label="Phát video feedback khách hàng 2">
-            <img src="https://i.ytimg.com/vi/7q80bjS1Sb8/hqdefault.jpg" alt="Video feedback khách hàng 2" width="480" height="360" loading="lazy">
-            <span class="badge">▶ Video feedback</span>
-            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
-          </button>
-          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
-        </figure>
-      </div>
-
-      <div class="results reveal">
-        <div class="res-card">
-          <span class="tag">Quảng cáo livestream · Shop thời trang</span>
-          <h3>Style by BaoAnh — “Hôm nay ra đơn tốt quá em ơi!”</h3>
-          <p class="sub">Tin nhắn thật trong nhóm làm việc với khách, khi đang chạy quảng cáo cho phiên livestream.</p>
-          <blockquote>“Khách không có inbox cho chị! Nhưng khi chị livestream thì họ thấy và họ vào chốt.”</blockquote>
-          <figure><img src="assets/feedback-style-by-baoanh.jpg" alt="Tin nhắn khách hàng Style by BaoAnh: Hôm nay ra đơn tốt quá em ơi, chạy lượt follow rất ok, khách vào livestream chốt đơn" width="970" height="877" loading="lazy"></figure>
-        </div>
-        <div class="res-card">
-          <span class="tag">Traffic thật · 28 ngày (2/10 – 29/10)</span>
-          <h3>Các fanpage Tâm đang vận hành</h3>
-          <p class="sub">Số liệu lấy từ Bảng điều khiển Facebook của từng trang.</p>
-          <div class="metric-row">
-            <div class="metric"><div class="v">1,45 triệu</div><div class="l">Lượt xem trên 6 fanpage</div></div>
-            <div class="metric"><div class="v">2.324</div><div class="l">Cuộc trò chuyện qua tin nhắn</div></div>
-          </div>
-          <table class="page-table">
-            <thead><tr><th scope="col">Fanpage</th><th scope="col">Lượt xem</th><th scope="col">Tin nhắn</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">QT Shop</th><td>750.295</td><td>951</td></tr>
-              <tr><th scope="row">Piano + Guitar Đệm Hát</th><td>213.105</td><td>261</td></tr>
-              <tr><th scope="row">Charmé</th><td>212.101</td><td>340</td></tr>
-              <tr><th scope="row">Gold Class Head Spa Chermside</th><td>127.737</td><td>260</td></tr>
-              <tr><th scope="row">Em Tâm Làm Ads</th><td>75.028</td><td>266</td></tr>
-              <tr><th scope="row">Dạy Guitar Online 1:1</th><td>73.207</td><td>246</td></tr>
-            </tbody>
-          </table>
-          <p class="fine">Mỗi shop một kết quả khác nhau, tuỳ sản phẩm và ngân sách — Tâm sẽ nói rõ kỳ vọng ngay từ buổi tư vấn.</p>
-        </div>
       </div>
 
       <div class="test-grid reveal reveal-stagger">
@@ -989,13 +878,148 @@
     </div>
   </section>
 
+  <!-- ============ HỎI ĐÁP ============ -->
+  <section id="hoi-dap" data-bg="dark">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Hỏi đáp</span>
+        <h2>Câu hỏi thường gặp.</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal">
+          <summary>Chi phí dịch vụ được tính như thế nào?</summary>
+          <p>Gói vận hành Ads + Edit clip là 7.500.000đ/dự án (ngân sách quảng cáo tính riêng); các khoá đào tạo trực tiếp từ 15.000.000đ, combo 2 khoá 25.000.000đ — xem chi tiết ở <a href="#bang-gia" style="color:var(--gold-light);">Bảng giá</a>. Nhu cầu riêng (quay chụp theo buổi, vận hành dài hạn…) Tâm báo giá sau buổi trao đổi miễn phí.</p>
+        </details>
+        <details class="reveal">
+          <summary>Ngân sách quảng cáo có nằm trong phí dịch vụ không?</summary>
+          <p>Không. Ngân sách quảng cáo do shop nạp trực tiếp vào tài khoản quảng cáo của shop, phí dịch vụ tính riêng — bạn luôn kiểm soát được từng đồng.</p>
+        </details>
+        <details class="reveal">
+          <summary>Shop ở tỉnh khác có quay chụp được không?</summary>
+          <p>Được. Bạn có thể gửi sản phẩm để quay chụp, hoặc trao đổi qua Zalo để lên phương án phù hợp với vị trí của shop.</p>
+        </details>
+        <details class="reveal">
+          <summary>Bao lâu thì thấy kết quả?</summary>
+          <p>Quảng cáo thường có dữ liệu để đánh giá sau vài ngày chạy thử nghiệm; fanpage và nội dung cần thời gian xây dựng đều đặn. Tâm sẽ thống nhất mục tiêu và mốc báo cáo ngay từ đầu.</p>
+        </details>
+        <details class="reveal">
+          <summary>Mình chưa có fanpage / TikTok thì có làm được không?</summary>
+          <p>Được. Tâm hỗ trợ từ khâu tạo và thiết lập trang, xây hình ảnh ban đầu cho đến khi trang sẵn sàng bán hàng.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KHÓA HỌC VIDEO ============ -->
+  <section id="khoa-hoc" data-bg="paper">
+    <div class="wrap home-course">
+      <div class="reveal">
+        <span class="eyebrow">Khoá học online</span>
+        <h2 style="font-size:clamp(1.9rem,2.4vw+1rem,2.8rem); margin-top:0.9rem;">Muốn tự làm nội dung? Học quay &amp; dựng video bằng chính điện thoại.</h2>
+        <p style="color:var(--fg-dim); margin-top:1rem; font-size:1.05rem; max-width:48ch;">Chụp ảnh, quay và dựng video chuyên nghiệp cho bán hàng — không cần máy xịn. Học viên từ 18 đến ngoài 50 tuổi đều học được.</p>
+        <div class="course-stats">
+          <div><div class="num" data-count="44">44</div><div class="lbl">bài giảng</div></div>
+          <div><div class="num" data-count="7">7</div><div class="lbl">phần học</div></div>
+          <div><div class="num" data-count="100" data-suffix="+">100<span class="u">+</span></div><div class="lbl">học viên</div></div>
+        </div>
+        <div class="hero-ctas" style="margin-top:1.8rem;">
+          <a href="khoa-hoc-video.html" class="btn btn-primary">Xem tổng quan khoá học <span class="btn-arrow">→</span></a>
+          <a href="khoa-hoc-chuong-trinh.html" class="btn btn-ghost">Chương trình &amp; học phí</a>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="home-course-mosaic">
+          <div class="home-course-media ph-frame hcm-main"><img src="assets/bts-1.jpg" alt="Quay sản phẩm bằng điện thoại" loading="lazy"></div>
+          <div class="home-course-media ph-frame hcm-sub"><img src="assets/bts-2.jpg" alt="Dựng video trên máy tính" loading="lazy"></div>
+          <div class="home-course-media ph-frame hcm-sub"><img src="assets/class-photo-2.jpg" alt="Học viên nhận chứng chỉ" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VỀ CHÚNG TÔI ============ -->
+  <section id="ve-chung-toi" data-bg="brass">
+    <div class="wrap">
+      <div class="reveal sec-head">
+        <span class="eyebrow">Về Em Tâm</span>
+        <h2>Nhiều năm làm nghề sản xuất nội dung, trước khi đứng lớp giảng dạy.</h2>
+        <p class="big">Từng dựng phim và sản xuất nội dung cho các agency truyền thông — giờ Tâm đồng hành trực tiếp cùng chủ shop để nội dung và quảng cáo ra kết quả thật. "Marketing không khó khi có Tâm."</p>
+      </div>
+
+      <div class="badge-grid reveal reveal-stagger">
+        <div class="badge-card" style="--i:0; --stripe:#20160A;">
+          <div class="hole"></div>
+          <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
+          <div class="place">Diễn Quân Media &amp; Entertainment</div>
+          <div class="role">Dựng phim</div>
+        </div>
+        <div class="badge-card" style="--i:1; --stripe:#20160A;">
+          <div class="hole"></div>
+          <div class="photo"><img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" loading="lazy"></div>
+          <div class="place">Color Man</div>
+          <div class="role">Phó phòng Sản xuất nội dung</div>
+        </div>
+        <div class="badge-card" style="--i:2; --stripe:#20160A;">
+          <div class="hole"></div>
+          <div class="photo"><img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" loading="lazy"></div>
+          <div class="place">Đông Tây Promotion</div>
+          <div class="role">Sản xuất nội dung</div>
+        </div>
+      </div>
+
+      <div class="mosaic reveal" style="margin-top:2.6rem;">
+        <span class="mosaic-tag">Ảnh thật</span>
+        <div class="mosaic-grid" style="grid-template-rows:1fr;">
+          <div class="ph-frame"><img src="assets/event-1.jpg" alt="Lễ trao chứng chỉ" loading="lazy"></div>
+          <div class="ph-frame"><img src="assets/event-2.jpg" alt="Buổi đào tạo" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DỊCH VỤ KHÁC ============ -->
+  <section id="dich-vu-khac" data-bg="paper">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Ngoài ra</span>
+        <h2>Các dịch vụ hỗ trợ khác.</h2>
+      </div>
+      <div class="more-grid reveal reveal-stagger">
+        <div class="more-card" id="tu-van-pheu" style="--i:0">
+          <div class="thumb"><img src="assets/svc-pheu.jpg" alt="" loading="lazy"></div>
+          <h3>Tư vấn phễu chuyển đổi</h3>
+          <p>Audit và thiết kế lại phễu bán hàng — vá đúng chỗ đang rò rỉ khách, từ người lạ đến khách trung thành.</p>
+          <a href="lien-he.html?dv=pheu">Tư vấn phễu miễn phí →</a>
+        </div>
+        <div class="more-card" id="dao-tao-1-kem-1" style="--i:1">
+          <div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h3>Đào tạo quảng cáo 1 kèm 1</h3>
+          <p>Cầm tay chỉ việc trên chính tài khoản của bạn, học từ case thực tế, hỗ trợ đến khi tự chạy được.</p>
+          <a href="lien-he.html?dv=dao-tao">Đăng ký lịch học →</a>
+        </div>
+        <div class="more-card" id="build-website-ai" style="--i:2">
+          <div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h3>Build Website &amp; AI</h3>
+          <p>Landing page, website bán hàng xây bằng AI — load nhanh, chuẩn SEO, sẵn sàng chạy quảng cáo.</p>
+          <a href="lien-he.html?dv=website">Bắt đầu xây website →</a>
+        </div>
+        <div class="more-card" id="truyen-tranh-marketing" style="--i:3">
+          <div class="thumb"><img src="assets/svc-brand.jpg" alt="" loading="lazy"></div>
+          <h3>Truyện tranh Marketing</h3>
+          <p>Kiến thức marketing kể lại bằng truyện tranh — dễ hiểu, dễ nhớ cho người bận rộn. Đăng mỗi tuần trên fanpage.</p>
+          <a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank" rel="noopener">Xem fanpage →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA CUỐI ============ -->
   <section class="cta-final" data-bg="dark">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Bắt đầu</span>
-        <h2>Kể cho Tâm nghe về shop của bạn.</h2>
-        <p>Cho Tâm biết bạn đang cần fanpage, hình ảnh hay quảng cáo — Tâm sẽ tư vấn hướng đi phù hợp trong 24 giờ.</p>
+        <h2>Nhận audit fanpage &amp; quảng cáo miễn phí.</h2>
+        <p>Gửi Tâm link fanpage của bạn qua Zalo — Tâm xem và chỉ ra 3 điểm cần sửa để ra đơn tốt hơn, trong 24 giờ.</p>
       </div>
       <div class="chip-row reveal">
         <span class="chip">Trao đổi trực tiếp 1 kèm 1</span>
@@ -1003,7 +1027,7 @@
         <span class="chip">Hoàn toàn miễn phí</span>
       </div>
       <div class="hero-ctas reveal" style="justify-content:center;">
-        <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Nhắn Zalo ngay <span class="btn-arrow">→</span></a>
+        <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-primary">Gửi link fanpage qua Zalo <span class="btn-arrow">→</span></a>
         <a href="lien-he.html" class="btn btn-ghost">Gửi yêu cầu tư vấn</a>
         <a href="tel:0965817021" class="btn btn-ghost">Gọi 0965 817 021</a>
       </div>
