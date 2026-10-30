@@ -335,6 +335,7 @@
   .faq details[open] summary::after{ transform:rotate(45deg); }
   .faq details p{ margin:0; padding:0 1.3rem 1.2rem; color:var(--fg-dim); font-size:0.97rem; }
 
+
   /* ============ Responsive ============ */
   @media (max-width:1024px){
     .core-grid{ grid-template-columns:1fr; max-width:620px; }
@@ -354,14 +355,95 @@
   }
   .svc-media .main.square{ aspect-ratio:1/1; }
   @media (max-width:560px){
-    .core-card{ flex-direction:column; }
-    .core-card .media{ width:auto; aspect-ratio:4/3; }
+
     .deliver ul{ grid-template-columns:1fr; }
     .svc-media .sub{ right:-0.4rem; width:52%; }
     .svc-detail.flip .svc-media .sub{ left:-0.4rem; }
     .more-grid, .steps, .price-grid{ grid-template-columns:1fr; }
     .course-stats{ gap:1.4rem; }
   }
+  /* ============ TỐI ƯU ĐIỆN THOẠI ============ */
+  .swipe-hint{ display:none; }
+  @media (max-width:640px){
+    section{ padding-block:3.2rem; }
+    .sec-head{ margin-bottom:1.6rem; }
+    .sec-head h2{ font-size:1.6rem; }
+    .sec-head p{ font-size:0.98rem; }
+
+    /* Hero gọn hơn: bớt ảnh nổi, gallery thấp hơn */
+    .hero-v2{ padding-top:2rem; padding-bottom:3.6rem; }
+    .hero-v2 .hero-grid{ gap:2rem; }
+    .hero-v2 p.lede{ font-size:0.98rem; }
+    .hero-svcs{ gap:0.45rem; margin-top:1.2rem; }
+    .hero-svcs a{ font-size:0.82rem; padding:0.45rem 0.8rem; }
+    .hero-ctas .btn{ flex:1 1 100%; justify-content:center; }
+    .hg-thumb, .hg-badge, .hg-ring, .hg-dots{ display:none; }
+    .hg-main{ aspect-ratio:16/10; }
+    .trust-panel-wrap{ margin-top:-30px; padding-bottom:0.5rem; }
+    .trust-panel > div{ padding:0.9rem 0.6rem; }
+    .tp-num{ font-size:1.5rem; }
+    .tp-lbl{ font-size:0.76rem; }
+
+    /* 3 dịch vụ: thẻ ngang gọn */
+    .core-grid{ gap:0.8rem; }
+    .core-card{ flex-direction:row; }
+    .core-card .media{ width:34%; aspect-ratio:auto; flex:none; }
+    .core-card .body{ padding:0.9rem 1rem; }
+    .core-card h3{ font-size:1.02rem; }
+    .core-card p{ font-size:0.85rem; margin-top:0.4rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    .core-card .num{ top:0.5rem; left:0.5rem; font-size:0.7rem; padding:0.2rem 0.5rem; }
+    .core-card .go{ margin-top:0.5rem; padding-block:0.5rem; }
+
+    /* Chi tiết dịch vụ: ảnh nhỏ lại, bỏ ảnh phụ */
+    .svc-detail{ gap:1.4rem; }
+    .svc-media{ padding-bottom:0; max-width:none; }
+    .svc-media .main, .svc-media .main.square{ aspect-ratio:16/10; }
+    .svc-media .sub{ display:none; }
+    .svc-detail h2{ font-size:1.55rem; }
+    .svc-detail .lede{ font-size:0.96rem; }
+    .deliver ul{ grid-template-columns:1fr 1fr; gap:0.6rem 0.9rem; }
+    .deliver li{ font-size:0.86rem; }
+    .fit-box{ font-size:0.88rem; }
+    .price-hint{ font-size:0.9rem; }
+
+    /* Vuốt ngang thay vì xếp chồng */
+    .swipe-hint{ display:block; margin:0 0 0.6rem; font-size:0.8rem; font-weight:600; color:var(--fg-mute); text-align:right; }
+    .m-scroll{ display:flex !important; gap:0.8rem; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      margin-inline:calc(var(--pad) * -1); padding:0.9rem var(--pad) 1rem; scroll-padding-inline:var(--pad); scrollbar-width:none; }
+    .m-scroll::-webkit-scrollbar{ display:none; }
+    .m-scroll > *{ flex:0 0 84%; scroll-snap-align:start; min-width:0; }
+    .vfb-grid.m-scroll{ margin-bottom:1.6rem; }
+    .price-grid.m-scroll{ align-items:stretch; padding-top:1.2rem; }
+    .price-grid.m-scroll > *{ flex-basis:86%; }
+    .test-grid.m-scroll > *, .more-grid.m-scroll > *{ flex-basis:78%; }
+
+    /* Kết quả: ảnh tin nhắn không quá dài */
+    .res-card figure{ max-height:380px; }
+    .res-card figure img{ object-fit:cover; object-position:top; }
+    .metric{ padding:0.8rem; }
+    .metric .v{ font-size:1.5rem; }
+    .page-table{ font-size:0.84rem; }
+
+    /* Về Tâm gọn */
+    .values{ grid-template-columns:1fr 1fr; gap:0.6rem; }
+    .values div{ padding:0.9rem; }
+    .values b{ font-size:0.92rem; }
+    .values span{ font-size:0.82rem; }
+    .badge-grid{ grid-template-columns:repeat(3,1fr) !important; gap:0.5rem; }
+    .badge-grid .place{ font-size:0.72rem; }
+    .badge-grid .role{ font-size:0.68rem; }
+
+    /* Vùng bấm tối thiểu ~44px cho link chữ */
+    .core-card .go, .price-hint a, .more-card a, .hero-social-proof a, .price-note a{ display:inline-flex; align-items:center; min-height:44px; }
+    .steps{ grid-template-columns:1fr 1fr !important; gap:0.6rem; }
+    .steps li{ padding:0.9rem; }
+    .steps li::before{ width:36px; height:36px; font-size:0.8rem; }
+    .steps h3{ font-size:0.98rem; margin-top:0.7rem; }
+    .steps p{ font-size:0.82rem; }
+    .combo-steps div{ padding:0.8rem 1rem; font-size:0.92rem; }
+    .faq summary{ padding:1rem; font-size:0.95rem; }
+  }
+
 </style>
 </head>
 <body data-page="home">
@@ -535,7 +617,8 @@
         <h2>Đừng tin lời quảng cáo — hãy xem khách nói gì.</h2>
         <p>Video khách chia sẻ, tin nhắn thật và số liệu từ chính các fanpage Tâm đang vận hành.</p>
       </div>
-      <div class="vfb-grid reveal reveal-stagger">
+      <p class="swipe-hint">Vuốt ngang để xem thêm video →</p>
+      <div class="vfb-grid reveal reveal-stagger m-scroll">
         <figure class="vfb">
           <button class="vfb-player" type="button" data-yt="UgOzFtB93Kk" aria-label="Phát video feedback khách hàng 1">
             <img src="https://i.ytimg.com/vi/UgOzFtB93Kk/hqdefault.jpg" alt="Video feedback khách hàng 1" width="480" height="360" loading="lazy">
@@ -781,7 +864,8 @@
         <p>Một gói vận hành cho shop muốn giao hẳn việc, và các khoá đào tạo trực tiếp cho người muốn tự làm.</p>
       </div>
 
-      <div class="price-grid reveal reveal-stagger">
+      <p class="swipe-hint">Vuốt ngang để xem 4 gói →</p>
+      <div class="price-grid reveal reveal-stagger m-scroll">
         <article class="plan" style="--i:0">
           <span class="kind">Gói vận hành</span>
           <h3>Ads + <em>Edit clip</em></h3>
@@ -887,7 +971,8 @@
         <p>Không phải lời quảng cáo — đây là những đoạn hội thoại và đánh giá nguyên bản từ học viên và khách hàng đã đồng hành.</p>
       </div>
 
-      <div class="test-grid reveal reveal-stagger">
+      <p class="swipe-hint">Vuốt ngang để xem thêm cảm nhận →</p>
+      <div class="test-grid reveal reveal-stagger m-scroll">
         <div class="test-card" style="--i:0">
           <div class="chat-thread">
             <div class="bubble them">Có cần điện thoại xịn, đầy đủ chức năng không ạ?</div>
@@ -1041,7 +1126,8 @@
         <span class="eyebrow">Ngoài ra</span>
         <h2>Các dịch vụ hỗ trợ khác.</h2>
       </div>
-      <div class="more-grid reveal reveal-stagger">
+      <p class="swipe-hint">Vuốt ngang để xem thêm →</p>
+      <div class="more-grid reveal reveal-stagger m-scroll">
         <div class="more-card" id="tu-van-pheu" style="--i:0">
           <div class="thumb"><img src="assets/svc-pheu.jpg" alt="" loading="lazy"></div>
           <h3>Tư vấn phễu chuyển đổi</h3>
