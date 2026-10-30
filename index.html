@@ -37,7 +37,11 @@
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vận hành Fanpage & mạng xã hội cho shop" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quay chụp & dựng video sản phẩm" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chạy quảng cáo Facebook & Google" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chạy quảng cáo Facebook & Google" } },
+      { "@type": "Offer", "name": "Gói vận hành Ads + Edit clip", "price": "7500000", "priceCurrency": "VND" },
+      { "@type": "Offer", "name": "Khoá đào tạo Quay · Chụp & Dựng (6 buổi)", "price": "15000000", "priceCurrency": "VND" },
+      { "@type": "Offer", "name": "Khoá đào tạo Facebook Ads + AI Claude Code (4 buổi)", "price": "15000000", "priceCurrency": "VND" },
+      { "@type": "Offer", "name": "Combo 2 khoá đào tạo (10 buổi)", "price": "25000000", "priceCurrency": "VND" }
     ]
   }
 }
@@ -218,6 +222,60 @@
   .badge-grid.reveal-stagger.is-visible .badge-card{ animation:badge-pop .5s cubic-bezier(.2,.8,.2,1) backwards; animation-delay:calc(var(--i,0) * 100ms); }
   @keyframes badge-pop{ from{ opacity:0; transform:translateY(14px) scale(.96); } to{ opacity:1; transform:translateY(0) scale(1); } }
 
+  /* ============ Bảng giá ============ */
+  #bang-gia{ --green:#1E3A31; --green-2:#24473C; --cream:#F2EBDC; }
+  .price-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; align-items:stretch; }
+  .plan{ position:relative; display:flex; flex-direction:column; padding:1.8rem 1.5rem 1.6rem; border-radius:14px;
+    background:var(--green); border:1px solid rgba(216,187,122,0.22); color:var(--cream); }
+  .plan.light{ background:var(--cream); color:#1E3A31; border-color:rgba(30,58,49,0.15); }
+  .plan.featured{ border:1.5px solid var(--gold-primary); box-shadow:0 30px 60px -30px rgba(214,179,44,0.45); }
+  .plan .ribbon{ position:absolute; top:-12px; left:50%; transform:translateX(-50%); white-space:nowrap;
+    font-size:0.7rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#181410;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold-primary)); padding:0.3rem 0.8rem; border-radius:20px; }
+  .plan .kind{ font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--brass-2); }
+  .plan.light .kind{ color:#A9772F; }
+  .plan h3{ font-size:1.45rem; line-height:1.2; margin-top:0.6rem; }
+  .plan h3 em{ color:var(--brass-2); }
+  .plan.light h3 em{ color:#A9772F; }
+  .plan .meta{ font-size:0.86rem; opacity:0.75; margin-top:0.4rem; }
+  .plan ol{ list-style:none; margin:1.2rem 0 0; padding:0; counter-reset:it; flex:1; }
+  .plan ol li{ counter-increment:it; display:flex; gap:0.75rem; padding:0.6rem 0; border-top:1px solid rgba(242,235,220,0.12); font-size:0.92rem; line-height:1.45; }
+  .plan.light ol li{ border-top-color:rgba(30,58,49,0.12); }
+  .plan ol li::before{ content:"0" counter(it); flex:none; font-family:var(--font-display); color:var(--brass-2); font-size:0.95rem; }
+  .plan.light ol li::before{ color:#A9772F; }
+  .plan ol li small{ display:block; opacity:0.6; font-size:0.78rem; }
+  .plan .price{ margin-top:1.2rem; padding:1.1rem 1rem; border-radius:10px; background:var(--green-2); text-align:center; }
+  .plan.light .price{ background:#E9E2D2; }
+  .plan .price .old{ font-size:0.95rem; opacity:0.6; text-decoration:line-through; }
+  .plan .price .amt{ display:block; font-family:var(--font-display); font-weight:700; font-size:clamp(1.7rem,1.4vw + 1rem,2.1rem); line-height:1.15; font-variant-numeric:lining-nums; }
+  .plan .price .unit{ font-size:0.8rem; opacity:0.75; }
+  .plan .price .save{ display:block; margin-top:0.3rem; font-size:0.82rem; font-weight:700; color:var(--brass-2); }
+  .plan .btn{ margin-top:1rem; justify-content:center; }
+  .plan.light .btn-primary{ background:linear-gradient(135deg,#1E3A31,#142921); color:#F2EBDC; }
+  .plan .btn-ghost{ border-color:rgba(242,235,220,0.3); color:var(--cream); }
+  .price-note{ margin-top:1.6rem; font-size:0.9rem; color:var(--fg-dim); text-align:center; }
+
+  /* ============ Kết quả thật ============ */
+  .results{ display:grid; grid-template-columns:1.05fr 1fr; gap:1.6rem; margin-bottom:3rem; }
+  .res-card{ border-radius:14px; background:var(--card-bg); border:1px solid var(--card-line); padding:1.4rem; display:flex; flex-direction:column; }
+  .res-card .tag{ font-size:0.7rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); }
+  .res-card h3{ font-size:1.2rem; margin-top:0.5rem; }
+  .res-card .sub{ color:var(--fg-mute); font-size:0.86rem; margin-top:0.25rem; }
+  .res-card figure{ margin:1rem 0 0; border-radius:10px; overflow:hidden; border:1px solid var(--card-line); }
+  .res-card figure img{ width:100%; height:auto; }
+  .res-card blockquote{ margin:1rem 0 0; font-family:var(--font-display); font-style:italic; font-size:1.05rem; color:var(--fg); }
+  .metric-row{ display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-top:1.2rem; }
+  .metric{ padding:1.1rem; border-radius:10px; background:var(--bg); border:1px solid var(--card-line); }
+  .metric .v{ font-family:var(--font-num); font-weight:800; font-size:clamp(1.6rem,1.5vw + 1rem,2.2rem); color:var(--fg); line-height:1.1; font-variant-numeric:tabular-nums; }
+  .metric .up{ display:inline-block; margin-left:0.35rem; font-size:0.85rem; font-weight:700; color:#2E8B57; }
+  .metric .l{ font-size:0.84rem; color:var(--fg-dim); margin-top:0.35rem; }
+  .page-table{ width:100%; margin-top:1.1rem; border-collapse:collapse; font-size:0.92rem; }
+  .page-table th, .page-table td{ padding:0.65rem 0.4rem; border-bottom:1px solid var(--card-line); text-align:right; font-variant-numeric:tabular-nums; }
+  .page-table th[scope="row"], .page-table thead th:first-child{ text-align:left; font-weight:600; }
+  .page-table thead th{ font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--fg-mute); font-weight:700; }
+  .page-table td{ font-family:var(--font-num); font-weight:700; }
+  .res-card .fine{ margin-top:auto; padding-top:1rem; font-size:0.8rem; color:var(--fg-mute); }
+
   /* ============ Hỏi đáp ============ */
   .faq{ max-width:860px; display:grid; gap:0.8rem; }
   .faq details{ border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,0.03); transition:border-color .2s ease; }
@@ -235,6 +293,8 @@
     .core-card .media{ width:38%; aspect-ratio:auto; flex:none; }
     .more-grid{ grid-template-columns:1fr 1fr; }
     .steps{ grid-template-columns:1fr 1fr; }
+    .price-grid{ grid-template-columns:1fr 1fr; gap:1.6rem 1.2rem; }
+    .results{ grid-template-columns:1fr; }
   }
   @media (max-width:880px){
     .svc-detail, .svc-detail.flip{ grid-template-columns:1fr; }
@@ -250,7 +310,7 @@
     .deliver ul{ grid-template-columns:1fr; }
     .svc-media .sub{ right:-0.4rem; width:52%; }
     .svc-detail.flip .svc-media .sub{ left:-0.4rem; }
-    .more-grid, .steps{ grid-template-columns:1fr; }
+    .more-grid, .steps, .price-grid{ grid-template-columns:1fr; }
     .course-stats{ gap:1.4rem; }
   }
 </style>
@@ -271,7 +331,7 @@
     <nav class="links" aria-label="Điều hướng chính">
       <a href="index.html" data-page="home">Trang chủ</a>
       <a href="#dich-vu">Dịch vụ</a>
-      <a href="#quy-trinh">Quy trình</a>
+      <a href="#bang-gia">Bảng giá</a>
       <a href="#khoa-hoc">Khóa học</a>
       <a href="#ve-chung-toi">Về chúng tôi</a>
       <a href="#cam-nhan">Cảm nhận</a>
@@ -291,6 +351,7 @@
     <span class="mm-group-label">Khóa học Video</span>
     <a class="mm-sub" href="khoa-hoc-video.html">Tổng quan khoá học</a>
     <a class="mm-sub" href="khoa-hoc-chuong-trinh.html">Chương trình &amp; Học phí</a>
+    <a href="#bang-gia">Bảng giá</a>
     <a href="#quy-trinh">Quy trình làm việc</a>
     <a href="#ve-chung-toi">Về chúng tôi</a>
     <a href="#cam-nhan">Cảm nhận</a>
@@ -609,6 +670,91 @@
     </div>
   </section>
 
+  <!-- ============ BẢNG GIÁ ============ -->
+  <section id="bang-gia" data-bg="dark">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Bảng giá</span>
+        <h2>Giá rõ ràng, không phát sinh.</h2>
+        <p>Một gói vận hành cho shop muốn giao hẳn việc, và các khoá đào tạo trực tiếp cho người muốn tự làm.</p>
+      </div>
+
+      <div class="price-grid reveal reveal-stagger">
+        <article class="plan" style="--i:0">
+          <span class="kind">Gói vận hành</span>
+          <h3>Ads + <em>Edit clip</em></h3>
+          <p class="meta">Clip học viên • quảng cáo fanpage</p>
+          <ol>
+            <li>30–60 clip/tháng, tuỳ source khách gửi</li>
+            <li>Clip dọc 9:16 có nhạc, chữ, phụ đề</li>
+            <li>Chạy ads Facebook + Instagram</li>
+            <li>Báo cáo kết quả</li>
+          </ol>
+          <div class="price">
+            <span class="amt">7.500.000đ</span>
+            <span class="unit">/ dự án · ngân sách quảng cáo tính riêng</span>
+          </div>
+          <a href="lien-he.html?dv=goi-van-hanh" class="btn btn-primary">Đăng ký gói này</a>
+        </article>
+
+        <article class="plan light" style="--i:1">
+          <span class="kind">Khoá đào tạo</span>
+          <h3>Quay · Chụp <em>&amp; Dựng</em></h3>
+          <p class="meta">6 buổi thực hành • 120 phút/buổi</p>
+          <ol>
+            <li>Thiết bị &amp; bố cục</li>
+            <li>Quay video &amp; ánh sáng</li>
+            <li>Chụp ảnh &amp; ánh sáng</li>
+            <li>Tư duy dựng &amp; cắt ghép</li>
+            <li>Màu sắc, âm thanh &amp; chữ</li>
+            <li>Thực hành sản phẩm</li>
+          </ol>
+          <div class="price">
+            <span class="amt">15.000.000đ</span>
+            <span class="unit">trọn khoá 6 buổi</span>
+          </div>
+          <a href="lien-he.html?dv=khoa-quay-dung" class="btn btn-primary">Đăng ký khoá học</a>
+        </article>
+
+        <article class="plan" style="--i:2">
+          <span class="kind">Khoá đào tạo</span>
+          <h3>Facebook Ads <em>+ AI Claude Code</em></h3>
+          <p class="meta">4 buổi • 2 buổi Ads + 2 buổi Claude Code</p>
+          <ol>
+            <li><span>Chiến dịch tin nhắn<small>Facebook Ads</small></span></li>
+            <li><span>Chiến dịch like page + like post<small>Facebook Ads</small></span></li>
+            <li><span>Đọc báo cáo &amp; tối ưu chỉ số<small>Facebook Ads</small></span></li>
+            <li><span>AI Claude Code làm hệ thống<small>Claude Code</small></span></li>
+            <li><span>Setup tên miền &amp; website<small>Claude Code</small></span></li>
+          </ol>
+          <div class="price">
+            <span class="amt">15.000.000đ</span>
+            <span class="unit">trọn khoá 4 buổi</span>
+          </div>
+          <a href="lien-he.html?dv=khoa-ads-ai" class="btn btn-primary">Đăng ký khoá học</a>
+        </article>
+
+        <article class="plan featured" style="--i:3">
+          <span class="ribbon">Tiết kiệm nhất</span>
+          <span class="kind">Ưu đãi · Combo đào tạo</span>
+          <h3>Combo <em>2 khoá học</em></h3>
+          <p class="meta">10 buổi • 6 buổi Quay · Chụp &amp; Dựng + 4 buổi Ads &amp; Claude Code</p>
+          <ol>
+            <li><span>Quay · Chụp &amp; Dựng<small>6 buổi thực hành · 15.000.000đ</small></span></li>
+            <li><span>Facebook Ads + Claude Code<small>4 buổi · 15.000.000đ</small></span></li>
+          </ol>
+          <div class="price">
+            <span class="old">30.000.000đ</span>
+            <span class="amt">25.000.000đ</span>
+            <span class="save">Tiết kiệm 5.000.000đ khi đăng ký cả 2 khoá</span>
+          </div>
+          <a href="lien-he.html?dv=combo-2-khoa" class="btn btn-primary">Đăng ký combo</a>
+        </article>
+      </div>
+      <p class="price-note reveal">Cần tư vấn chọn gói? Gọi hoặc nhắn Zalo Tâm: <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" style="color:var(--gold-light);">0965 817 021</a></p>
+    </div>
+  </section>
+
   <!-- ============ VỀ CHÚNG TÔI ============ -->
   <section id="ve-chung-toi" data-bg="brass">
     <div class="wrap">
@@ -659,7 +805,7 @@
       <div class="faq">
         <details class="reveal">
           <summary>Chi phí dịch vụ được tính như thế nào?</summary>
-          <p>Mỗi shop có sản phẩm và mục tiêu khác nhau, nên Tâm báo giá theo nhu cầu thực tế sau buổi trao đổi miễn phí. Bạn có thể chọn lẻ từng dịch vụ hoặc gói trọn bộ để tiết kiệm hơn.</p>
+          <p>Gói vận hành Ads + Edit clip là 7.500.000đ/dự án (ngân sách quảng cáo tính riêng); các khoá đào tạo trực tiếp từ 15.000.000đ, combo 2 khoá 25.000.000đ — xem chi tiết ở <a href="#bang-gia" style="color:var(--gold-light);">Bảng giá</a>. Nhu cầu riêng (quay chụp theo buổi, vận hành dài hạn…) Tâm báo giá sau buổi trao đổi miễn phí.</p>
         </details>
         <details class="reveal">
           <summary>Ngân sách quảng cáo có nằm trong phí dịch vụ không?</summary>
@@ -688,6 +834,36 @@
         <span class="eyebrow">Khách hàng nói gì</span>
         <h2>Người thật, trải nghiệm thật, kết quả thật.</h2>
         <p>Không phải lời quảng cáo — đây là những đoạn hội thoại và đánh giá nguyên bản từ học viên và khách hàng đã đồng hành.</p>
+      </div>
+
+      <div class="results reveal">
+        <div class="res-card">
+          <span class="tag">Quảng cáo livestream · Shop thời trang</span>
+          <h3>Style by BaoAnh — “Hôm nay ra đơn tốt quá em ơi!”</h3>
+          <p class="sub">Tin nhắn thật trong nhóm làm việc với khách, khi đang chạy quảng cáo cho phiên livestream.</p>
+          <blockquote>“Khách không có inbox cho chị! Nhưng khi chị livestream thì họ thấy và họ vào chốt.”</blockquote>
+          <figure><img src="assets/feedback-style-by-baoanh.jpg" alt="Tin nhắn khách hàng Style by BaoAnh: Hôm nay ra đơn tốt quá em ơi, chạy lượt follow rất ok, khách vào livestream chốt đơn" width="970" height="877" loading="lazy"></figure>
+        </div>
+        <div class="res-card">
+          <span class="tag">Traffic thật · 28 ngày (2/10 – 29/10)</span>
+          <h3>Các fanpage Tâm đang vận hành</h3>
+          <p class="sub">Số liệu lấy từ Bảng điều khiển Facebook của từng trang.</p>
+          <div class="metric-row">
+            <div class="metric"><div class="v">1,3 triệu</div><div class="l">Lượt xem trên 5 fanpage</div></div>
+            <div class="metric"><div class="v">2.064</div><div class="l">Cuộc trò chuyện qua tin nhắn</div></div>
+          </div>
+          <table class="page-table">
+            <thead><tr><th scope="col">Fanpage</th><th scope="col">Lượt xem</th><th scope="col">Tin nhắn</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">QT Shop</th><td>750.295</td><td>951</td></tr>
+              <tr><th scope="row">Piano + Guitar Đệm Hát</th><td>213.105</td><td>261</td></tr>
+              <tr><th scope="row">Charmé</th><td>212.101</td><td>340</td></tr>
+              <tr><th scope="row">Em Tâm Làm Ads</th><td>75.028</td><td>266</td></tr>
+              <tr><th scope="row">Dạy Guitar Online 1:1</th><td>73.207</td><td>246</td></tr>
+            </tbody>
+          </table>
+          <p class="fine">Mỗi shop một kết quả khác nhau, tuỳ sản phẩm và ngân sách — Tâm sẽ nói rõ kỳ vọng ngay từ buổi tư vấn.</p>
+        </div>
       </div>
 
       <div class="test-grid reveal reveal-stagger">
