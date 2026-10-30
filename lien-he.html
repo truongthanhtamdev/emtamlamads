@@ -233,7 +233,8 @@
         status.textContent = 'Đang mở ứng dụng email của bạn để gửi nội dung này cho Tâm…';
         return;
       }
-      var zalo = window.open('https://zalo.me/0965817021', '_blank', 'noopener');
+      var zalo = window.open('https://zalo.me/0965817021', '_blank');
+      if(zalo) zalo.opener = null;
       function done(copied){
         status.textContent = copied
           ? 'Đã sao chép nội dung! Trong Zalo, giữ ô chat → Dán → Gửi cho Tâm.'
