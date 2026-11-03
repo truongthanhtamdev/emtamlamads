@@ -610,3 +610,9 @@ section[data-bg="paper"] .btn-ghost:hover, section[data-bg="brass"] .btn-ghost:h
 .hero-form input[type=email], .hero-form input[type=date]{ background:#fff; color:#221C11; border:1px solid rgba(34,28,17,0.2); }
 .vn-now{ margin:0.5rem 0 0; font-size:0.8rem; color:var(--fg-mute); }
 .vn-now b{ color:var(--fg-dim); font-variant-numeric:tabular-nums; }
+
+/* Logo = avatar Em Tâm Làm Ads */
+.brand img.mark{ width:46px; height:46px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 2px rgba(214,179,44,0.55); transition:transform .25s ease; }
+.brand:hover img.mark{ transform:rotate(-6deg) scale(1.05); }
+header.site.is-scrolled .brand img.mark{ width:40px; height:40px; }
+@media (max-width:640px){ .brand img.mark{ width:40px; height:40px; } }
