@@ -562,3 +562,43 @@ section[data-bg="paper"] .btn-ghost:hover, section[data-bg="brass"] .btn-ghost:h
   .mobile-cta .btn{ justify-content:center; padding-block:0.8rem; }
   body{ padding-bottom:calc(4.4rem + env(safe-area-inset-bottom)); }
 }
+
+/* ---------- Messenger: nút, nút nổi, câu hỏi soạn sẵn ---------- */
+.btn .mi{ width:18px; height:18px; flex:none; }
+.float-mess{ position:fixed; left:1.1rem; bottom:4.6rem; z-index:81; width:52px; height:52px; border-radius:50%;
+  display:grid; place-items:center; color:#fff; text-decoration:none;
+  background:radial-gradient(circle at 30% 110%, #FF6968 0%, #A334FA 45%, #0695FF 100%);
+  box-shadow:0 12px 28px rgba(0,0,0,0.35); border:2px solid rgba(255,255,255,0.9); transition:transform .2s ease; }
+.float-mess:hover{ transform:translateY(-2px) scale(1.05); }
+.float-mess .mi{ width:26px; height:26px; }
+.float-mess::after{ content:""; position:absolute; inset:-6px; border-radius:50%; border:2px solid #A334FA; opacity:0; animation:zalo-ping 2.4s ease-out infinite; }
+.float-zalo{ bottom:8.6rem; width:42px; height:42px; font-size:0.7rem; }
+.float-zalo::after{ display:none; }
+
+.ask-label{ margin:1.6rem 0 0.7rem; font-size:0.88rem; font-weight:600; color:var(--fg-dim); text-align:center; }
+.ask-chips{ display:flex; flex-wrap:wrap; gap:0.55rem; }
+.ask-chips.center{ justify-content:center; }
+.price-note + .ask-chips{ justify-content:center; margin-top:0.8rem; }
+.ask-chips a{ display:inline-flex; align-items:center; gap:0.45rem; min-height:42px; padding:0.5rem 0.95rem; border-radius:30px;
+  font-size:0.88rem; font-weight:600; text-decoration:none; color:var(--fg);
+  background:rgba(6,149,255,0.08); border:1px solid rgba(6,149,255,0.45); transition:background .15s ease, border-color .15s ease, transform .15s ease; }
+.ask-chips a::before{ content:"💬"; font-size:0.9rem; }
+.ask-chips a:hover{ background:rgba(6,149,255,0.16); border-color:#0695FF; transform:translateY(-1px); }
+
+.alt-send{ margin-top:0.8rem; font-size:0.86rem; color:var(--fg-mute); }
+.alt-send a, .linkish{ color:var(--fg-dim); text-decoration:underline; text-underline-offset:3px; }
+.linkish{ background:none; border:0; padding:0; font:inherit; cursor:pointer; }
+
+@media (max-width:640px){
+  .float-mess{ display:none; }
+  .mobile-cta.three{ grid-template-columns:1.5fr 1fr 0.8fr; gap:0.45rem; }
+  .mobile-cta.three .btn{ padding-inline:0.6rem; font-size:0.9rem; }
+  .ask-chips{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin-inline:calc(var(--pad) * -1); padding:0.2rem var(--pad) 0.4rem; justify-content:flex-start !important; }
+  .ask-chips::-webkit-scrollbar{ display:none; }
+  .ask-chips a{ flex:none; }
+}
+
+/* Grid items must be allowed to shrink, or wide content pushes forms off-screen on phones */
+.contact-grid > *{ min-width:0; }
+.form-row-2 > *, .form-field{ min-width:0; }
+.form-field select{ width:100%; max-width:100%; text-overflow:ellipsis; }
