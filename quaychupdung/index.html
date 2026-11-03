@@ -109,6 +109,7 @@
   @media (max-width:980px){ #feedback .test-grid{ grid-template-columns:1fr 1fr; } }
 
   /* ---------- Form đăng ký học thử ---------- */
+  .reg > *{ min-width:0; }
   .reg{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(1.6rem,4vw,3.5rem); align-items:start; }
   .reg h2{ font-size:clamp(1.9rem,2.2vw + 1rem,2.7rem); margin-top:0.9rem; }
   .reg .why{ margin-top:1.2rem; padding:0; list-style:none; display:grid; gap:0.7rem; }
@@ -134,6 +135,12 @@
   .faq details[open] summary::after{ transform:rotate(45deg); }
   .faq details p{ margin:0; padding:0 1.3rem 1.2rem; color:var(--fg-dim); }
 
+  .outcomes{ margin-top:1.6rem; padding:1.4rem 1.5rem; border-radius:14px; border:1px solid rgba(214,179,44,0.35); background:rgba(214,179,44,0.06); }
+  .outcomes h3{ font-size:1.15rem; }
+  .outcomes ul{ list-style:none; margin:0.9rem 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0.6rem 1.4rem; }
+  .outcomes li{ display:flex; gap:0.55rem; color:var(--fg-dim); font-size:0.95rem; }
+  .outcomes li::before{ content:"✓"; color:var(--gold-primary); font-weight:800; }
+  @media (max-width:640px){ .outcomes ul{ grid-template-columns:1fr; } }
   .swipe-hint{ display:none; }
 
   @media (max-width:980px){
@@ -314,6 +321,15 @@
         <li><h3>Màu sắc, âm thanh &amp; chữ</h3><p>Chỉnh màu, nhạc nền, hiệu ứng âm thanh, chữ và phụ đề.</p></li>
         <li><h3>Thực hành sản phẩm</h3><p>Tự làm hoàn chỉnh một sản phẩm thật, được góp ý trực tiếp.</p></li>
       </ol>
+      <div class="outcomes reveal">
+        <h3>Học xong 6 buổi, bạn tự làm được:</h3>
+        <ul>
+          <li>Tự quay một clip sản phẩm đúng bố cục, đủ sáng</li>
+          <li>Tự chụp bộ ảnh sản phẩm đăng bán</li>
+          <li>Tự dựng clip ngắn có nhạc, chữ, phụ đề</li>
+          <li>Có ngay một sản phẩm thật làm trong khoá để đăng</li>
+        </ul>
+      </div>
       <div class="hero-ctas reveal" style="margin-top:1.8rem;">
         <a href="#dang-ky" class="btn btn-primary">Đăng ký học thử <span class="btn-arrow">→</span></a>
       </div>
@@ -390,7 +406,8 @@
           <li>Hỏi mọi thắc mắc về lịch học, học phí</li>
           <li>Không áp lực đăng ký</li>
         </ul>
-        <p style="margin-top:1.4rem; color:var(--fg-dim); font-size:0.95rem;">Hoặc nhắn thẳng Zalo: <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" style="color:var(--gold-light); font-weight:700;">0965 817 021</a></p>
+        <p class="ask-label" style="text-align:left;margin-top:1.6rem;">Hoặc hỏi nhanh qua Messenger — bấm là có sẵn câu hỏi:</p>
+        <div class="ask-chips"><a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20l%E1%BB%8Bch%20h%E1%BB%8Dc%20th%E1%BB%AD%20kho%C3%A1%20Quay%20%C2%B7%20Ch%E1%BB%A5p%20%26%20D%E1%BB%B1ng%20g%E1%BA%A7n%20nh%E1%BA%A5t%20l%C3%A0%20khi%20n%C3%A0o%3F" target="_blank" rel="noopener">Lịch học thử gần nhất?</a><a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20l%E1%BB%9Bp%20Quay%20%C2%B7%20Ch%E1%BB%A5p%20%26%20D%E1%BB%B1ng%20h%E1%BB%8Dc%20%E1%BB%9F%20%C4%91%C3%A2u%20%E1%BA%A1%3F" target="_blank" rel="noopener">Lớp học ở đâu?</a><a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20%C4%91ang%20d%C3%B9ng%20m%C3%A1y%20%E2%80%A6%20th%C3%AC%20h%E1%BB%8Dc%20kho%C3%A1%20Quay%20%C2%B7%20Ch%E1%BB%A5p%20%26%20D%E1%BB%B1ng%20%C4%91%C6%B0%E1%BB%A3c%20kh%C3%B4ng%3F" target="_blank" rel="noopener">Máy của mình học được không?</a><a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20quan%20t%C3%A2m%20combo%202%20kho%C3%A1%2025.000.000%C4%91." target="_blank" rel="noopener">Tư vấn combo 2 khoá</a></div>
       </div>
       <form class="reveal" id="regForm" novalidate>
         <div class="form-row-2">
@@ -428,10 +445,11 @@
           <textarea id="rf-note" name="note" rows="3" placeholder="Bạn đang bán gì, đang dùng điện thoại hay máy quay gì…"></textarea>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary" data-via="zalo">Gửi đăng ký qua Zalo <span class="btn-arrow">→</span></button>
-          <button type="submit" class="btn btn-ghost" data-via="email">Gửi qua Email</button>
+          <button type="submit" class="btn btn-primary btn-mess" data-via="mess"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg>Gửi đăng ký qua Messenger</button>
+          <button type="submit" class="btn btn-ghost" data-via="zalo">Gửi qua Zalo</button>
         </div>
-        <p id="reg-status" role="status">Bấm “Gửi đăng ký qua Zalo”: thông tin được sao chép sẵn và mở Zalo của Tâm — bạn chỉ cần dán và gửi, Tâm sẽ báo lịch học thử.</p>
+        <p class="alt-send">Không dùng Messenger, Zalo? <button type="submit" class="linkish" data-via="email">Gửi qua Email</button> hoặc gọi <a href="tel:0965817021">0965 817 021</a>.</p>
+        <p id="reg-status" role="status">Bấm “Gửi đăng ký qua Messenger”: Messenger của fanpage Em Tâm Làm Ads mở ra với nội dung soạn sẵn — bạn chỉ cần bấm Gửi, Tâm sẽ báo lịch học thử.</p>
       </form>
     </div>
   </section>
@@ -451,7 +469,7 @@
       </div>
       <div class="hero-ctas reveal" style="margin-top:1.6rem;">
         <a href="#dang-ky" class="btn btn-primary">Đăng ký học thử <span class="btn-arrow">→</span></a>
-        <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-ghost">Hỏi qua Zalo</a>
+        <a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20mu%E1%BB%91n%20h%E1%BB%8Fi%20v%E1%BB%81%20kho%C3%A1%20Quay%20%C2%B7%20Ch%E1%BB%A5p%20%26%20D%E1%BB%B1ng%3A%20" target="_blank" rel="noopener" class="btn btn-ghost btn-mess"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg>Hỏi qua Messenger</a>
       </div>
     </div>
   </section>
@@ -462,6 +480,8 @@
   <div class="wrap foot-row">
     <span>© <span id="year">2026</span> <a href="../">Em Tâm Làm Ads</a> · Fanpage · Quay chụp dựng · Quảng cáo</span>
     <span>
+      <a href="https://m.me/emtamlamads" target="_blank" rel="noopener">Messenger</a>
+      &nbsp;·&nbsp;
       <a href="https://zalo.me/0965817021" target="_blank" rel="noopener">Zalo</a>
       &nbsp;·&nbsp;
       <a href="https://www.facebook.com/profile.php?id=61590304574447" target="_blank" rel="noopener">Facebook</a>
@@ -471,9 +491,10 @@
   </div>
 </footer>
 
+<a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20c%E1%BA%A7n%20t%C6%B0%20v%E1%BA%A5n." target="_blank" rel="noopener" class="float-mess" aria-label="Nhắn Messenger fanpage Em Tâm Làm Ads"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg></a>
 <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="float-zalo" aria-label="Nhắn Zalo 0965 817 021">Zalo</a>
 <nav class="mobile-cta" aria-label="Liên hệ nhanh">
-  <a href="https://zalo.me/0965817021" target="_blank" rel="noopener" class="btn btn-ghost">Nhắn Zalo</a>
+  <a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20mu%E1%BB%91n%20h%E1%BB%8Fi%20v%E1%BB%81%20kho%C3%A1%20Quay%20%C2%B7%20Ch%E1%BB%A5p%20%26%20D%E1%BB%B1ng." target="_blank" rel="noopener" class="btn btn-ghost btn-mess"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg>Messenger</a>
   <a href="#dang-ky" class="btn btn-primary">Đăng ký học thử</a>
 </nav>
 
@@ -503,7 +524,7 @@
   (function(){
     var form = document.getElementById('regForm');
     var status = document.getElementById('reg-status');
-    var via = 'zalo';
+    var via = 'mess';
     form.querySelectorAll('[data-via]').forEach(function(b){ b.addEventListener('click', function(){ via = b.getAttribute('data-via'); }); });
     function val(id){ return document.getElementById(id).value.trim(); }
     form.addEventListener('submit', function(e){
@@ -531,17 +552,18 @@
         status.textContent = 'Đang mở ứng dụng email của bạn…';
         return;
       }
-      var zalo = window.open('https://zalo.me/0965817021', '_blank');
-      if(zalo) zalo.opener = null;
-      function done(copied){
-        status.textContent = copied
-          ? 'Đã sao chép thông tin! Trong Zalo, giữ ô chat → Dán → Gửi cho Tâm.'
-          : 'Đã mở Zalo. Bạn gửi Tâm: ' + text.replace(/\n/g, ' ');
-        if(!zalo) location.href = 'https://zalo.me/0965817021';
+      function openTab(url){ var w = window.open(url, '_blank'); if(w){ w.opener = null; return true; } location.href = url; return false; }
+      function copy(t){ return (navigator.clipboard && navigator.clipboard.writeText) ? navigator.clipboard.writeText(t).then(function(){return true;},function(){return false;}) : Promise.resolve(false); }
+      if(via === 'mess'){
+        copy(text).then(function(){ status.textContent = 'Đã mở Messenger với nội dung soạn sẵn — bấm Gửi là xong. Nếu ô chat trống, giữ ô chat → Dán.'; });
+        openTab('https://m.me/emtamlamads?text=' + encodeURIComponent(text));
+        return;
       }
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
-      } else { done(false); }
+      if(via === 'zalo'){
+        copy(text).then(function(ok){ status.textContent = ok ? 'Đã sao chép nội dung! Trong Zalo, giữ ô chat → Dán → Gửi cho Tâm.' : 'Đã mở Zalo. Bạn gửi Tâm: ' + text.replace(/\n/g, ' '); });
+        openTab('https://zalo.me/0965817021');
+        return;
+      }
     });
   })();
 </script>
