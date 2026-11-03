@@ -1,9 +1,9 @@
 // ============================================================
 // Em Tâm Làm Ads — form đăng ký trên các landing page (.lead-form)
-// Gửi về Google Sheet qua Google Apps Script (xem tools/dang-ky-hoc-thu.gs).
+// Gửi về trang quản trị trên VPS (server/app.py) — khách mới hiện trong admin + báo Telegram.
 // Chưa có LEAD_ENDPOINT thì tự chuyển sang gửi qua Messenger.
 // ============================================================
-var LEAD_ENDPOINT = '';   // dán "URL ứng dụng web" (…/exec) vào đây
+var LEAD_ENDPOINT = '';   // vd: 'https://admin.emtamlamads.com/api/lead'
 
 (function(){
   var MESSENGER = 'https://m.me/emtamlamads';
@@ -63,7 +63,8 @@ var LEAD_ENDPOINT = '';   // dán "URL ứng dụng web" (…/exec) vào đây
         return;
       }
       btn.disabled = true; status.textContent = 'Đang gửi…';
-      fetch(LEAD_ENDPOINT, { method:'POST', mode:'no-cors', body:new URLSearchParams(data) })
+      fetch(LEAD_ENDPOINT, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify(data) })
+        .then(function(r){ return r.json().catch(function(){ return { ok:false }; }).then(function(j){ if(!r.ok || !j.ok) throw new Error(j.error || 'send'); }); })
         .then(function(){
           if(window.fbq) try{ fbq('track', 'Lead', { content_name:kind }); }catch(err){}
           form.innerHTML = '<div class="lf-done"><div class="lf-check">✓</div><h3>Cảm ơn ' + esc(name) + '!</h3>' +
@@ -72,7 +73,10 @@ var LEAD_ENDPOINT = '';   // dán "URL ứng dụng web" (…/exec) vào đây
             '<p>Muốn nhanh hơn? Nhắn luôn cho Tâm:</p>' +
             '<a class="btn btn-primary" target="_blank" rel="noopener" href="' + MESSENGER + '?text=' + encodeURIComponent(text) + '">Nhắn Messenger</a></div>';
         })
-        .catch(function(){ btn.disabled = false; status.textContent = 'Mạng đang chập chờn — bạn thử lại, hoặc nhắn Messenger cho Tâm nhé.'; });
+        .catch(function(){
+          btn.disabled = false;
+          status.innerHTML = 'Chưa gửi được — bạn thử lại, hoặc <a target="_blank" rel="noopener" href="' + MESSENGER + '?text=' + encodeURIComponent(text) + '">gửi qua Messenger</a> (đã soạn sẵn).';
+        });
     });
   });
 })();
