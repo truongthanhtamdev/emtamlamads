@@ -606,7 +606,7 @@ section[data-bg="paper"] .btn-ghost:hover, section[data-bg="brass"] .btn-ghost:h
 /* ---------- Landing form: ngày & khung giờ (giờ Việt Nam) ---------- */
 .lf-when small{ font-weight:600; opacity:0.75; }
 .lf-date{ width:100%; margin-bottom:0.6rem; }
-.lead-form input[type=email], .lead-form input[type=date]{ font:inherit; }
+.lead-form input[type=email], .lead-form input[type=date]{ font-family:var(--font-body); font-size:0.95rem; }
 .hero-form input[type=email], .hero-form input[type=date]{ background:#fff; color:#221C11; border:1px solid rgba(34,28,17,0.2); }
 .vn-now{ margin:0.5rem 0 0; font-size:0.8rem; color:var(--fg-mute); }
 .vn-now b{ color:var(--fg-dim); font-variant-numeric:tabular-nums; }
