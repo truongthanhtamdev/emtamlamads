@@ -41,8 +41,10 @@
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chạy quảng cáo Facebook & Google" } },
       { "@type": "Offer", "name": "Gói vận hành Ads + Edit clip", "price": "7500000", "priceCurrency": "VND" },
       { "@type": "Offer", "name": "Khoá đào tạo Quay · Chụp & Dựng (6 buổi)", "price": "15000000", "priceCurrency": "VND" },
-      { "@type": "Offer", "name": "Khoá đào tạo Facebook Ads + AI Claude Code (4 buổi)", "price": "15000000", "priceCurrency": "VND" },
-      { "@type": "Offer", "name": "Combo 2 khoá đào tạo (10 buổi)", "price": "25000000", "priceCurrency": "VND" }
+      { "@type": "Offer", "name": "Khoá đào tạo Facebook Ads + Instagram Ads (4 buổi)", "price": "15000000", "priceCurrency": "VND" },
+      { "@type": "Offer", "name": "Khoá đào tạo Làm Website cùng AI Claude Code (4 buổi)", "price": "15000000", "priceCurrency": "VND" },
+      { "@type": "Offer", "name": "Combo 2 khoá đào tạo (10 buổi)", "price": "25000000", "priceCurrency": "VND" },
+      { "@type": "Offer", "name": "Combo 3 khoá đào tạo (14 buổi)", "price": "35000000", "priceCurrency": "VND" }
     ]
   }
 }
@@ -225,7 +227,7 @@
 
   /* ============ Bảng giá ============ */
   #bang-gia{ --green:#1E3A31; --green-2:#24473C; --cream:#F2EBDC; }
-  .price-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; align-items:stretch; }
+  .price-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem 1.2rem; align-items:stretch; }
   .plan{ position:relative; display:flex; flex-direction:column; padding:1.8rem 1.5rem 1.6rem; border-radius:14px;
     background:var(--green); border:1px solid rgba(216,187,122,0.22); color:var(--cream); }
   .plan.light{ background:var(--cream); color:#1E3A31; border-color:rgba(30,58,49,0.15); }
@@ -329,12 +331,12 @@
   .price-proof cite{ display:block; margin-top:0.4rem; font-style:normal; font-size:0.85rem; color:var(--fg-mute); }
   .posters{ margin-top:2.2rem; padding-top:1.8rem; border-top:1px solid var(--line); }
   .posters h3{ font-family:var(--font-body); font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-mute); text-align:center; }
-  .poster-row{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-top:1rem; max-width:720px; margin-inline:auto; }
+  .poster-row{ display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:0.8rem; margin-top:1rem; max-width:1000px; margin-inline:auto; }
   .poster-row button{ display:block; width:100%; min-width:0; padding:0; border:1px solid var(--line-strong); border-radius:10px; overflow:hidden; background:none; cursor:zoom-in; transition:transform .2s ease, border-color .2s ease; }
   .poster-row button:hover{ transform:translateY(-3px); border-color:var(--gold-primary); }
   .poster-row img{ display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; }
   .posters p{ text-align:center; font-size:0.85rem; color:var(--fg-mute); margin-top:0.9rem; }
-  @media (max-width:720px){ .poster-row{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:720px){ .poster-row{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
   dialog.lightbox{ padding:0; border:0; background:transparent; max-width:min(92vw,560px); width:100%; }
   dialog.lightbox::backdrop{ background:rgba(5,6,7,0.85); }
   dialog.lightbox img{ width:100%; height:auto; max-height:80vh; object-fit:contain; border-radius:10px; }
@@ -884,7 +886,7 @@
         <p>Một gói vận hành cho shop muốn giao hẳn việc, và các khoá đào tạo trực tiếp cho người muốn tự làm.</p>
       </div>
 
-      <p class="swipe-hint">Vuốt ngang để xem 4 gói →</p>
+      <p class="swipe-hint">Vuốt ngang để xem 6 gói →</p>
       <div class="price-grid reveal reveal-stagger m-scroll">
         <article class="plan" style="--i:0">
           <span class="kind">Gói vận hành</span>
@@ -924,14 +926,13 @@
 
         <article class="plan" style="--i:2">
           <span class="kind">Khoá đào tạo</span>
-          <h3>Facebook Ads <em>+ AI Claude Code</em></h3>
-          <p class="meta">4 buổi • 2 buổi Ads + 2 buổi Claude Code</p>
+          <h3>Facebook Ads <em>+ Instagram Ads</em></h3>
+          <p class="meta">4 buổi • Quảng cáo Facebook &amp; Instagram</p>
           <ol>
-            <li><span>Chiến dịch tin nhắn<small>Facebook Ads</small></span></li>
+            <li><span>Chiến dịch tin nhắn<small>Facebook · Instagram</small></span></li>
             <li><span>Chiến dịch like page + like post<small>Facebook Ads</small></span></li>
-            <li><span>Đọc báo cáo &amp; tối ưu chỉ số<small>Facebook Ads</small></span></li>
-            <li><span>AI Claude Code làm hệ thống<small>Claude Code</small></span></li>
-            <li><span>Setup tên miền &amp; website<small>Claude Code</small></span></li>
+            <li><span>Quảng cáo Instagram: follow, reels, tin nhắn<small>Instagram Ads</small></span></li>
+            <li><span>Đọc báo cáo &amp; tối ưu chỉ số<small>Facebook · Instagram</small></span></li>
           </ol>
           <div class="price">
             <span class="amt">15.000.000đ</span>
@@ -940,21 +941,56 @@
           <a href="khoaads/" class="btn btn-primary">Xem khoá &amp; giữ chỗ</a>
         </article>
 
-        <article class="plan featured" style="--i:3">
-          <span class="ribbon">Tiết kiệm nhất</span>
+        <article class="plan" style="--i:3">
+          <span class="kind">Khoá đào tạo</span>
+          <h3>Khoá học <em>Làm Website</em></h3>
+          <p class="meta">4 buổi • Tự dựng website cùng AI Claude Code</p>
+          <ol>
+            <li><span>Mua &amp; setup tên miền<small>Website</small></span></li>
+            <li><span>Dựng &amp; đưa website lên mạng<small>Website</small></span></li>
+            <li><span>Làm việc với AI Claude Code<small>Claude Code</small></span></li>
+            <li><span>Tối ưu &amp; thêm các chức năng<small>Website · Claude Code</small></span></li>
+          </ol>
+          <div class="price">
+            <span class="amt">15.000.000đ</span>
+            <span class="unit">trọn khoá 4 buổi</span>
+          </div>
+          <a href="lamwebsite/" class="btn btn-primary">Xem khoá &amp; giữ chỗ</a>
+        </article>
+
+        <article class="plan featured" style="--i:4">
+          <span class="ribbon">Tiết kiệm 5 triệu</span>
           <span class="kind">Ưu đãi · Combo đào tạo</span>
           <h3>Combo <em>2 khoá học</em></h3>
-          <p class="meta">10 buổi • 6 buổi Quay · Chụp &amp; Dựng + 4 buổi Ads &amp; Claude Code</p>
+          <p class="meta">10 buổi • Quay · Chụp &amp; Dựng + Facebook &amp; Instagram Ads</p>
           <ol>
             <li><span>Quay · Chụp &amp; Dựng<small>6 buổi thực hành · 15.000.000đ</small></span></li>
-            <li><span>Facebook Ads + Claude Code<small>4 buổi · 15.000.000đ</small></span></li>
+            <li><span>Facebook Ads + Instagram Ads<small>4 buổi · 15.000.000đ</small></span></li>
           </ol>
           <div class="price">
             <span class="old">30.000.000đ</span>
             <span class="amt">25.000.000đ</span>
             <span class="save">Tiết kiệm 5.000.000đ khi đăng ký cả 2 khoá</span>
           </div>
-          <a href="lien-he.html?dv=combo-2-khoa" class="btn btn-primary">Đăng ký combo</a>
+          <a href="khoaads/#giu-cho" class="btn btn-primary">Đăng ký combo</a>
+        </article>
+
+        <article class="plan featured" style="--i:5">
+          <span class="ribbon">Tiết kiệm nhất</span>
+          <span class="kind">Ưu đãi · Combo đào tạo</span>
+          <h3>Combo <em>3 khoá học</em></h3>
+          <p class="meta">14 buổi • Quay · Chụp &amp; Dựng + Facebook &amp; Instagram Ads + Làm Website</p>
+          <ol>
+            <li><span>Quay · Chụp &amp; Dựng<small>6 buổi thực hành · 15.000.000đ</small></span></li>
+            <li><span>Facebook Ads + Instagram Ads<small>4 buổi · 15.000.000đ</small></span></li>
+            <li><span>Làm Website cùng AI Claude Code<small>4 buổi · 15.000.000đ</small></span></li>
+          </ol>
+          <div class="price">
+            <span class="old">45.000.000đ</span>
+            <span class="amt">35.000.000đ</span>
+            <span class="save">Tiết kiệm 10.000.000đ khi đăng ký cả 3 khoá</span>
+          </div>
+          <a href="lamwebsite/#giu-cho" class="btn btn-primary">Đăng ký combo 3 khoá</a>
         </article>
       </div>
       <div class="price-proof reveal">
@@ -966,8 +1002,11 @@
         <div class="poster-row">
           <button type="button" data-poster="assets/bang-gia-goi-van-hanh.jpg"><img src="assets/bang-gia-goi-van-hanh.jpg" alt="Bảng giá gói vận hành Ads + Edit clip 7.500.000đ" width="1080" height="1350" loading="lazy"></button>
           <button type="button" data-poster="assets/bang-gia-khoa-quay-chup-dung.jpg"><img src="assets/bang-gia-khoa-quay-chup-dung.jpg" alt="Bảng giá khoá Quay Chụp và Dựng 15.000.000đ" width="1080" height="1350" loading="lazy"></button>
-          <button type="button" data-poster="assets/bang-gia-khoa-ads-claude-code.jpg"><img src="assets/bang-gia-khoa-ads-claude-code.jpg" alt="Bảng giá khoá Facebook Ads + AI Claude Code 15.000.000đ" width="1080" height="1350" loading="lazy"></button>
-          <button type="button" data-poster="assets/bang-gia-combo-2-khoa.jpg"><img src="assets/bang-gia-combo-2-khoa.jpg" alt="Combo 2 khoá học 25.000.000đ" width="1080" height="1350" loading="lazy"></button>
+        
+          <button type="button" data-poster="assets/bang-gia-khoa-ads-instagram.jpg"><img src="assets/bang-gia-khoa-ads-instagram.jpg" alt="Bảng giá khoá Facebook Ads + Instagram Ads 15.000.000đ" width="1080" height="1350" loading="lazy"></button>
+          <button type="button" data-poster="assets/bang-gia-khoa-lam-website.jpg"><img src="assets/bang-gia-khoa-lam-website.jpg" alt="Bảng giá khoá Làm Website 15.000.000đ" width="1080" height="1350" loading="lazy"></button>
+          <button type="button" data-poster="assets/bang-gia-combo-2-khoa-v2.jpg"><img src="assets/bang-gia-combo-2-khoa-v2.jpg" alt="Combo 2 khoá học 25.000.000đ" width="1080" height="1350" loading="lazy"></button>
+          <button type="button" data-poster="assets/bang-gia-combo-3-khoa.jpg"><img src="assets/bang-gia-combo-3-khoa.jpg" alt="Combo 3 khoá học 35.000.000đ" width="1080" height="1350" loading="lazy"></button>
         </div>
       </div>
       <dialog class="lightbox" id="posterBox">
@@ -1088,7 +1127,7 @@
       <div class="faq">
         <details class="reveal">
           <summary>Chi phí dịch vụ được tính như thế nào?</summary>
-          <p>Gói vận hành Ads + Edit clip là 7.500.000đ/dự án (ngân sách quảng cáo tính riêng); các khoá đào tạo trực tiếp từ 15.000.000đ, combo 2 khoá 25.000.000đ — xem chi tiết ở <a href="#bang-gia" style="color:var(--gold-light);">Bảng giá</a>. Nhu cầu riêng (quay chụp theo buổi, vận hành dài hạn…) Tâm báo giá sau buổi trao đổi miễn phí.</p>
+          <p>Gói vận hành Ads + Edit clip là 7.500.000đ/dự án (ngân sách quảng cáo tính riêng); các khoá đào tạo trực tiếp 15.000.000đ/khoá, combo 2 khoá 25.000.000đ, combo 3 khoá 35.000.000đ — xem chi tiết ở <a href="#bang-gia" style="color:var(--gold-light);">Bảng giá</a>. Nhu cầu riêng (quay chụp theo buổi, vận hành dài hạn…) Tâm báo giá sau buổi trao đổi miễn phí.</p>
         </details>
         <details class="reveal">
           <summary>Ngân sách quảng cáo có nằm trong phí dịch vụ không?</summary>
