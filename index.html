@@ -260,8 +260,11 @@
   .price-note{ margin-top:1.6rem; font-size:0.9rem; color:var(--fg-dim); text-align:center; }
 
   /* ============ Video feedback ============ */
-  .vfb-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.4rem; margin-bottom:3rem; }
-  .vfb{ margin:0; }
+  /* video ngang 16:9 và dọc 9:16 xếp chung một hàng, cao bằng nhau */
+  .vfb-grid{ display:flex; gap:1.2rem; margin-bottom:3rem; align-items:flex-start; }
+  .vfb{ margin:0; flex:1.778 1 0; min-width:0; }
+  .vfb.v{ flex:0.5625 1 0; }
+  .vfb-player.vertical{ aspect-ratio:9/16; }
   @media (max-width:720px){ .vfb-grid{ grid-template-columns:1fr; } }
   .vfb-player{ position:relative; display:block; width:100%; aspect-ratio:16/9; padding:0; border:0; border-radius:14px; overflow:hidden; cursor:pointer;
     background:#0B0D0F; box-shadow:0 30px 60px -30px rgba(34,28,17,0.55); }
@@ -300,9 +303,9 @@
   .res-card .fine{ margin-top:auto; padding-top:1rem; font-size:0.8rem; color:var(--fg-mute); }
 
   /* ============ Về Tâm: đội ngũ ============ */
-  .team{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:2.2rem; }
+  .team{ display:grid; grid-template-columns:1fr; gap:1.2rem; margin-bottom:2.2rem; max-width:760px; }
   .person{ display:flex; gap:1.1rem; align-items:flex-start; padding:1.4rem; border-radius:14px; background:var(--card-bg); border:1px solid var(--card-line); }
-  .avatar-lg{ flex:none; width:72px; height:72px; border-radius:50%; overflow:hidden; display:grid; place-items:center;
+  .avatar-lg{ flex:none; width:96px; height:96px; border-radius:50%; overflow:hidden; display:grid; place-items:center;
     font-family:var(--font-display); font-weight:700; font-size:1.8rem; color:#F0D66B; background:#1B1206; border:2px solid rgba(27,18,6,0.35); }
   .avatar-lg img{ width:100%; height:100%; object-fit:cover; }
   .person h3{ font-size:1.3rem; }
@@ -428,6 +431,7 @@
     .price-grid.m-scroll{ align-items:stretch; padding-top:1.2rem; }
     .price-grid.m-scroll > *{ flex-basis:86%; }
     .test-grid.m-scroll > *, .more-grid.m-scroll > *{ flex-basis:78%; }
+    .vfb-grid.m-scroll > .vfb.v{ flex-basis:50%; }
 
     /* Kết quả: ảnh tin nhắn không quá dài */
     .res-card figure{ max-height:380px; }
@@ -637,15 +641,31 @@
             <span class="badge">▶ Video feedback</span>
             <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
           </button>
-          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
+          <figcaption>Khách hàng chia sẻ thật.</figcaption>
+        </figure>
+        <figure class="vfb v">
+          <button class="vfb-player vertical" type="button" data-yt="bHkHH5c9ny4" aria-label="Phát video feedback khách hàng 2">
+            <img src="https://i.ytimg.com/vi/bHkHH5c9ny4/hqdefault.jpg" alt="Video feedback khách hàng 2" width="480" height="360" loading="lazy">
+            <span class="badge">▶ Shorts</span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
+          </button>
+          <figcaption>Khách hàng chia sẻ thật.</figcaption>
         </figure>
         <figure class="vfb">
-          <button class="vfb-player" type="button" data-yt="7q80bjS1Sb8" aria-label="Phát video feedback khách hàng 2">
-            <img src="https://i.ytimg.com/vi/7q80bjS1Sb8/hqdefault.jpg" alt="Video feedback khách hàng 2" width="480" height="360" loading="lazy">
+          <button class="vfb-player" type="button" data-yt="7q80bjS1Sb8" aria-label="Phát video feedback khách hàng 3">
+            <img src="https://i.ytimg.com/vi/7q80bjS1Sb8/hqdefault.jpg" alt="Video feedback khách hàng 3" width="480" height="360" loading="lazy">
             <span class="badge">▶ Video feedback</span>
             <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
           </button>
-          <figcaption>Khách hàng chia sẻ trực tiếp sau khi làm việc cùng Tâm.</figcaption>
+          <figcaption>Khách hàng chia sẻ thật.</figcaption>
+        </figure>
+        <figure class="vfb v">
+          <button class="vfb-player vertical" type="button" data-yt="uHYHvx3uO0k" aria-label="Phát video feedback khách hàng 4">
+            <img src="https://i.ytimg.com/vi/uHYHvx3uO0k/hqdefault.jpg" alt="Video feedback khách hàng 4" width="480" height="360" loading="lazy">
+            <span class="badge">▶ Shorts</span>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
+          </button>
+          <figcaption>Khách hàng chia sẻ thật.</figcaption>
         </figure>
       </div>
 
@@ -692,25 +712,17 @@
     <div class="wrap">
       <div class="reveal sec-head">
         <span class="eyebrow">Về Em Tâm Làm Ads</span>
-        <h2>Hai người, hai thế mạnh — một mục tiêu: shop của bạn ra đơn.</h2>
-        <p class="big">Người chạy quảng cáo và người làm video ngồi chung một bàn, nên nội dung được làm ra để bán ngay từ khâu kịch bản. "Marketing không khó khi có Tâm."</p>
+        <h2>Làm nội dung để bán — chạy quảng cáo để ra đơn.</h2>
+        <p class="big">Em Tâm Làm Ads gói gọn quay dựng, vận hành fanpage và quảng cáo trong một đầu mối, nên nội dung được làm ra để bán ngay từ khâu kịch bản. "Marketing không khó khi có Tâm."</p>
       </div>
 
       <div class="team reveal reveal-stagger">
         <article class="person" style="--i:0">
-          <div class="avatar-lg" aria-hidden="true">T</div>
+          <div class="avatar-lg photo-av"><img src="assets/em-tam-avatar.webp" alt="Em Tâm Làm Ads" width="400" height="400" loading="lazy"></div>
           <div>
             <h3>Tâm</h3>
             <p class="role-line">Người sáng lập Em Tâm Làm Ads · Vận hành fanpage &amp; Quảng cáo</p>
-            <p>Trực tiếp vận hành fanpage và chạy quảng cáo Facebook, Instagram cho các shop — từ lên chiến dịch, đọc chỉ số đến báo cáo. Là người bạn trao đổi khi làm việc qua Zalo.</p>
-          </div>
-        </article>
-        <article class="person" style="--i:1">
-          <div class="avatar-lg photo-av"><img src="assets/badge-1.jpg" alt="Lê Minh Tấn" loading="lazy"></div>
-          <div>
-            <h3>Lê Minh Tấn</h3>
-            <p class="role-line">Chuyên gia quay dựng &amp; sản xuất nội dung</p>
-            <p>Nhiều năm dựng phim và sản xuất nội dung cho các agency truyền thông. Phụ trách quay chụp, dựng video cho khách và đứng lớp khoá Quay · Chụp &amp; Dựng.</p>
+            <p>Trực tiếp vận hành fanpage và chạy quảng cáo Facebook, Instagram cho các shop — từ lên chiến dịch, đọc chỉ số đến báo cáo. Cùng đội ngũ giảng viên đào tạo các khoá quay dựng và quảng cáo. Là người bạn trao đổi khi nhắn fanpage.</p>
           </div>
         </article>
       </div>
@@ -721,28 +733,6 @@
         <div style="--i:1"><b>Tài khoản là của shop</b><span>Ngân sách nạp thẳng vào tài khoản quảng cáo của shop — bạn thấy từng đồng chi ra.</span></div>
         <div style="--i:2"><b>Báo cáo dễ hiểu</b><span>Không chỉ số khó hiểu: bao nhiêu tin nhắn, bao nhiêu đơn, tốn bao nhiêu tiền.</span></div>
         <div style="--i:3"><b>Làm việc trực tiếp</b><span>Trao đổi thẳng với Tâm qua Zalo, không qua nhiều lớp trung gian.</span></div>
-      </div>
-
-      <h3 class="sub-head reveal">Kinh nghiệm của Tấn tại các agency</h3>
-      <div class="badge-grid reveal reveal-stagger" style="margin-top:1rem;">
-        <div class="badge-card" style="--i:0; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-1.jpg" alt="Thẻ nhân viên Diễn Quân Media" loading="lazy"></div>
-          <div class="place">Diễn Quân Media &amp; Entertainment</div>
-          <div class="role">Dựng phim</div>
-        </div>
-        <div class="badge-card" style="--i:1; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-2.jpg" alt="Thẻ nhân viên Color Man" loading="lazy"></div>
-          <div class="place">Color Man</div>
-          <div class="role">Phó phòng Sản xuất nội dung</div>
-        </div>
-        <div class="badge-card" style="--i:2; --stripe:#20160A;">
-          <div class="hole"></div>
-          <div class="photo"><img src="assets/badge-3.jpg" alt="Thẻ nhân viên Đông Tây Promotion" loading="lazy"></div>
-          <div class="place">Đông Tây Promotion</div>
-          <div class="role">Sản xuất nội dung</div>
-        </div>
       </div>
 
       <div class="mosaic reveal" style="margin-top:2.6rem;">
@@ -781,7 +771,7 @@
         <div class="fit-box reveal"><b>Phù hợp với:</b> shop mới mở page, hoặc page có sẵn nhưng bỏ bê vì không có thời gian chăm.</div>
         <div class="hero-ctas reveal">
           <a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20mu%E1%BB%91n%20t%C6%B0%20v%E1%BA%A5n%20g%C3%B3i%20v%E1%BA%ADn%20h%C3%A0nh%20fanpage%20cho%20shop." target="_blank" rel="noopener" class="btn btn-primary btn-mess"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg>Tư vấn gói vận hành <span class="btn-arrow">→</span></a>
-          <a href="lien-he.html?dv=fanpage" class="btn btn-ghost">Gửi yêu cầu</a>
+          <a href="quangcao/" class="btn btn-ghost">Đặt lịch tư vấn 1:1</a>
         </div>
       </div>
     </div>
@@ -797,7 +787,7 @@
       <div>
         <span class="svc-num reveal">DỊCH VỤ 02</span>
         <h2 class="reveal">Hình ảnh &amp; video sản phẩm <span class="accent">đủ đẹp để bán.</span></h2>
-        <p class="lede reveal">Do chuyên gia Lê Minh Tấn phụ trách — nhiều năm dựng phim và sản xuất nội dung cho các agency truyền thông, giờ đưa kinh nghiệm đó vào từng tấm ảnh, từng video ngắn cho shop của bạn.</p>
+        <p class="lede reveal">Ảnh và video được làm ra để bán: đúng bố cục, đủ sáng, bắt trend, xuất đúng tỉ lệ cho từng nền tảng — dùng được ngay cho fanpage và quảng cáo.</p>
         <div class="deliver reveal">
           <h3>Bạn nhận được</h3>
           <ul>
@@ -845,7 +835,7 @@
         <div class="fit-box reveal"><b>Phù hợp với:</b> shop muốn tăng đơn nhanh, hoặc đang tự chạy nhưng chi phí cao, đơn ít.</div>
         <div class="hero-ctas reveal">
           <a href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20mu%E1%BB%91n%20audit%20t%C3%A0i%20kho%E1%BA%A3n%20qu%E1%BA%A3ng%20c%C3%A1o%20mi%E1%BB%85n%20ph%C3%AD." target="_blank" rel="noopener" class="btn btn-primary btn-mess"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg>Audit tài khoản ads miễn phí <span class="btn-arrow">→</span></a>
-          <a href="lien-he.html?dv=quang-cao" class="btn btn-ghost">Gửi yêu cầu</a>
+          <a href="quangcao/" class="btn btn-ghost">Đặt lịch tư vấn 1:1</a>
         </div>
       </div>
     </div>
@@ -857,9 +847,9 @@
       <div class="reveal">
         <span class="eyebrow">Gói trọn bộ 3 trong 1</span>
         <h2>Nội dung, hình ảnh và quảng cáo — một đội làm, ăn khớp từ đầu.</h2>
-        <p>Khi người quay video (Tấn) và người chạy quảng cáo (Tâm) làm cùng một đội, nội dung được làm ra để bán ngay từ khâu kịch bản. Ít khâu phối hợp, ít lãng phí, ra kết quả nhanh hơn.</p>
+        <p>Khi người quay video và người chạy quảng cáo làm cùng một đội, nội dung được làm ra để bán ngay từ khâu kịch bản. Ít khâu phối hợp, ít lãng phí, ra kết quả nhanh hơn.</p>
         <div class="hero-ctas" style="margin-top:1.6rem;">
-          <a href="lien-he.html?dv=tron-goi" class="btn btn-primary">Nhận báo giá trọn gói <span class="btn-arrow">→</span></a>
+          <a href="quangcao/#dat-lich" class="btn btn-primary">Đặt lịch tư vấn trọn gói <span class="btn-arrow">→</span></a>
         </div>
       </div>
       <div class="combo-steps reveal reveal-stagger">
@@ -913,7 +903,7 @@
             <span class="amt">7.500.000đ</span>
             <span class="unit">/ dự án · ngân sách quảng cáo tính riêng</span>
           </div>
-          <a href="lien-he.html?dv=goi-van-hanh" class="btn btn-primary">Đăng ký gói này</a>
+          <a href="quangcao/#dat-lich" class="btn btn-primary">Đặt lịch tư vấn 1:1</a>
         </article>
 
         <article class="plan light" style="--i:1">
@@ -1021,7 +1011,7 @@
           </div>
           <div class="comment comment-reply">
             <div class="avatar">T</div>
-            <div class="body"><span class="name">Lê Minh Tấn</span>Dạ con cảm ơn cô! Đợi clip của cô ạ.</div>
+            <div class="body"><span class="name">Giảng viên Em Tâm Làm Ads</span>Dạ con cảm ơn cô! Đợi clip của cô ạ.</div>
           </div>
           <div class="cap">Không giới hạn độ tuổi — học được, làm được</div>
         </div>
@@ -1033,7 +1023,7 @@
         <div class="test-card" style="--i:3">
           <div class="comment">
             <div class="avatar">P</div>
-            <div class="body"><span class="name">Mai Hoàng Phúc</span>@Minh Tấn em lên xu hướng rồi thầy ơi!</div>
+            <div class="body"><span class="name">Mai Hoàng Phúc</span>Em lên xu hướng rồi thầy ơi!</div>
           </div>
           <div class="cap">Video kênh bán vườn phong lan lọt xu hướng TikTok</div>
         </div>
@@ -1045,7 +1035,7 @@
         <div class="test-card" style="--i:5">
           <div class="comment">
             <div class="avatar">T</div>
-            <div class="body"><span class="name">Lê Minh Tấn</span>Gần hai nghìn lượt xem rồi chị ơi.</div>
+            <div class="body"><span class="name">Giảng viên Em Tâm Làm Ads</span>Gần hai nghìn lượt xem rồi chị ơi.</div>
           </div>
           <div class="comment comment-reply">
             <div class="avatar">H</div>
