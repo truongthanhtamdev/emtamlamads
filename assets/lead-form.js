@@ -3,7 +3,7 @@
 // Gửi về trang quản trị trên VPS (server/app.py) — khách mới hiện trong admin + báo Telegram.
 // Chưa có LEAD_ENDPOINT thì tự chuyển sang gửi qua Messenger.
 // ============================================================
-var LEAD_ENDPOINT = '';   // vd: 'https://admin.emtamlamads.com/api/lead'
+var LEAD_ENDPOINT = 'https://admin.emtamlamads.com/api/lead';
 
 (function(){
   var MESSENGER = 'https://m.me/emtamlamads';
