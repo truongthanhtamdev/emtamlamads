@@ -66,6 +66,14 @@ var LEAD_ENDPOINT = 'https://admin.emtamlamads.com/api/lead';
       fetch(LEAD_ENDPOINT, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify(data) })
         .then(function(r){ return r.json().catch(function(){ return { ok:false }; }).then(function(j){ if(!r.ok || !j.ok) throw new Error(j.error || 'send'); }); })
         .then(function(){
+          // Sang trang Cảm ơn (thông tin khách để trong sessionStorage, không đưa SĐT lên URL)
+          var slug = (location.pathname.match(/\/([a-z0-9-]+)\/(?:index\.html)?$/) || [])[1] || 'web';
+          try {
+            sessionStorage.setItem('etla_lead', JSON.stringify({ name:name, kind:kind, contact:phone || email,
+              when:[date, data.times].filter(Boolean).join(', '), text:text, slug:slug, t:Date.now() }));
+            location.href = new URL('../camon/?khoa=' + encodeURIComponent(slug), location.href).href;
+            return;
+          } catch(err) {}
           if(window.fbq) try{ fbq('track', 'Lead', { content_name:kind }); }catch(err){}
           form.innerHTML = '<div class="lf-done"><div class="lf-check">✓</div><h3>Cảm ơn ' + esc(name) + '!</h3>' +
             '<p>Tâm đã nhận thông tin và sẽ liên hệ qua <b>' + esc(phone || email) + '</b> trong 24 giờ để ' + esc(doneText) +
