@@ -169,15 +169,15 @@
         <span class="mosaic-tag">Ảnh thật của học viên</span>
         <div class="mosaic-grid">
           <div class="ph-frame ph-empty">
-            <img src="assets/bts-1.jpg" alt="Hậu trường quay sản phẩm" onerror="this.remove()">
+            <img decoding="async" src="assets/bts-1.webp" alt="Hậu trường quay sản phẩm" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/bts-1.jpg</strong>Ảnh hậu trường buổi quay</div>
           </div>
           <div class="ph-frame ph-empty">
-            <img src="assets/bts-2.jpg" alt="Sản phẩm trên phông nền" onerror="this.remove()">
+            <img decoding="async" src="assets/bts-2.webp" alt="Sản phẩm trên phông nền" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/bts-2.jpg</strong>Ảnh sản phẩm trên phông nền</div>
           </div>
           <div class="ph-frame ph-empty">
-            <img src="assets/bts-3.jpg" alt="Màn hình dựng phim" onerror="this.remove()">
+            <img decoding="async" src="assets/bts-3.webp" alt="Màn hình dựng phim" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/bts-3.jpg</strong>Ảnh màn hình dựng phim</div>
           </div>
         </div>
@@ -187,19 +187,19 @@
         <span class="mosaic-tag">Không khí lớp học thực tế</span>
         <div class="class-gallery">
           <div class="ph-frame ph-empty">
-            <img src="assets/class-photo-1.jpg" alt="Gặp gỡ và trao đổi cùng đối tác sau khoá đào tạo" onerror="this.remove()">
+            <img decoding="async" src="assets/class-photo-1.webp" alt="Gặp gỡ và trao đổi cùng đối tác sau khoá đào tạo" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/class-photo-1.jpg</strong>Ảnh gặp gỡ đối tác</div>
           </div>
           <div class="ph-frame ph-empty">
-            <img src="assets/class-photo-2.jpg" alt="Học viên nhận chứng nhận hoàn thành khoá học" onerror="this.remove()">
+            <img decoding="async" src="assets/class-photo-2.webp" alt="Học viên nhận chứng nhận hoàn thành khoá học" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/class-photo-2.jpg</strong>Ảnh lễ trao chứng nhận</div>
           </div>
           <div class="ph-frame ph-empty">
-            <img src="assets/class-photo-3.jpg" alt="Nhóm học viên chụp ảnh cùng chứng chỉ" onerror="this.remove()">
+            <img decoding="async" src="assets/class-photo-3.webp" alt="Nhóm học viên chụp ảnh cùng chứng chỉ" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/class-photo-3.jpg</strong>Ảnh nhóm học viên</div>
           </div>
           <div class="ph-frame ph-empty">
-            <img src="assets/product-shot-2.jpg" alt="Học viên thực hành quay sản phẩm bằng điện thoại" onerror="this.remove()">
+            <img decoding="async" src="assets/product-shot-2.webp" alt="Học viên thực hành quay sản phẩm bằng điện thoại" onerror="this.remove()">
             <div class="ph-fallback"><strong>assets/product-shot-2.jpg</strong>Ảnh thực hành quay sản phẩm</div>
           </div>
         </div>
@@ -324,7 +324,7 @@
         var card = document.createElement('li');
         card.className = 'method-mobile-card';
         var mediaHTML = step.img
-          ? '<div class="method-mobile-media"><img src="' + step.img + '" alt="' + step.alt + '" loading="lazy" width="480" height="360" style="object-position:' + (step.pos || '50% 50%') + '"></div>'
+          ? '<div class="method-mobile-media"><img decoding="async" src="' + step.img + '" alt="' + step.alt + '" loading="lazy" width="480" height="360" style="object-position:' + (step.pos || '50% 50%') + '"></div>'
           : '<div class="method-mobile-media">' + fallbackMarkup(step.alt) + '</div>';
         card.innerHTML = '<span class="step-num">' + step.num + '</span><h3>' + step.title + '</h3><p class="step-desc">' + step.desc + '</p><p class="step-result">' + step.result + '</p>' + mediaHTML;
         mobileList.appendChild(card);
