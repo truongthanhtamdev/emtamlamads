@@ -170,6 +170,34 @@
   .vfb{ flex:1.778 1 0; min-width:0; }
   .vfb.v{ flex:0.5625 1 0; }
   @media (max-width:640px){ .photo-strip{ grid-template-columns:1fr 1fr; } .vfb-grid.m-scroll > .vfb.v{ flex:0 0 50%; } .vfb-grid.m-scroll > .vfb:not(.v){ flex:0 0 84%; } }
+
+  /* ---------- Kết quả theo fanpage ---------- */
+  .sub-h{ font-family:var(--font-body); font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-mute); margin:2.4rem 0 1rem; }
+  .ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0.9rem; }
+  .ind-card{ padding:1.1rem 1.2rem; border-radius:12px; background:var(--card-bg); border:1px solid var(--card-line); }
+  .ind-card .ind{ display:inline-block; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-light); }
+  .ind-card b{ display:block; margin-top:0.3rem; font-size:1.02rem; }
+  .ind-num{ display:flex; gap:1.4rem; margin-top:0.7rem; }
+  .ind-num strong{ display:block; font-family:var(--font-num); font-size:1.35rem; line-height:1.1; }
+  .ind-num small{ font-size:0.78rem; color:var(--fg-dim); }
+  /* ---------- Báo cáo mẫu ---------- */
+  .report{ max-width:900px; margin:0 auto; border-radius:16px; background:#fff; color:#1C1E21; border:1px solid var(--card-line); box-shadow:0 30px 60px -30px rgba(34,28,17,0.35); overflow:hidden; }
+  .report-head{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; padding:1rem 1.3rem; background:#F2F4F7; border-bottom:1px solid #E4E6EB; }
+  .report-head .sample{ font-size:0.72rem; font-weight:700; color:#8A6A10; background:#FFF4CC; padding:0.2rem 0.6rem; border-radius:20px; }
+  .report-kpi{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#E4E6EB; }
+  .report-kpi div{ background:#fff; padding:0.9rem 1.1rem; }
+  .report-kpi small{ font-size:0.76rem; color:#65676B; }
+  .report-kpi strong{ display:block; font-family:var(--font-num); font-size:1.25rem; margin-top:0.2rem; }
+  .report-table-wrap{ overflow-x:auto; }
+  .report-table{ width:100%; border-collapse:collapse; font-size:0.9rem; min-width:520px; }
+  .report-table th, .report-table td{ padding:0.75rem 1.1rem; border-bottom:1px solid #EEF0F3; text-align:left; }
+  .report-table th{ font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:#65676B; }
+  .report-table td:nth-child(2), .report-table td:nth-child(3){ font-family:var(--font-num); font-weight:700; }
+  .pill{ display:inline-block; padding:0.2rem 0.6rem; border-radius:20px; font-size:0.78rem; font-weight:700; white-space:nowrap; }
+  .pill.up{ background:#E3F5E8; color:#1B7F3B; } .pill.keep{ background:#EEF0F3; color:#3A3F47; } .pill.off{ background:#FDE8E4; color:#B4532A; }
+  .report-notes{ margin:0; padding:1rem 1.3rem 1.2rem 2.4rem; font-size:0.9rem; color:#3A3F47; display:grid; gap:0.35rem; }
+  @media (max-width:820px){ .ind-grid{ grid-template-columns:1fr 1fr; } .report-kpi{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .ind-grid{ grid-template-columns:1fr 1fr; gap:0.6rem; } .ind-card{ padding:0.8rem; } .ind-card b{ font-size:0.88rem; } .ind-card .ind{ font-size:0.62rem; } .ind-num{ gap:0.8rem; } .ind-num strong{ font-size:1rem; } .ind-num small{ font-size:0.7rem; } }
   .swipe-hint{ display:none; }
 
   @media (max-width:980px){
@@ -296,6 +324,19 @@
           <input type="text" id="a-page" name="fanpage" inputmode="url" placeholder="facebook.com/tenshop">
         </div>
         <div class="form-field">
+          <label for="a-ind">Ngành hàng</label>
+          <select id="a-ind" name="industry">
+            <option value="">-- Chọn ngành --</option>
+            <option>Thời trang / Phụ kiện</option>
+            <option>Spa – Làm đẹp</option>
+            <option>Mỹ phẩm</option>
+            <option>Giáo dục / Khoá học</option>
+            <option>Ăn uống (F&amp;B)</option>
+            <option>Nội thất / Gia dụng</option>
+            <option>Khác</option>
+          </select>
+        </div>
+        <div class="form-field">
           <label for="a-budget">Ngân sách quảng cáo mỗi tháng</label>
           <select id="a-budget" name="budget">
             <option value="">-- Chọn --</option>
@@ -354,19 +395,24 @@
           <span class="tag">Traffic thật · 28 ngày (2/10 – 29/10)</span>
           <h3>Các fanpage Tâm đang vận hành</h3>
           <div class="big-num"><div><b>1,45 triệu</b><span>Lượt xem trên 6 fanpage</span></div><div><b>2.324</b><span>Cuộc trò chuyện qua tin nhắn</span></div></div>
-          <table class="page-table">
-            <thead><tr><th scope="col">Fanpage</th><th scope="col">Lượt xem</th><th scope="col">Tin nhắn</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">QT Shop</th><td>750.295</td><td>951</td></tr>
-              <tr><th scope="row">Piano + Guitar Đệm Hát</th><td>213.105</td><td>261</td></tr>
-              <tr><th scope="row">Charmé</th><td>212.101</td><td>340</td></tr>
-              <tr><th scope="row">Gold Class Head Spa Chermside</th><td>127.737</td><td>260</td></tr>
-              <tr><th scope="row">Em Tâm Làm Ads</th><td>75.028</td><td>266</td></tr>
-              <tr><th scope="row">Dạy Guitar Online 1:1</th><td>73.207</td><td>246</td></tr>
-            </tbody>
-          </table>
+
           <p class="fine">Số liệu từ Bảng điều khiển Facebook của từng trang. Mỗi shop một kết quả khác nhau, tuỳ sản phẩm và ngân sách.</p>
         </div>
+      </div>
+      <h3 class="sub-h reveal">Kết quả theo từng fanpage · 28 ngày (2/10 – 29/10)</h3>
+      <div class="ind-grid reveal">
+          <div class="ind-card"><span class="ind">Shop bán hàng online</span><b>QT Shop</b>
+            <div class="ind-num"><div><strong>750.295</strong><small>lượt xem</small></div><div><strong>951</strong><small>tin nhắn</small></div></div></div>
+          <div class="ind-card"><span class="ind">Giáo dục · Âm nhạc</span><b>Piano + Guitar Đệm Hát</b>
+            <div class="ind-num"><div><strong>213.105</strong><small>lượt xem</small></div><div><strong>261</strong><small>tin nhắn</small></div></div></div>
+          <div class="ind-card"><span class="ind">Thương hiệu</span><b>Charmé</b>
+            <div class="ind-num"><div><strong>212.101</strong><small>lượt xem</small></div><div><strong>340</strong><small>tin nhắn</small></div></div></div>
+          <div class="ind-card"><span class="ind">Spa – Làm đẹp · Úc</span><b>Gold Class Head Spa Chermside</b>
+            <div class="ind-num"><div><strong>127.737</strong><small>lượt xem</small></div><div><strong>260</strong><small>tin nhắn</small></div></div></div>
+          <div class="ind-card"><span class="ind">Dịch vụ Marketing</span><b>Em Tâm Làm Ads</b>
+            <div class="ind-num"><div><strong>75.028</strong><small>lượt xem</small></div><div><strong>266</strong><small>tin nhắn</small></div></div></div>
+          <div class="ind-card"><span class="ind">Giáo dục · Khoá online</span><b>Dạy Guitar Online 1:1</b>
+            <div class="ind-num"><div><strong>73.207</strong><small>lượt xem</small></div><div><strong>246</strong><small>tin nhắn</small></div></div></div>
       </div>
       <p class="swipe-hint" style="margin-top:2rem;">Vuốt ngang để xem thêm video →</p>
       <div class="vfb-grid m-scroll reveal" style="margin-top:2rem;">
@@ -444,6 +490,39 @@
     </div>
   </section>
 
+  <!-- ============ BÁO CÁO MẪU ============ -->
+  <section id="bao-cao" data-bg="paper">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Minh bạch</span>
+        <h2>Mỗi tuần bạn nhận báo cáo như thế này.</h2>
+        <p>Không phải biểu đồ khó hiểu — chỉ những con số bạn cần để biết tiền quảng cáo đang đi đâu, và tuần tới làm gì.</p>
+      </div>
+      <div class="report reveal">
+        <div class="report-head"><b>Báo cáo tuần · Shop của bạn</b><span class="sample">Mẫu báo cáo · số liệu minh hoạ</span></div>
+        <div class="report-kpi">
+          <div><small>Đã chi</small><strong>3.500.000đ</strong></div>
+          <div><small>Tin nhắn mới</small><strong>140</strong></div>
+          <div><small>Chi phí / tin nhắn</small><strong>25.000đ</strong></div>
+          <div><small>Đơn chốt (shop báo)</small><strong>31</strong></div>
+        </div>
+        <div class="report-table-wrap"><table class="report-table">
+          <thead><tr><th>Mẫu quảng cáo</th><th>Tin nhắn</th><th>Chi phí/tin nhắn</th><th>Quyết định tuần tới</th></tr></thead>
+          <tbody>
+            <tr><td>Clip review sản phẩm (9:16)</td><td>78</td><td>19.200đ</td><td><span class="pill up">▲ Tăng ngân sách</span></td></tr>
+            <tr><td>Clip unbox + giá</td><td>44</td><td>27.300đ</td><td><span class="pill keep">● Giữ nguyên</span></td></tr>
+            <tr><td>Ảnh sản phẩm</td><td>18</td><td>48.900đ</td><td><span class="pill off">■ Tắt, thay clip mới</span></td></tr>
+          </tbody>
+        </table></div>
+        <ul class="report-notes">
+          <li>Tuần tới: quay thêm 2 clip review theo mẫu đang chạy tốt nhất.</li>
+          <li>Đề xuất: tăng ngân sách 20% vào clip review vì chi phí mỗi tin nhắn thấp nhất.</li>
+        </ul>
+      </div>
+      <p class="fine reveal" style="text-align:center;">Bảng trên là mẫu minh hoạ cách trình bày. Số liệu thật của shop bạn sẽ được gửi mỗi tuần.</p>
+    </div>
+  </section>
+
   <!-- ============ QUY TRÌNH TƯ VẤN ============ -->
   <section data-bg="dark">
     <div class="wrap">
@@ -491,6 +570,21 @@
           <div class="form-field">
             <label for="rf-page">Trang fanpage (nếu có)</label>
             <input type="text" id="rf-page" name="fanpage" inputmode="url" placeholder="facebook.com/tenshop">
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-field">
+            <label for="rf-ind">Ngành hàng</label>
+            <select id="rf-ind" name="industry">
+            <option value="">-- Chọn ngành --</option>
+            <option>Thời trang / Phụ kiện</option>
+            <option>Spa – Làm đẹp</option>
+            <option>Mỹ phẩm</option>
+            <option>Giáo dục / Khoá học</option>
+            <option>Ăn uống (F&amp;B)</option>
+            <option>Nội thất / Gia dụng</option>
+            <option>Khác</option>
+          </select>
           </div>
         </div>
         <div class="form-row-2">
@@ -580,7 +674,7 @@
 </nav>
 
 <script src="../assets/site.js"></script>
-<script src="../assets/lead-form.js?v=3"></script>
+<script src="../assets/lead-form.js?v=4"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
