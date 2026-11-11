@@ -10,7 +10,7 @@ var LEAD_ENDPOINT = 'https://admin.emtamlamads.com/api/lead';
   var qs = new URLSearchParams(location.search);
   var utm = ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].filter(function(k){ return qs.get(k); })
     .map(function(k){ return k + '=' + qs.get(k).slice(0, 80); }).join('&');
-  var LABELS = { email:'Email', fanpage:'Fanpage', date:'Ngày hẹn', times:'Khung giờ (giờ VN)', budget:'Ngân sách ads/tháng', goal:'Mục tiêu', note:'Ghi chú' };
+  var LABELS = { industry:'Ngành hàng', email:'Email', fanpage:'Fanpage', date:'Ngày hẹn', times:'Khung giờ (giờ VN)', budget:'Ngân sách ads/tháng', goal:'Mục tiêu', note:'Ghi chú' };
   var VN_TZ = 'Asia/Ho_Chi_Minh';
 
   // Giờ Việt Nam hiện tại (+ giờ của khách nếu họ ở múi giờ khác), ngày hẹn không chọn được ngày đã qua
@@ -47,7 +47,8 @@ var LEAD_ENDPOINT = 'https://admin.emtamlamads.com/api/lead';
 
       var data = { kind:kind, name:name, phone:phone, email:email, date:date,
         times:[].slice.call(form.querySelectorAll('input[name="time"]:checked')).map(function(i){ return i.value; }).join(', '),
-        fanpage:val('fanpage'), budget:val('budget'), goal:val('goal'), note:val('note'),
+        industry:val('industry'), fanpage:val('fanpage'), budget:val('budget'), goal:val('goal'),
+        note:[val('industry') ? 'Ngành: ' + val('industry') : '', val('note')].filter(Boolean).join(' · '),
         page:location.pathname.replace(/\/index\.html$/, '/') + (form.getAttribute('data-pos') ? ' (' + form.getAttribute('data-pos') + ')' : ''),
         utm:utm, website:val('website') };
       var lines = ['Chào Tâm, mình muốn ' + kind.toLowerCase() + ':', '- Tên: ' + name]; if(phone) lines.push('- SĐT/Zalo: ' + phone);
