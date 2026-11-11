@@ -343,6 +343,22 @@
   dialog.lightbox .lb-actions{ display:flex; gap:0.6rem; justify-content:center; margin-top:0.8rem; }
   .faq-more{ margin-top:1.4rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; color:var(--fg-dim); }
 
+
+  /* ---------- Facebook ---------- */
+  .fb-ico{ display:inline-grid; place-items:center; width:40px; height:40px; border-radius:50%; margin-right:0.6rem; color:#fff; background:#0866FF; transition:transform .2s ease; }
+  .nav-cta-desktop{ white-space:nowrap; flex:none; }
+  .fb-ico:hover{ transform:scale(1.08); } .fb-ico svg{ width:22px; height:22px; }
+  .fb-box{ display:grid; grid-template-columns:1fr 340px; gap:1.6rem; align-items:center; margin-top:2.4rem; padding:1.6rem; border-radius:16px; background:var(--card-bg); border:1px solid var(--card-line); }
+  .fb-tag{ display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:#0866FF; }
+  .fb-tag svg{ width:16px; height:16px; }
+  .fb-info h3{ font-size:1.4rem; margin-top:0.5rem; }
+  .fb-info p{ margin:0.5rem 0 0; color:var(--fg-dim); }
+  .fb-acts{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.1rem; }
+  .fb-embed{ width:340px; height:420px; max-width:100%; border-radius:12px; overflow:hidden; background:#fff; }
+  .fb-embed iframe{ width:100%; height:100%; border:0; }
+  .fb-fallback{ height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem; text-decoration:none; color:#1C1E21; background:linear-gradient(180deg,#E7F0FF,#fff); }
+  .fb-fallback svg{ width:48px; height:48px; color:#0866FF; } .fb-fallback span{ font-size:0.85rem; color:#65676B; }
+  @media (max-width:820px){ .fb-box{ grid-template-columns:1fr; } .fb-embed{ margin:0 auto; } }
   /* ============ Hỏi đáp ============ */
   .faq{ max-width:860px; display:grid; gap:0.8rem; }
   .faq details{ border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,0.03); transition:border-color .2s ease; }
@@ -483,6 +499,7 @@
       <a href="#khoa-hoc">Khóa học</a>
       <a href="#ve-chung-toi">Về Tâm</a>
     </nav>
+    <a class="fb-ico nav-cta-desktop" href="https://www.facebook.com/emtamlamads" target="_blank" rel="noopener" aria-label="Fanpage Facebook Em Tâm Làm Ads"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></a>
     <a class="btn btn-primary nav-cta-desktop btn-mess" href="https://m.me/emtamlamads?text=Ch%C3%A0o%20T%C3%A2m%2C%20m%C3%ACnh%20c%E1%BA%A7n%20t%C6%B0%20v%E1%BA%A5n%20marketing%20cho%20shop." target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8Z"/></svg>Tư vấn qua Messenger</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Mở menu">
       <span></span><span></span><span></span>
@@ -733,6 +750,21 @@
         <div style="--i:1"><b>Tài khoản quảng cáo sẵn có</b><span>Chạy trên tài khoản quảng cáo của Em Tâm Làm Ads — shop không phải tự lập, tự lo tài khoản, vẫn được báo cáo chi tiêu rõ ràng.</span></div>
         <div style="--i:2"><b>Báo cáo dễ hiểu</b><span>Không chỉ số khó hiểu: bao nhiêu tin nhắn, bao nhiêu đơn, tốn bao nhiêu tiền.</span></div>
         <div style="--i:3"><b>Làm việc trực tiếp</b><span>Trao đổi thẳng với Tâm qua Messenger, Zalo — không qua nhiều lớp trung gian.</span></div>
+      </div>
+
+      <div class="fb-box reveal">
+        <div class="fb-info">
+          <span class="fb-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg> Fanpage chính thức</span>
+          <h3>Theo dõi Em Tâm Làm Ads trên Facebook</h3>
+          <p>Mẹo chạy quảng cáo, clip hậu trường quay dựng và kết quả của các shop — cập nhật mỗi tuần.</p>
+          <div class="fb-acts">
+            <a class="btn btn-primary" href="https://www.facebook.com/emtamlamads" target="_blank" rel="noopener">Theo dõi fanpage</a>
+            <a class="btn btn-ghost" href="https://m.me/emtamlamads" target="_blank" rel="noopener">Nhắn tin</a>
+          </div>
+        </div>
+        <div class="fb-embed" data-fb-page="https://www.facebook.com/emtamlamads">
+          <a href="https://www.facebook.com/emtamlamads" target="_blank" rel="noopener" class="fb-fallback"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg><b>facebook.com/emtamlamads</b><span>Bấm để xem fanpage</span></a>
+        </div>
       </div>
 
       <div class="mosaic reveal" style="margin-top:2.6rem;">
@@ -1275,6 +1307,24 @@
 <script src="assets/site.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Khung fanpage Facebook: chỉ tải khi khách cuộn tới
+  (function(){
+    var box = document.querySelector('[data-fb-page]'); if(!box) return;
+    function load(){
+      var w = Math.min(340, box.clientWidth || 340);
+      var f = document.createElement('iframe');
+      f.src = 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent(box.getAttribute('data-fb-page')) +
+        '&tabs=timeline&width=' + w + '&height=420&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true';
+      f.title = 'Fanpage Facebook Em Tâm Làm Ads'; f.loading = 'lazy'; f.allow = 'encrypted-media; clipboard-write'; f.scrolling = 'no';
+      box.replaceChildren(f);
+    }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); load(); } }, { rootMargin:'300px' });
+      io.observe(box);
+    } else load();
+  })();
+
 
   // Bảng giá dạng ảnh: xem lớn, lưu ảnh
   (function(){
