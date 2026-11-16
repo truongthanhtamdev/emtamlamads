@@ -17,12 +17,12 @@
     quaychupdung: ['Mình muốn học thử Quay · Chụp & Dựng', 'Học bằng điện thoại được không?', 'Combo 2 khoá gồm gì?'],
     khoaads:      ['Khoá Ads học những gì?', 'Mình chưa chạy ads bao giờ, học được không?', 'Combo 3 khoá giá bao nhiêu?'],
     lamwebsite:   ['Không biết code có học được không?', 'Học xong làm được web gì?', 'Combo 3 khoá gồm gì?'],
-    quangcao:     ['Mình bán thời trang, nên chạy ads thế nào?', 'Gói vận hành 7,5 triệu gồm gì?', 'Đặt lịch tư vấn 1:1'],
-    home:         ['Mình bán thời trang', 'Mình làm spa – làm đẹp', 'Mình muốn tự học làm video & ads', 'Đặt lịch tư vấn 1:1']
+    quangcao:     ['Chạy ads mãi mà ít khách, sai ở đâu?', 'Mình bán thời trang, nên chạy ads thế nào?', 'Gói vận hành 7,5 triệu gồm gì?', 'Đặt lịch tư vấn 1:1'],
+    home:         ['Shop mình ít khách, nên làm gì?', 'Mình bán thời trang', 'Mình làm spa – làm đẹp', 'Mình muốn tự học làm video & ads']
   };
   var seg = (path.split('/')[1] || 'home');
   var chips = CHIPS[seg] || CHIPS.home;
-  var HELLO = 'Chào anh/chị 👋 Em là trợ lý AI của Em Tâm Làm Ads. Anh/chị đang kinh doanh ngành gì, hay muốn tự học làm video – chạy quảng cáo? Em tư vấn gói phù hợp và đặt lịch với Tâm luôn ạ.';
+  var HELLO = 'Chào anh/chị 👋 Em là trợ lý AI của Em Tâm Làm Ads. Anh/chị đang kinh doanh gì ạ? Em gợi ý chiến lược content – quay dựng – quảng cáo để có thêm khách, và đặt lịch với Tâm nếu cần.';
 
   function sid(){
     var s = store.get('etla_ai_sid');
