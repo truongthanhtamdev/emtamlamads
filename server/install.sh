@@ -81,6 +81,7 @@ if [ -n "$CADDY" ]; then
     echo " Lưu ý: $DOMAIN chưa trỏ về VPS (đang: ${DNS_IP:-chưa có}). Thêm bản ghi A: admin -> $SERVER_IP."
     echo " Caddy tự bật https khi tên miền trỏ đúng — không cần chạy lại."
   fi
+  echo " Bật trợ lý AI: vào trang quản trị → ⚙ Cài đặt → Trợ lý AI, dán khoá Claude API."
   echo " Quên mật khẩu: docker exec -u 1000 etla-admin python /app/app.py --reset-password"
   echo "=============================================================="
   exit 0
